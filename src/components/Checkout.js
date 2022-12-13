@@ -1,5 +1,7 @@
-import { useState, useRef } from "react";
+import React from 'react';
+import { useState, useRef, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import ticket from '../images/ticket.png'
 
 import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.jpg";
@@ -87,32 +89,55 @@ const Checkout = () => {
 
   if (stripeError) alert(stripeError);
 
+  const [days, setDays] = React.useState(0);
+  const [hours, setHours] = React.useState(0);
+  const [minutes, setMinutes] = React.useState(0);
+  const [seconds, setSeconds] = React.useState(0);
+
+  const deadline = "December, 31, 2022";
+
+  const getTime = () => {
+    const time = Date.parse(deadline) - Date.now();    
+
+    setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
+    setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
+    setMinutes(Math.floor((time / 1000 / 60) % 60));
+    setSeconds(Math.floor((time / 1000) % 60));
+  };
+
+  React.useEffect(() => {
+    const interval = setInterval(() => getTime(deadline), 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
   return (
     <div>
       <div className="page-wrapper" ref={top}>
             <section className="section">
                 <div className="container is--nav">
                     <div className="grid is--nav">
-                        <div className="grid_item is--nav-logo">
+                        {/* <div className="grid_item is--nav-logo">
                             <a className="nav_logo w-inline-block">
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a048b62e5ac_logo.svg" className="nav_logo-img"/>
                             </a>
-                        </div>
+                        </div> */}
                         <div className="grid_item is--menu">
                             <a className="menu_link w-inline-block">
-                                <p className="menu_p">MUSIC</p>
+                                <p className="menu_p">MAIN</p>
                                 <div className="menu_line"></div>
                             </a>
                             <a className="menu_link w-inline-block">
                                 <div className="menu_line"></div>
-                                <p className="menu_p">Tour</p>
+                                <p className="menu_p">INFO</p>
                             </a>
                             <a className="menu_link w-inline-block">
-                                <p className="menu_p">RESOURCES</p>
+                                <p className="menu_p">PRICES</p>
                                 <div className="menu_line"></div>
                             </a>
                             <a className="menu_link w-inline-block">
-                                <p className="menu_p">STORE</p>
+                                <p className="menu_p">ABOUT</p>
                                 <div className="menu_line"></div>
                             </a>
                             <a className="menu_link w-inline-block">
@@ -120,10 +145,10 @@ const Checkout = () => {
                                 <p className="menu_p">CONTACT</p>
                             </a>
                             <div className="menu_button">
-                                <p className="menu_p bold">Get The Album</p>
-                                <div className="menu_button-circle">
+                                <p className="menu_p bold">Acquista i biglietti</p>
+                                {/* <div className="menu_button-circle">
                                     <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a512462e5af_nav-apple-icon.svg" className="menu_button-icon"/>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <a className="grid_item is--hamburger w-inline-block">
@@ -141,7 +166,7 @@ const Checkout = () => {
                         <div className="grid_item is--hero-content">
                             <div className="is--3-bp">
                                 <p>
-                                    New album: <span className="hero_span">Old Church Basement</span>
+                                  DISCO Capitolo 1: <span className="hero_span">La villa dello zio Nathaniel</span>
                                 </p>
                             </div>
                             <button className="main-button w-inline-block bgbutton" onClick={handleClick}>
@@ -159,10 +184,10 @@ const Checkout = () => {
                             <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a277f62e5b7_hero-image1.jpeg" className="hero_photo1"/>
                         </div>
                         <div className="grid_item is--hero-img2">
-                            <div className="is--3-bp is--40">
+                            {/* <div className="is--3-bp is--40">
                                 <h4 className="heading-3">©2021</h4>
                                 <p>More than you ask, think or imagine According to His power working in us</p>
-                            </div>
+                            </div> */}
                             <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a15e962e5b4_hero-image2.jpeg" className="hero_photo2"/>
                         </div>
                     </div>
@@ -192,40 +217,39 @@ const Checkout = () => {
                     <div className="merch">
                         <div className="grid is--merch-column">
                             <div className="grid_item is--merch-title">
-                                <h3>Shop Merch</h3>
+                                <h3>acquistare i biglietti</h3>
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3aa55362e5a5_merch-underline.svg" className="image"/>
-                                <p className="merch_p">Sort by Category</p>
                             </div>
                             <div className="grid_item is--merch-link">
                                 <a className="merch_link is--active w-inline-block">
-                                    <h5>01</h5>
-                                    <p className="bold">all</p>
+                                    <h5 id="day">{days < 10 ? "0" + days : days}</h5>
+                                    <p className="bold">days</p>
                                 </a>
                             </div>
                             <div className="grid_item is--merch-link">
                                 <a className="merch_link w-inline-block">
-                                    <h5>02</h5>
-                                    <p className="bold">Shirts</p>
+                                    <h5 id="hour">{hours < 10 ? "0" + hours : hours}</h5>
+                                    <p className="bold">hours</p>
                                 </a>
                             </div>
                             <div className="grid_item is--merch-link">
                                 <a className="merch_link w-inline-block">
-                                    <h5>03</h5>
-                                    <p className="bold">hats</p>
+                                    <h5 id="minute">{minutes < 10 ? "0" + minutes : minutes}</h5>
+                                    <p className="bold">minutes</p>
                                 </a>
                             </div>
                             <div className="grid_item is--merch-link">
                                 <a className="merch_link w-inline-block">
-                                    <h5>04</h5>
-                                    <p className="bold">Music</p>
+                                    <h5 id="second">{seconds < 10 ? "0" + seconds : seconds}</h5>
+                                    <p className="bold">seconds</p>
                                 </a>
                             </div>
-                            <div className="grid_item is--merch-link">
+                            {/* <div className="grid_item is--merch-link">
                                 <a className="merch_link w-inline-block">
                                     <h5>05</h5>
                                     <p className="bold">Signs</p>
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="grid is--merch-column2">
                             <div className="grid_item is--merch-img1">
@@ -280,7 +304,7 @@ const Checkout = () => {
 
             <div ref={ref} className="checkout">
               <div className="checkoutLeft">
-
+                <img src={ticket} className="ticket"/>
               </div>
               <div className="checkoutRight">
                 <div className="style1">
@@ -300,13 +324,8 @@ const Checkout = () => {
                     onClick={redirectToCheckout}
                     disabled={isLoading}
                   >
-                    <div className="grey-circle">
-                      <div className="purple-circle">
-                        <img className="icon" src={CardIcon} alt="credit-card-icon" />
-                      </div>
-                    </div>
                     <div className="text-container">
-                      <p className="text">{isLoading ? "Carico..." : "paga"}</p>
+                      <div className="text">{isLoading ? "Carico..." : "paga"}</div>
                     </div>
                   </button>
                 </div>

@@ -118,6 +118,7 @@ button {
 }
 
 button:hover {
+  transition: all 0.5s ease-in-out;
   scale: 1.05;
 }
 
@@ -2219,7 +2220,7 @@ h3 {
   font-size: 6.56em;
   line-height: 0.9;
   font-weight: 700;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.03em;
 }
 
 h4 {
@@ -2342,6 +2343,7 @@ blockquote {
   -webkit-align-items: flex-end;
   -ms-flex-align: end;
   align-items: flex-end;
+  justify-content: center;
 }
 
 .grid.is--resources {
@@ -2583,10 +2585,7 @@ blockquote {
   /* background-color: #121212; */
 }
 
-.main-button:hover {
-  background-color: #000000;
-  opacity: 0.9;
-}
+
 
 .bgbutton {
   background-color: transparent;
