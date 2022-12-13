@@ -279,32 +279,37 @@ const Checkout = () => {
             </section>
 
             <div ref={ref} className="checkout">
-              <div className="style1">
-                <h1>BIGLIETTI</h1>
-                <h1 className="checkout-price">€{total}</h1>
-                <div className="quantity-input">
+              <div className="checkoutLeft">
 
-                  <button className="quantity-input__modifier quantity-input__modifier--left" onClick={decNum}>—</button>
+              </div>
+              <div className="checkoutRight">
+                <div className="style1">
+                  <h1 className="tickets">BIGLIETTI</h1>
+                  <h1 className="checkout-price">€{total}</h1>
+                  <div className="quantity-input">
 
-                  <input type="text" className="quantity-input__screen" value={num} onChange={handleChange}/>
-                  
-                  <button className="quantity-input__modifier quantity-input__modifier--right" onClick={incNum}>＋</button>
+                    <button className="quantity-input__modifier quantity-input__modifier--left" onClick={decNum}>—</button>
 
-                </div>
-                <button
-                  className="checkout-button"
-                  onClick={redirectToCheckout}
-                  disabled={isLoading}
-                >
-                  <div className="grey-circle">
-                    <div className="purple-circle">
-                      <img className="icon" src={CardIcon} alt="credit-card-icon" />
+                    <input type="text" className="quantity-input__screen" value={num} onChange={handleChange}/>
+                    
+                    <button className="quantity-input__modifier quantity-input__modifier--right" onClick={incNum}>＋</button>
+
+                  </div>
+                  <button
+                    className="checkout-button"
+                    onClick={redirectToCheckout}
+                    disabled={isLoading}
+                  >
+                    <div className="grey-circle">
+                      <div className="purple-circle">
+                        <img className="icon" src={CardIcon} alt="credit-card-icon" />
+                      </div>
                     </div>
-                  </div>
-                  <div className="text-container">
-                    <p className="text">{isLoading ? "Carico..." : "paga"}</p>
-                  </div>
-                </button>
+                    <div className="text-container">
+                      <p className="text">{isLoading ? "Carico..." : "paga"}</p>
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
 

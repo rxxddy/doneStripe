@@ -24,17 +24,29 @@ code {
   justify-content: center;
   align-items: center;
   display: flex;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  max-width: 1163px;
+  border-bottom: 3px solid white;
+  padding-bottom: 4em;
+  margin-bottom: 7em;
 }
 
 .style1 {
   max-width: 1140px;
   margin: auto;
   width: 50%;
-  border: 3px solid white;
+  /* border: 3px solid white; */
   padding: 10px;
   margin-top: 100px;
   position: relative;
   z-index: 999999;
+}
+
+.tickets {
+  justify-content: center;
+  display: flex;
 }
 
 .checkout-title {
@@ -54,6 +66,7 @@ code {
   line-height: 95px;
   margin: 0;
   color: #b798c1;
+  margin-top: 1em;
 }
 
 .checkout-description {
@@ -72,7 +85,9 @@ code {
 }
 
 .checkout-button {
-  background: linear-gradient(180deg, #ffffff 0%, #d9dfff 100%);
+  /* background: linear-gradient(180deg, #a4349e 0%, #d9dfff 100%); */
+
+  background-color: transparent;
   border: 0.5px solid rgba(255, 255, 255, 0.5);
   box-sizing: border-box;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
@@ -85,8 +100,8 @@ code {
   width: 169px;
   cursor: pointer;
   margin: 0 auto;
-  margin-top: 20px;
-
+  margin-top: 3em;
+  
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -97,7 +112,8 @@ code {
 .checkout-button:hover {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1),
     0px 30px 60px rgba(23, 0, 102, 0.3);
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
+  scale: 1.1;
 }
 
 .checkout-button .grey-circle {
@@ -143,8 +159,9 @@ code {
   font-size: 17px;
   line-height: 130%;
   margin: 0;
-  color: rgba(0, 0, 0, 1);
+  color: #b798c1;
   margin: 0;
+  
 }
 
 
@@ -154,6 +171,7 @@ code {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  margin-top: 2em;
 }
 .quantity-input:focus {
   background: red;
@@ -200,4 +218,13 @@ code {
   border-top: 0 solid #dbdbdb;
   border-bottom: 0 solid #dbdbdb;
   text-align: center;
+}
+
+.checkoutLeft {
+  width: 50%; 
+  float:left;
+}
+.checkoutRight {
+  width: 50%; 
+  float:right;
 }

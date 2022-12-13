@@ -109,11 +109,16 @@ code,kbd,pre,samp {
 button,input,optgroup,select,textarea {
   color: inherit;
   font: inherit;
-  margin: 0
+  margin: 0;
+  background-color: transparent;
 }
 
 button {
   overflow: visible
+}
+
+button:hover {
+  scale: 1.05;
 }
 
 button,select {
@@ -2963,6 +2968,7 @@ blockquote {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: transparent;
 }
 
 .paragraph {
@@ -3303,6 +3309,7 @@ blockquote {
       padding-top: 5px;
       padding-right: 0px;
       padding-bottom: 5px;
+
   }
 
   .menu_button {
@@ -3606,4 +3613,12 @@ blockquote {
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+}
+
+.Canceled {
+  margin-top: 14em;
+}
+
+.Canceled-cancel {
+  margin-bottom: 0.6em;
 }
