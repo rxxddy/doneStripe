@@ -217,7 +217,7 @@ const Checkout = () => {
                     <div className="merch">
                         <div className="grid is--merch-column">
                             <div className="grid_item is--merch-title">
-                                <h3>acquistare i biglietti</h3>
+                                <h5>La discoteca inizierà tra poco:</h5>
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3aa55362e5a5_merch-underline.svg" className="image"/>
                             </div>
                             <div className="grid_item is--merch-link">
