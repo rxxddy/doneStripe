@@ -2195,7 +2195,7 @@ textarea.w-input,textarea.w-select {
 body {
   background-color: #121212;
   font-family: 'Neue Haas Grotesk', sans-serif;
-  color: white;
+  color: #bf2d06;
   line-height: 1.6;
 }
 
@@ -2594,6 +2594,7 @@ blockquote {
 
 
 .bgbutton {
+  color: #bf2d06;
   background-color: transparent;
 }
 
@@ -2634,7 +2635,7 @@ blockquote {
 }
 
 .hero_circle.is--link:hover {
-  background-color: #e8e8e8;
+  background-color: black;
   -webkit-transform: scale(0.9);
   -ms-transform: scale(0.9);
   transform: scale(0.9);
@@ -2773,7 +2774,7 @@ blockquote {
   display: block;
   width: 100%;
   margin-bottom: 0px;
-  padding: 8.13em 32.34em 8.39em;
+  padding: 26em 32.34em 8.39em;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -2782,7 +2783,7 @@ blockquote {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url("https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a00d962e5ba_old-church-basement.jpeg");
+  background-image: url("../../../images/banner.png");
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2804,9 +2805,9 @@ blockquote {
 }
 
 .resources_img {
-  width: 100%;
+  /* width: 100%;
   height: 49.58em;
-  border-radius: 100vw;
+  border-radius: 100vw; */
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -3003,7 +3004,7 @@ blockquote {
 }
 
 .menu_button:hover {
-  color: #e8e8e8;
+  color: black;
 }
 
 .menu_button-circle {
@@ -3033,7 +3034,7 @@ blockquote {
 }
 
 .menu_button-circle:hover {
-  background-color: #e8e8e8;
+  background-color: black;
 }
 
 .menu_button-icon {
@@ -3055,27 +3056,7 @@ blockquote {
   transform: translate(-101%, 0px);
 }
 
-.main-button_circle {
-  position: absolute;
-  left: 0%;
-  top: 0%;
-  right: 0%;
-  bottom: auto;
-  z-index: 10;
-  width: 100%;
-  margin-top: 0%;
-  margin-bottom: 0%;
-  padding-top: 100%;
-  padding-bottom: 0px;
-  border-style: none;
-  border-width: 0px;
-  border-color: #bf2d06;
-  border-radius: 100vw;
-  background-color: #bf2d06;
-  -webkit-transform: translate(0px, -100%);
-  -ms-transform: translate(0px, -100%);
-  transform: translate(0px, -100%);
-}
+
 
 .main-button_p {
   position: relative;

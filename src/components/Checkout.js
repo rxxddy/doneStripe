@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import ticket from '../images/ticket.png'
 import logo from '../images/logo.png'
+import greek1 from '../images/greek1.png'
 
 import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.jpg";
@@ -200,7 +201,6 @@ const Checkout = () => {
                                 </p>
                             </div>
                             <button className="main-button w-inline-block bgbutton" onClick={handleClick}>
-                                <div className="main-button_circle"></div>
                                 <p className="main-button_p">Acquista i biglietti</p>
                             </button>
                             <div className="hero_album">
@@ -210,15 +210,17 @@ const Checkout = () => {
                                 </a>
                             </div>
                         </div>
+
+                       
                         <div className="grid_item is--hero-img1">
-                            <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a277f62e5b7_hero-image1.jpeg" className="hero_photo1"/>
+                            <img src="https://www.greece-is.com/wp-content/uploads/2016/01/DISCO_CINDERELLA_1.jpg" className="hero_photo1"/>
                         </div>
                         <div className="grid_item is--hero-img2">
                             {/* <div className="is--3-bp is--40">
                                 <h4 className="heading-3">©2021</h4>
-                                <p>More than you ask, think or imagine According to His power working in us</p>
+                                <p></p>
                             </div> */}
-                            <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a15e962e5b4_hero-image2.jpeg" className="hero_photo2"/>
+                            <img src="https://media.architecturaldigest.com/photos/634dbbc971ea5ab8b1a71bfe/master/pass/J000394_S4_ND_ShowSpace_03092.jpg" className="hero_photo2"/>
                         </div>
                     </div>
                 </div>
@@ -283,19 +285,19 @@ const Checkout = () => {
                         </div>
                         <div className="grid is--merch-column2">
                             <div className="grid_item is--merch-img1">
-                                <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a5fee62e5b0_merch-photo1.jpeg" className="merch_img1"/>
+                                <img src="https://images.unsplash.com/photo-1574155376612-bfa4ed8aabfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmlnaHRjbHVifGVufDB8fDB8fA%3D%3D&w=1000&q=80" className="merch_img1"/>
                             </div>
                             <div className="grid_item is--merch-img2">
-                                <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a5b2962e5b6_merch-photo2.jpeg" className="merch_img2"/>
+                                <img src="https://images.pexels.com/photos/2114365/pexels-photo-2114365.jpeg" className="merch_img2"/>
                             </div>
                             <div className="grid_item is--merch-img3">
-                                <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a095e62e5b9_merch-photo3.jpeg" className="merch_img3"/>
+                                <img src="https://thumbs.dreamstime.com/b/crowd-people-dancing-night-club-cheering-concert-95375453.jpg" className="merch_img3"/>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="section">
+            {/* <section className="section">
                 <div className="container is--wide">
                     <div className="card">
                         <div className="card_content">
@@ -303,30 +305,30 @@ const Checkout = () => {
                                 Old<br/>
                                 Church<br/>Basement
                             </h2>
-                            <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a115962e5b2_sub-logos.png" className="card_logos"/>
+                           
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section className="section">
                 <div className="container">
                     <div className="grid is--resources">
                         <a src="https://www.elevationworship.com/resources" target="_blank"  className="resources_text is--main-colour w-inline-block">
-                            <h1 className="display">Music Resources</h1>
+                            <h1 className="display">HIMEROS CLUB</h1>
                             <div className="resources_circle">
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3af04f62e59c_resource-arrow1.svg" className="resources_arrow is--light-colour"/>
                             </div>
-                            <h1 className="display">Music Resources</h1>
+                            <h1 className="display">HIMEROS CLUB</h1>
                         </a>
                         <a className="resources_text is--light-colour w-inline-block">
-                            <h1 className="display">Music Resources</h1>
+                            <h1 className="display">HIMEROS CLUB</h1>
                             <div className="resources_circle is--light-colour">
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a7b0a62e59e_resource-arrow2.svg" className="resources_arrow is--main-colour"/>
                             </div>
-                            <h1 className="display">Music Resources</h1>
+                            <h1 className="display">HIMEROS CLUB</h1>
                         </a>
                         <div className="grid_item is--resources">
-                            <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a032062e5b8_resources.jpeg"  className="resources_img"/>
+                            <img src={greek1}  className="resources_img"/>
                         </div>
                     </div>
                 </div>
@@ -367,7 +369,7 @@ const Checkout = () => {
                     <div className="grid is--footer">
                         <div className="grid_item">
                             <h4>
-                                FOLlow ELEVATION <br/>WORSHIP
+                                FOLlow US
                             </h4>
                         </div>
                         <div className="grid_item is--social">
@@ -409,7 +411,7 @@ const Checkout = () => {
                             <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3af18b62e5b1_footer-arrow.svg" className="footer_top-img"/>
                         </button>
                         <div className="grid_item is--footer-copyright">
-                            <p>2021 album - Old Church Basement</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>

@@ -28,7 +28,7 @@ code {
   width: 50%;
   padding: 10px;
   max-width: 1163px;
-  border-bottom: 3px solid white;
+  border-bottom: 2px solid #bf2d06;
   padding-bottom: 4em;
   margin-bottom: 7em;
 }
@@ -202,7 +202,7 @@ code {
   background-color: transparent;
 }
 .quantity-input__modifier:hover {
-  background: #dadada;
+  background: black;
   color: #555555;
 }
 .quantity-input__modifier--left {
