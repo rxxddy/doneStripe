@@ -2,7 +2,8 @@ import React from 'react';
 import { useState, useRef, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import ticket from '../images/ticket.png'
-
+import logo from '../images/logo.png'
+import {Helmet} from "react-helmet";
 import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.jpg";
 
@@ -20,6 +21,7 @@ const getStripe = () => {
 
   return stripePromise;
 };
+
 
 const Checkout = () => {
 
@@ -114,15 +116,21 @@ const Checkout = () => {
 
   return (
     <div>
+        <Helmet>
+            <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591"></script>
+            <script>try{Typekit.load({ async: true })};{'}'}catch(e){}</script>
+            <script src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js"></script>
+            <script>try{Typekit.load({ async: true })};{'}'}catch(e){}</script>
+        </Helmet>
       <div className="page-wrapper" ref={top}>
             <section className="section">
                 <div className="container is--nav">
                     <div className="grid is--nav">
-                        {/* <div className="grid_item is--nav-logo">
+                        <div className="grid_item is--nav-logo">
                             <a className="nav_logo w-inline-block">
-                                <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a048b62e5ac_logo.svg" className="nav_logo-img"/>
+                                <img src={logo} className="nav_logo-img"/>
                             </a>
-                        </div> */}
+                        </div>
                         <div className="grid_item is--menu">
                             <a className="menu_link w-inline-block">
                                 <p className="menu_p">MAIN</p>
@@ -161,7 +169,7 @@ const Checkout = () => {
                 <div className="container is--hero">
                     <div className="grid">
                         <div className="grid_item">
-                            <h1>DISCO</h1>
+                            <h1>HIMEROS CLUB</h1>
                         </div>
                         <div className="grid_item is--hero-content">
                             <div className="is--3-bp">
@@ -281,7 +289,7 @@ const Checkout = () => {
             <section className="section">
                 <div className="container">
                     <div className="grid is--resources">
-                        <a className="resources_text is--main-colour w-inline-block">
+                        <a src="https://www.elevationworship.com/resources" target="_blank"  className="resources_text is--main-colour w-inline-block">
                             <h1 className="display">Music Resources</h1>
                             <div className="resources_circle">
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3af04f62e59c_resource-arrow1.svg" className="resources_arrow is--light-colour"/>
@@ -388,6 +396,7 @@ const Checkout = () => {
 
       
     </div>
+    
   );
 };
 

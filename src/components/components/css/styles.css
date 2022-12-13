@@ -114,12 +114,18 @@ button,input,optgroup,select,textarea {
 }
 
 button {
-  overflow: visible
+  overflow: visible;
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:focus {
+  outline: none;
 }
 
 button:hover {
+
   transition: all 0.5s ease-in-out;
-  scale: 1.05;
+  scale: 1.1;
 }
 
 button,select {
@@ -2189,7 +2195,7 @@ textarea.w-input,textarea.w-select {
 body {
   background-color: #121212;
   font-family: 'Neue Haas Grotesk', sans-serif;
-  color: #b798c1;
+  color: white;
   line-height: 1.6;
 }
 
@@ -2301,7 +2307,7 @@ blockquote {
   padding-bottom: 1.67em;
   border-style: solid;
   border-width: 0px 0px 1px;
-  border-color: #000 #000 #b798c1;
+  border-color: #000 #000 #bf2d06;
   background-color: #121212;
   z-index: 200;
 }
@@ -2448,7 +2454,7 @@ blockquote {
 .grid_item.is--banner_left {
   width: 40%;
   padding: 3.07em 6.56em;
-  background-color: #b798c1;
+  background-color: #bf2d06;
   color: #121212;
 }
 
@@ -2468,7 +2474,7 @@ blockquote {
   flex-wrap: nowrap;
   border-style: solid;
   border-width: 3px;
-  border-color: #b798c1;
+  border-color: #bf2d06;
   background-color: transparent;
   color: #e8e8e8;
   font-weight: 700;
@@ -2574,7 +2580,7 @@ blockquote {
   padding: 1.56em;
   border-style: solid;
   border-width: 3px;
-  border-color: #b798c1;
+  border-color: #bf2d06;
   border-radius: 100vw;
   -webkit-transform: translate(0px, 0px);
   -ms-transform: translate(0px, 0px);
@@ -2611,7 +2617,7 @@ blockquote {
   -ms-flex-align: center;
   align-items: center;
   border-radius: 100vw;
-  background-color: #b798c1;
+  background-color: #bf2d06;
 }
 
 .hero_circle.is--img {
@@ -2722,14 +2728,14 @@ blockquote {
   align-items: center;
   border-style: solid;
   border-width: 3px;
-  border-color: #b798c1;
+  border-color: #bf2d06;
   border-radius: 100vw;
   font-weight: 700;
   text-align: center;
 }
 
 .merch_link.is--active {
-  background-color: #b798c1;
+  background-color: #bf2d06;
   color: #121212;
 }
 
@@ -2876,7 +2882,7 @@ blockquote {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 100vw;
-  background-color: #b798c1;
+  background-color: #bf2d06;
 }
 
 .resources_circle.is--light-colour {
@@ -3021,7 +3027,7 @@ blockquote {
   -ms-flex: 0 auto;
   flex: 0 auto;
   border-radius: 100vw;
-  background-color: #b798c1;
+  background-color: #bf2d06;
   -webkit-transition: background-color 200ms ease;
   transition: background-color 200ms ease;
 }
@@ -3043,7 +3049,7 @@ blockquote {
   bottom: 0%;
   width: 100%;
   height: 1px;
-  background-color: #b798c1;
+  background-color: #bf2d06;
   -webkit-transform: translate(-101%, 0px);
   -ms-transform: translate(-101%, 0px);
   transform: translate(-101%, 0px);
@@ -3063,9 +3069,9 @@ blockquote {
   padding-bottom: 0px;
   border-style: none;
   border-width: 0px;
-  border-color: #b798c1;
+  border-color: #bf2d06;
   border-radius: 100vw;
-  background-color: #b798c1;
+  background-color: #bf2d06;
   -webkit-transform: translate(0px, -100%);
   -ms-transform: translate(0px, -100%);
   transform: translate(0px, -100%);
@@ -3224,7 +3230,7 @@ blockquote {
       align-items: center;
       border-style: none none solid;
       border-width: 1px;
-      border-color: #000 #000 #b798c1;
+      border-color: #000 #000 #bf2d06;
       background-color: #121212;
   }
 
@@ -3368,7 +3374,7 @@ blockquote {
   .grid_item.is--menu {
       display: none;
       padding-bottom: 40px;
-      border-bottom: 1px solid #b798c1;
+      border-bottom: 1px solid #bf2d06;
   }
 
   .is--3-bp {

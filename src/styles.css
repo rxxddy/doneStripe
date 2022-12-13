@@ -65,7 +65,7 @@ code {
   font-size: 60px;
   line-height: 95px;
   margin: 0;
-  color: #b798c1;
+  color: #bf2d06;
   margin-top: 1em;
 }
 
@@ -162,7 +162,7 @@ code {
   font-size: x-large;
   line-height: 130%;
   margin: 0;
-  color: #b798c1;
+  color: #bf2d06;
   margin: 0;
   
 }
@@ -194,8 +194,8 @@ code {
   width: 3rem;
   font-size: 1.5rem;
   background: #f3f3f3;
-  color: #b798c1;
-  border: 1px solid #b798c1;
+  color: #bf2d06;
+  border: 1px solid #bf2d06;
   text-align: center;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
   cursor: pointer;
