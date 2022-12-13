@@ -1,0 +1,203 @@
+.App {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1f1949;
+  background-size: 80%;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.checkout {
+  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.style1 {
+  max-width: 1140px;
+  margin: auto;
+  width: 50%;
+  border: 3px solid white;
+  padding: 10px;
+  margin-top: 100px;
+  position: relative;
+  z-index: 999999;
+}
+
+.checkout-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.checkout-price {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 95px;
+  margin: 0;
+  color: #b798c1;
+}
+
+.checkout-description {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  max-width: 200px;
+  margin: 0 auto;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.checkout-product-image {
+  width: 400px;
+}
+
+.checkout-button {
+  background: linear-gradient(180deg, #ffffff 0%, #d9dfff 100%);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1),
+    0px 20px 40px rgba(23, 0, 102, 0.2);
+  border-radius: 20px;
+
+  display: flex;
+
+  padding: 4px;
+  width: 169px;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.checkout-button:focus {
+  outline: none;
+}
+
+.checkout-button:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1),
+    0px 30px 60px rgba(23, 0, 102, 0.3);
+  transform: translateY(-2px);
+}
+
+.checkout-button .grey-circle {
+  background: rgba(68, 66, 178, 0.1);
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-button .purple-circle {
+  background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkout-button .icon {
+  width: 20px;
+  height: 20px;
+  margin: 0px;
+}
+
+.checkout-button .text-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 4px;
+  margin: auto;
+  text-align: left;
+  margin-left: 16px;
+}
+
+.checkout-button .text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 130%;
+  margin: 0;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+}
+
+
+
+.quantity-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.quantity-input:focus {
+  background: red;
+}
+
+.quantity-input__modifier,
+.quantity-input__screen {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+}
+
+.quantity-input__modifier {
+  padding: 0.7rem;
+  width: 3rem;
+  font-size: 1.5rem;
+  background: #f3f3f3;
+  color: #b798c1;
+  border: 1px solid #b798c1;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  background-color: transparent;
+}
+.quantity-input__modifier:hover {
+  background: #dadada;
+  color: #555555;
+}
+.quantity-input__modifier--left {
+  border-radius: 7px 0 0 7px;
+}
+.quantity-input__modifier--right {
+  border-radius: 0 7px 7px 0;
+}
+
+.quantity-input__screen {
+  background-color: transparent;
+  width: 4rem;
+  padding: 0.9rem;
+  font-size: 1.8rem;
+  border: 0;
+  border-top: 0 solid #dbdbdb;
+  border-bottom: 0 solid #dbdbdb;
+  text-align: center;
+}
