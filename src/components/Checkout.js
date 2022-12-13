@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import ticket from '../images/ticket.png'
 import logo from '../images/logo.png'
-import {Helmet} from "react-helmet";
+
 import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.jpg";
 
@@ -23,7 +23,34 @@ const getStripe = () => {
 };
 
 
+
+
 const Checkout = () => {
+
+    useEffect(() => {
+        const script = document.createElement('script');
+      
+        script.src = "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591";
+        script.async = true;
+      
+        document.body.appendChild(script);
+      
+        return () => {
+          document.body.removeChild(script);
+        }
+      }, []);
+    useEffect(() => {
+        const script = document.createElement('script');
+      
+        script.src = "https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js";
+        script.async = true;
+      
+        document.body.appendChild(script);
+      
+        return () => {
+          document.body.removeChild(script);
+        }
+      }, []);
 
   const ref = useRef(null);
 
@@ -116,12 +143,7 @@ const Checkout = () => {
 
   return (
     <div>
-        <Helmet>
-            <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591"></script>
-            <script>try{Typekit.load({ async: true })};{'}'}catch(e){}</script>
-            <script src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js"></script>
-            <script>try{Typekit.load({ async: true })};{'}'}catch(e){}</script>
-        </Helmet>
+    
       <div className="page-wrapper" ref={top}>
             <section className="section">
                 <div className="container is--nav">
