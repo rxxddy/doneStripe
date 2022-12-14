@@ -1,15 +1,14 @@
 import React from 'react';
 import { useState, useRef, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import ticket from '../images/ticket.png'
-import logo from '../images/logo.png'
-import greek1 from '../images/greek1.png'
-
-import CardIcon from "../images/credit-card.svg";
-import ProductImage from "../images/product-image.jpg";
+import ticket from '../images/ticket.png';
+import logo from '../images/logo.png';
+import greek1 from '../images/greek1.png';
+import gsap from "gsap";
 
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
+import { useIntersection } from 'react-use';
 
 let stripePromise;
 
@@ -26,32 +25,33 @@ const getStripe = () => {
 
 
 
+
 const Checkout = () => {
 
-    useEffect(() => {
-        const script = document.createElement('script');
+    // useEffect(() => {
+    //     const script = document.createElement('script');
       
-        script.src = "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591";
-        script.async = true;
+    //     script.src = "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591";
+    //     script.async = true;
       
-        document.body.appendChild(script);
+    //     document.body.appendChild(script);
       
-        return () => {
-          document.body.removeChild(script);
-        }
-      }, []);
-    useEffect(() => {
-        const script = document.createElement('script');
+    //     return () => {
+    //       document.body.removeChild(script);
+    //     }
+    //   }, []);
+    // useEffect(() => {
+    //     const script = document.createElement('script');
       
-        script.src = "https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js";
-        script.async = true;
+    //     script.src = "https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js";
+    //     script.async = true;
       
-        document.body.appendChild(script);
+    //     document.body.appendChild(script);
       
-        return () => {
-          document.body.removeChild(script);
-        }
-      }, []);
+    //     return () => {
+    //       document.body.removeChild(script);
+    //     }
+    //   }, []);
 
   const ref = useRef(null);
 
@@ -141,12 +141,47 @@ const Checkout = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const sectionRef = useRef(null);
+  // All the ref to be observed
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2
+  });
+
+  // Animation for fading in
+  const fadeIn = element => {
+    gsap.to(element, {
+      duration: 1,
+      opacity: 1,
+      y: -60,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.3
+      }
+    });
+  };
+  // Animation for fading out
+  const fadeOut = element => {
+    gsap.to(element, {
+      duration: 1,
+      opacity: 0,
+      y: -20,
+      ease: "power4.out"
+    });
+  };
+
+  // checking to see when the vieport is visible to the user
+  intersection && intersection.intersectionRatio < 0.2
+    ? fadeOut(".fadeIn")
+    : fadeIn(".fadeIn");
+
 
   return (
-    <div>
     
       <div className="page-wrapper" ref={top}>
             <section className="section">
+                    
                 <div className="container is--nav">
                     <div className="grid is--nav">
                         <div className="grid_item is--nav-logo">
@@ -310,17 +345,17 @@ const Checkout = () => {
                     </div>
                 </div>
             </section> */}
-            <section className="section">
+            <section className="section" ref={sectionRef}>
                 <div className="container">
                     <div className="grid is--resources">
-                        <a src="https://www.elevationworship.com/resources" target="_blank"  className="resources_text is--main-colour w-inline-block">
+                        <a src="https://www.elevationworship.com/resources" target="_blank"  className="resources_text is--main-colour w-inline-block fadeIn">
                             <h1 className="display">HIMEROS CLUB</h1>
                             <div className="resources_circle">
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3af04f62e59c_resource-arrow1.svg" className="resources_arrow is--light-colour"/>
                             </div>
                             <h1 className="display">HIMEROS CLUB</h1>
                         </a>
-                        <a className="resources_text is--light-colour w-inline-block">
+                        <a className="resources_text is--light-colour w-inline-block fadeIn">
                             <h1 className="display">HIMEROS CLUB</h1>
                             <div className="resources_circle is--light-colour">
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a7b0a62e59e_resource-arrow2.svg" className="resources_arrow is--main-colour"/>
@@ -418,9 +453,6 @@ const Checkout = () => {
             </section>
         </div>
 
-      
-    </div>
-    
   );
 };
 

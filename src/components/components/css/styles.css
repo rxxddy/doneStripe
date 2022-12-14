@@ -14,7 +14,8 @@ body {
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
-  display: block
+  display: block;
+  color: #bf2d06;
 }
 
 audio,canvas,progress,video {
@@ -3061,6 +3062,7 @@ blockquote {
 .main-button_p {
   position: relative;
   z-index: 20;
+  color: #bf2d06;
 }
 
 .hamburger_icon {
