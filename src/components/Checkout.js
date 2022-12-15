@@ -5,10 +5,14 @@ import ticket from '../images/ticket.png';
 import logo from '../images/logo.png';
 import greek1 from '../images/greek1.png';
 import gsap from "gsap";
+import banner from "../images/banner.jpg";
+import bghex from "../images/bghex.png";
+
 
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
 import { useIntersection } from 'react-use';
+import { ScrollTrigger } from 'react-gsap';
 
 let stripePromise;
 
@@ -28,30 +32,30 @@ const getStripe = () => {
 
 const Checkout = () => {
 
-    // useEffect(() => {
-    //     const script = document.createElement('script');
+    useEffect(() => {
+        const script = document.createElement('script');
       
-    //     script.src = "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591";
-    //     script.async = true;
+        script.src = "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591";
+        script.async = true;
       
-    //     document.body.appendChild(script);
+        document.body.appendChild(script);
       
-    //     return () => {
-    //       document.body.removeChild(script);
-    //     }
-    //   }, []);
-    // useEffect(() => {
-    //     const script = document.createElement('script');
+        return () => {
+          document.body.removeChild(script);
+        }
+      }, []);
+    useEffect(() => {
+        const script = document.createElement('script');
       
-    //     script.src = "https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js";
-    //     script.async = true;
+        script.src = "https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js";
+        script.async = true;
       
-    //     document.body.appendChild(script);
+        document.body.appendChild(script);
       
-    //     return () => {
-    //       document.body.removeChild(script);
-    //     }
-    //   }, []);
+        return () => {
+          document.body.removeChild(script);
+        }
+      }, []);
 
   const ref = useRef(null);
 
@@ -141,40 +145,19 @@ const Checkout = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const sectionRef = useRef(null);
-  // All the ref to be observed
-  const intersection = useIntersection(sectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.2
-  });
 
-  // Animation for fading in
-  const fadeIn = element => {
-    gsap.to(element, {
-      duration: 1,
-      opacity: 1,
-      y: -60,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.3
-      }
-    });
-  };
-  // Animation for fading out
-  const fadeOut = element => {
-    gsap.to(element, {
-      duration: 1,
-      opacity: 0,
-      y: -20,
-      ease: "power4.out"
-    });
-  };
-
-  // checking to see when the vieport is visible to the user
-  intersection && intersection.intersectionRatio < 0.2
-    ? fadeOut(".fadeIn")
-    : fadeIn(".fadeIn");
+//   window.onscroll = function (e) {
+//     var vertical_position = 0;
+//     if (pageYOffset)//usual
+//       vertical_position = pageYOffset;
+//     else if (document.documentElement.clientHeight)//ie
+//       vertical_position = document.documentElement.scrollTop;
+//     else if (document.body)//ie quirks
+//       vertical_position = document.body.scrollTop;
+  
+//     var your_div = document.getElementById('scroll');
+//     your_div.style.top = (vertical_position + 200) + 'px';//200 is arbitrary.. just to show you could now position it how you want
+//   }
 
 
   return (
@@ -182,14 +165,9 @@ const Checkout = () => {
       <div className="page-wrapper" ref={top}>
             <section className="section">
                     
-                <div className="container is--nav">
-                    <div className="grid is--nav">
-                        <div className="grid_item is--nav-logo">
-                            <a className="nav_logo w-inline-block">
-                                <img src={logo} className="nav_logo-img"/>
-                            </a>
-                        </div>
-                        <div className="grid_item is--menu">
+                <div className="container is--nav ">
+                    <div className="grid is--nav center">
+                        <div className="grid_item is--menu left">
                             <a className="menu_link w-inline-block">
                                 <p className="menu_p">MAIN</p>
                                 <div className="menu_line"></div>
@@ -198,10 +176,13 @@ const Checkout = () => {
                                 <div className="menu_line"></div>
                                 <p className="menu_p">INFO</p>
                             </a>
-                            <a className="menu_link w-inline-block">
-                                <p className="menu_p">PRICES</p>
-                                <div className="menu_line"></div>
-                            </a>
+
+                            <div className="menu_link w-inline-block">
+                                <a className="nav_logo w-inline-block">
+                                    <img src={logo} className="nav_logo-img"/>
+                                </a>
+                            </div>
+    
                             <a className="menu_link w-inline-block">
                                 <p className="menu_p">ABOUT</p>
                                 <div className="menu_line"></div>
@@ -210,26 +191,26 @@ const Checkout = () => {
                                 <div className="menu_line"></div>
                                 <p className="menu_p">CONTACT</p>
                             </a>
-                            <div className="menu_button">
-                                <p className="menu_p bold">Acquista i biglietti</p>
-                                {/* <div className="menu_button-circle">
-                                    <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a512462e5af_nav-apple-icon.svg" className="menu_button-icon"/>
-                                </div> */}
-                            </div>
+                            
                         </div>
+
+
                         <a className="grid_item is--hamburger w-inline-block">
                             <div className="hamburger_icon"></div>
                         </a>
                     </div>
                 </div>
             </section>
-            <section className="section">
+            <section className="section ">
                 <div className="container is--hero">
-                    <div className="grid">
+                    <div className="grid borderio">
+
                         <div className="grid_item">
-                            <h1>HIMEROS CLUB</h1>
+                            <h1 className="naming">HIMEROS <br/> CLUB</h1>
+                            <img src={bghex} className="bghex" />
                         </div>
-                        <div className="grid_item is--hero-content">
+                        <div className="grid_item is--hero-img1">
+                 
                             <div className="is--3-bp">
                                 <p>
                                   DISCO Capitolo 1: <span className="hero_span">La villa dello zio Nathaniel</span>
@@ -238,28 +219,13 @@ const Checkout = () => {
                             <button className="main-button w-inline-block bgbutton" onClick={handleClick}>
                                 <p className="main-button_p">Acquista i biglietti</p>
                             </button>
-                            <div className="hero_album">
-                                <div className="hero_circle is--img"></div>
-                                <a className="hero_circle is--link w-inline-block">
-                                    <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a5e9462e5ad_hero-arrow.svg" className="hero_arrow"/>
-                                </a>
-                            </div>
+                    
                         </div>
-
-                       
-                        <div className="grid_item is--hero-img1">
-                            <img src="https://www.greece-is.com/wp-content/uploads/2016/01/DISCO_CINDERELLA_1.jpg" className="hero_photo1"/>
-                        </div>
-                        <div className="grid_item is--hero-img2">
-                            {/* <div className="is--3-bp is--40">
-                                <h4 className="heading-3">©2021</h4>
-                                <p></p>
-                            </div> */}
-                            <img src="https://media.architecturaldigest.com/photos/634dbbc971ea5ab8b1a71bfe/master/pass/J000394_S4_ND_ShowSpace_03092.jpg" className="hero_photo2"/>
-                        </div>
+                        
                     </div>
                 </div>
             </section>
+            <img src={banner} loading="eager" width="514" sizes="90vw" alt="true" className="image-135"></img>
             <section className="section">
                 <div className="container is--wide">
                     <div className="grid">
@@ -272,7 +238,7 @@ const Checkout = () => {
                                 <p>You would cross an ocean so I wouldn’t drown</p>
                             </div>
                             <div className="banner_item">
-                                <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3abb4b62e5a4_banner-icon2.svg" className="banner_icon"/>
+                                <img src={"https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3abb4b62e5a4_banner-icon2.svg"} className="banner_icon"/>
                                 <p>You would cross an ocean so I wouldn’t drown</p>
                             </div>
                         </div>
@@ -345,17 +311,17 @@ const Checkout = () => {
                     </div>
                 </div>
             </section> */}
-            <section className="section" ref={sectionRef}>
+            <section className="section">
                 <div className="container">
                     <div className="grid is--resources">
-                        <a src="https://www.elevationworship.com/resources" target="_blank"  className="resources_text is--main-colour w-inline-block fadeIn">
+                        <a src="https://www.elevationworship.com/resources" target="_blank"  className="resources_text is--main-colour w-inline-block">
                             <h1 className="display">HIMEROS CLUB</h1>
                             <div className="resources_circle">
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3af04f62e59c_resource-arrow1.svg" className="resources_arrow is--light-colour"/>
                             </div>
                             <h1 className="display">HIMEROS CLUB</h1>
                         </a>
-                        <a className="resources_text is--light-colour w-inline-block fadeIn">
+                        <a className="resources_text is--light-colour w-inline-block">
                             <h1 className="display">HIMEROS CLUB</h1>
                             <div className="resources_circle is--light-colour">
                                 <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a7b0a62e59e_resource-arrow2.svg" className="resources_arrow is--main-colour"/>

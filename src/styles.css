@@ -239,3 +239,42 @@ code {
   height: auto;
 }
 
+.center {
+  justify-content: center;
+}
+.left {
+  justify-content: left;
+}
+.right {
+  justify-content: right;
+}
+
+.image-135 {
+  position: static;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: block;
+  width: 100%;
+  height: 60%;
+  border-radius: 2em;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 50%;
+  width: 100%;
+  max-width: 1560px;
+    /* justify-content: center; */
+    display: initial;
+    height: 50%;
+    max-height: 500px;
+    margin-top: 4em;
+    border-bottom: 2px solid #bf2d06;
+    padding-top: 1.5em;
+}
+
+.borderio {
+  padding-top: 10em;
+  border-bottom: 2px solid #bf2d06;
+  padding-bottom: 2.5em;
+}
