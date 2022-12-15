@@ -7,6 +7,8 @@ import greek1 from '../images/greek1.png';
 import gsap from "gsap";
 import banner from "../images/banner.jpg";
 import bghex from "../images/bghex.png";
+import buy from "../images/buy.png";
+import arrow from "../images/arrow.png";
 
 
 import "../styles.css";
@@ -209,15 +211,17 @@ const Checkout = () => {
                             <h1 className="naming">HIMEROS <br/> CLUB</h1>
                             <img src={bghex} className="bghex" />
                         </div>
-                        <div className="grid_item is--hero-img1">
+                        <div className=" grid_item is--hero-img1 ">
                  
                             <div className="is--3-bp">
                                 <p>
                                   DISCO Capitolo 1: <span className="hero_span">La villa dello zio Nathaniel</span>
                                 </p>
                             </div>
-                            <button className="main-button w-inline-block bgbutton" onClick={handleClick}>
-                                <p className="main-button_p">Acquista i biglietti</p>
+                            <button className="main-button w-inline-block bgbutton buttonwidth" onClick={handleClick}>
+                              
+                                <p className="main-button_p buybuttontop2">Acquista i biglietti </p>
+                                <img src={arrow} className="buybuttontop"/>
                             </button>
                     
                         </div>
@@ -225,8 +229,12 @@ const Checkout = () => {
                     </div>
                 </div>
             </section>
+
+
             <img src={banner} loading="eager" width="514" sizes="90vw" alt="true" className="image-135"></img>
-            <section className="section">
+
+            
+            <section className="section mt">
                 <div className="container is--wide">
                     <div className="grid">
                         <div className="grid_item is--banner_left">
@@ -245,7 +253,7 @@ const Checkout = () => {
                     </div>
                 </div>
             </section>
-            <section className="section">
+            <section className="section mt">
                 <div className="container">
                     <div className="merch">
                         <div className="grid is--merch-column">
@@ -311,7 +319,7 @@ const Checkout = () => {
                     </div>
                 </div>
             </section> */}
-            <section className="section">
+            <section className="section mt">
                 <div className="container">
                     <div className="grid is--resources">
                         <a src="https://www.elevationworship.com/resources" target="_blank"  className="resources_text is--main-colour w-inline-block">
@@ -335,7 +343,7 @@ const Checkout = () => {
                 </div>
             </section>
 
-            <div ref={ref} className="checkout">
+            <div ref={ref} className="checkout mt">
               <div className="checkoutLeft">
                 <img src={ticket} className="ticket"/>
               </div>
@@ -365,7 +373,7 @@ const Checkout = () => {
               </div>
             </div>
 
-            <section className="section">
+            <section className="section mt">
                 <div className="container">
                     <div className="grid is--footer">
                         <div className="grid_item">
