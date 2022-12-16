@@ -5,10 +5,12 @@ import ticket from '../images/ticket.png';
 import logo from '../images/logo.png';
 import greek1 from '../images/greek1.png';
 import gsap from "gsap";
-import banner from "../images/banner.jpg";
+import banner from "../images/banner.png";
 import bghex from "../images/bghex.png";
 import buy from "../images/buy.png";
 import arrow from "../images/arrow.png";
+import fashion from "../images/fashion.png";
+import disco from "../images/disco.png";
 
 
 import "../styles.css";
@@ -37,7 +39,7 @@ const Checkout = () => {
     useEffect(() => {
         const script = document.createElement('script');
       
-        script.src = "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591";
+        script.src = "/src/components/jquery-3.5.1.min.dc5e7f18c8.js";
         script.async = true;
       
         document.body.appendChild(script);
@@ -49,7 +51,7 @@ const Checkout = () => {
     useEffect(() => {
         const script = document.createElement('script');
       
-        script.src = "https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js";
+        script.src = "/src/components/webflow.353aee397.js";
         script.async = true;
       
         document.body.appendChild(script);
@@ -94,19 +96,19 @@ const Checkout = () => {
 
   const item = {
 
-    price: "price_1ME6MNK1PrYKJW73A7tLoFfy",
+    price: "price_1MFZJ5K1PrYKJW736SkLpbx4",
     // adjustable_quantity: {enabled: true, minimum: 1, maximum: 99},
     quantity: num,
 
   };
 
-  const total = num * 45;
+  const total = num * 300;
 
 
 
   const checkoutOptions = {
     lineItems: [item],
-    mode: "payment",
+    mode: "subscription",
     successUrl: `${window.location.origin}/success`,
     cancelUrl: `${window.location.origin}/cancel`
   };
@@ -171,9 +173,9 @@ const Checkout = () => {
             <section className="section">
                     
                 <div className="container is--nav ">
-                    <div className="grid is--nav center">
+                    <div className="grid2 is--nav center">
 
-                        <div className="grid_item is--menu left">
+                        <div className="grid_item is--menu vercent">
 
 
                                 <div className="left1">
@@ -183,11 +185,11 @@ const Checkout = () => {
 
 
                                     <div className="left">
-                                        <p className="menu_p menu_link w-inline-block">INFO</p>
+                                        <p className="menu_p w-inline-block">INFO</p>
                                     </div>
                                 </div>
                            
-                                <a className="nav_logo w-inline-block menu_link w-inline-block center">
+                                <a className="nav_logo w-inline-block  w-inline-block center">
                                     <img src={logo} className="nav_logo-img"/>
                                 </a>
 
@@ -198,7 +200,7 @@ const Checkout = () => {
 
 
                                 <div className="right">
-                                    <p className="menu_p menu_link w-inline-block">CONTACT</p>
+                                    <p className="menu_p w-inline-block">CONTACT</p>
                                 </div>
                             </div>
 
@@ -245,30 +247,60 @@ const Checkout = () => {
             
             <section className="section mt">
                 <div className="container is--wide">
-                    <div className="grid">
-                        <div className="grid_item is--banner_left">
-                            <h6>The new album from Elevation Worship &amp;Maverick City</h6>
-                        </div>
-                        <div className="grid_item is--banner_right">
-                            <div className="banner_item is--first">
-                                <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3aeaf162e5a7_banner-icon1.svg" className="banner_icon"/>
-                                <p>You would cross an ocean so I wouldn’t drown</p>
+                    <div className="home-header_cards-wrapper cardtext">
+                        <div className="home-header_card">
+                            <div className="home-header_card-content-wrapper">
+                                <div className="home-header_card-texts-wrapper">
+                                    <h2 className="home-header_card-heading">Artistic</h2>
+                                    <div className="home-header_card-text">Explore top tools to gain inspiration, optimise workflow, increase pipeline, monitor marketing performance, manage finances and more, to grow your business online. </div>
+                                    </div>
+                                </div>
+                                <img src={disco} loading="lazy" alt="" className="home-header_card-image" />
                             </div>
-                            <div className="banner_item">
-                                <img src={"https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3abb4b62e5a4_banner-icon2.svg"} className="banner_icon"/>
-                                <p>You would cross an ocean so I wouldn’t drown</p>
+                            <div className="home-header_card">
+                                <div className="home-header_card-content-wrapper">
+                                    <div className="home-header_card-texts-wrapper">
+                                        <h2 className="home-header_card-heading">Mission</h2>
+                                        <div className="home-header_card-text">Not sure of the right tool for you? Our wealth of comparisons, top tips and how-to's will help youdecide which online tool will be pivotal for your business.</div>
+                                        </div>
+                                    </div>
+                                    <img src={fashion} loading="lazy" alt="" className="home-header_card-image" />
+                                </div>
                             </div>
+
+
+                    {/* <div class="home-header_card">
+                        <div class="home-header_card-content-wrapper">
+                            <div class="home-header_card-texts-wrapper">
+                                <h2 class="home-header_card-heading">Tools</h2>
+                                <div class="home-header_card-text">Explore top tools to gain inspiration, optimise workflow, increase pipeline, monitor marketing performance, manage finances and more, to grow your business online. 
+                                </div>
+                            </div>
+                            <a href="/tools" class="button is-card w-inline-block">
+                                <div>View tools</div>
+                                <div class="tools-button-icon hide w-embed">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M23.6105 8.89856L15.3603 1.77426C14.6382 1.15059 13.5 1.65689 13.5 2.6257V6.37818C5.97052 6.46439 0 7.97343 0 15.109C0 17.9891 1.85536 20.8423 3.90623 22.334C4.54622 22.7995 5.45831 22.2152 5.22234 21.4606C3.09684 14.6632 6.23049 12.8586 13.5 12.754V16.875C13.5 17.8453 14.6391 18.3494 15.3603 17.7264L23.6105 10.6014C24.1295 10.1532 24.1302 9.34739 23.6105 8.89856V8.89856Z"></path>
+                                    </svg>
+                                </div>
+                            </a>
                         </div>
-                    </div>
+                        <img src="https://assets.website-files.com/61e61bc712a95079885fb13f/62985b5dcc5210f337e9f484_header-card_image-tools.svg" loading="lazy" alt="" class="home-header_card-image" />
+                        <a href="/tools" class="home-header_card-link w-inline-block">
+                            <div class="hide">Link to the tools page</div>
+                        </a>
+                    </div> */}
                 </div>
             </section>
             <section className="section mt">
                 <div className="container">
                     <div className="merch">
                         <div className="grid is--merch-column">
+                        
                             <div className="grid_item is--merch-title">
                                 <h5>La discoteca inizierà tra poco:</h5>
-                                <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3aa55362e5a5_merch-underline.svg" className="image"/>
+                                
+                                
                             </div>
                             <div className="grid_item is--merch-link">
                                 <a className="merch_link is--active w-inline-block">
@@ -331,18 +363,16 @@ const Checkout = () => {
             <section className="section mt">
                 <div className="container">
                     <div className="grid is--resources">
-                        <a src="https://www.elevationworship.com/resources" target="_blank"  className="resources_text is--main-colour w-inline-block">
+                        <a className="resources_text is--light-colour w-inline-block">
                             <h1 className="display">HIMEROS CLUB</h1>
-                            <div className="resources_circle">
-                                <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3af04f62e59c_resource-arrow1.svg" className="resources_arrow is--light-colour"/>
-                            </div>
+                            <h1 className="display">HIMEROS CLUB</h1>
+                        </a>
+                        <a className="resources_text is--main-colour w-inline-block">
+                            <h1 className="display">HIMEROS CLUB</h1>
                             <h1 className="display">HIMEROS CLUB</h1>
                         </a>
                         <a className="resources_text is--light-colour w-inline-block">
                             <h1 className="display">HIMEROS CLUB</h1>
-                            <div className="resources_circle is--light-colour">
-                                <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a7b0a62e59e_resource-arrow2.svg" className="resources_arrow is--main-colour"/>
-                            </div>
                             <h1 className="display">HIMEROS CLUB</h1>
                         </a>
                         <div className="grid_item is--resources">
@@ -382,7 +412,7 @@ const Checkout = () => {
               </div>
             </div>
 
-            <section className="section mt">
+            {/* <section className="section mt">
                 <div className="container">
                     <div className="grid is--footer">
                         <div className="grid_item">
@@ -433,7 +463,7 @@ const Checkout = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
 
   );

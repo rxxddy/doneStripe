@@ -251,6 +251,8 @@ code {
   position: absolute;
   right: 0px;
   display: inline-block;
+  color: wheat;
+  font-size: large;
 }
 .left {
   display: inline-block;
@@ -259,8 +261,14 @@ code {
   position: absolute;
   left: 0px;
   display: inline-block;
+  color: wheat;
+  font-size: large;
 }
 
+.vercent {
+  display: flex;
+  align-items: center;
+}
 
 
 .image-135 {
