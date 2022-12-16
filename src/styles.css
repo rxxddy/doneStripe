@@ -243,12 +243,25 @@ code {
   justify-content: center;
   align-items: center;
 }
-.left {
-  justify-content: left;
-}
+
 .right {
-  justify-content: right;
+  display: inline-block;
 }
+.right1 {
+  position: absolute;
+  right: 0px;
+  display: inline-block;
+}
+.left {
+  display: inline-block;
+}
+.left1 {
+  position: absolute;
+  left: 0px;
+  display: inline-block;
+}
+
+
 
 .image-135 {
   position: static;

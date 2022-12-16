@@ -165,35 +165,44 @@ const Checkout = () => {
   return (
     
       <div className="page-wrapper" ref={top}>
+
+
+
             <section className="section">
                     
                 <div className="container is--nav ">
                     <div className="grid is--nav center">
-                        <div className="grid_item is--menu left">
-                            <a className="menu_link w-inline-block">
-                                <p className="menu_p">MAIN</p>
-                                <div className="menu_line"></div>
-                            </a>
-                            <a className="menu_link w-inline-block">
-                                <div className="menu_line"></div>
-                                <p className="menu_p">INFO</p>
-                            </a>
 
-                            <div className="menu_link w-inline-block">
-                                <a className="nav_logo w-inline-block">
+                        <div className="grid_item is--menu left">
+
+
+                                <div className="left1">
+                                    <div className="left">
+                                        <p className="menu_p menu_link w-inline-block">MAIN</p>
+                                    </div>
+
+
+                                    <div className="left">
+                                        <p className="menu_p menu_link w-inline-block">INFO</p>
+                                    </div>
+                                </div>
+                           
+                                <a className="nav_logo w-inline-block menu_link w-inline-block center">
                                     <img src={logo} className="nav_logo-img"/>
                                 </a>
+
+                            <div className="right1">
+                                <div className="right">
+                                    <p className="menu_p menu_link w-inline-block">ABOUT</p>
+                                </div>
+
+
+                                <div className="right">
+                                    <p className="menu_p menu_link w-inline-block">CONTACT</p>
+                                </div>
                             </div>
-    
-                            <a className="menu_link w-inline-block">
-                                <p className="menu_p">ABOUT</p>
-                                <div className="menu_line"></div>
-                            </a>
-                            <a className="menu_link w-inline-block">
-                                <div className="menu_line"></div>
-                                <p className="menu_p">CONTACT</p>
-                            </a>
-                            
+
+
                         </div>
 
 
