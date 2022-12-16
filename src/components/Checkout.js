@@ -11,7 +11,7 @@ import buy from "../images/buy.png";
 import arrow from "../images/arrow.png";
 import fashion from "../images/fashion.png";
 import disco from "../images/disco.png";
-
+import question from "../images/question.png";
 
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
@@ -39,7 +39,7 @@ const Checkout = () => {
     useEffect(() => {
         const script = document.createElement('script');
       
-        script.src = "/src/components/jquery-3.5.1.min.dc5e7f18c8.js";
+        script.src = "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591";
         script.async = true;
       
         document.body.appendChild(script);
@@ -51,7 +51,7 @@ const Checkout = () => {
     useEffect(() => {
         const script = document.createElement('script');
       
-        script.src = "/src/components/webflow.353aee397.js";
+        script.src = "https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js";
         script.async = true;
       
         document.body.appendChild(script);
@@ -247,58 +247,65 @@ const Checkout = () => {
             
             <section className="section mt">
                 <div className="container is--wide">
-                    <div className="home-header_cards-wrapper cardtext">
-                        <div className="home-header_card">
-                            <div className="home-header_card-content-wrapper">
-                                <div className="home-header_card-texts-wrapper">
-                                    <h2 className="home-header_card-heading">Artistic</h2>
-                                    <div className="home-header_card-text">Explore top tools to gain inspiration, optimise workflow, increase pipeline, monitor marketing performance, manage finances and more, to grow your business online. </div>
+                    <div className="desc-cards_cards-wrapper cardtext">
+                        <div className="desc-cards_card">
+                                <img src={disco} loading="lazy" alt="" className="desc-cards_card-image" />
+                            <div>
+                                <div className="desc-cards_card-texts-wrapper">
+                                    <h2 className="desc-cards_card-heading">Artistic</h2>
+                                    <div className="desc-cards_card-text">P O N T E C H E L E G A
+                                        L E C R E A T O R C O N I L O R O FA N
+                                        M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
+                                        U N ’ E SP E R IE N Z A E SC L U SIV A
+                                        E D IN IM IT A B IL E .
+                                    </div>
                                     </div>
                                 </div>
-                                <img src={disco} loading="lazy" alt="" className="home-header_card-image" />
                             </div>
-                            <div className="home-header_card">
-                                <div className="home-header_card-content-wrapper">
-                                    <div className="home-header_card-texts-wrapper">
-                                        <h2 className="home-header_card-heading">Mission</h2>
-                                        <div className="home-header_card-text">Not sure of the right tool for you? Our wealth of comparisons, top tips and how-to's will help youdecide which online tool will be pivotal for your business.</div>
+                            <div className="desc-cards_card">
+                                <div>
+                                    <div className="desc-cards_card-texts-wrapper">
+                                        <h2 className="desc-cards_card-heading">Mission</h2>
+                                        <div className="desc-cards_card-text">P O N T E C H E L E G A
+L E C R E A T O R C O N I L O R O FA N
+M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
+U N ’ E SP E R IE N Z A E SC L U SIV A
+E D IN IM IT A B IL E .</div>
                                         </div>
                                     </div>
-                                    <img src={fashion} loading="lazy" alt="" className="home-header_card-image" />
+                                    <img src={fashion} loading="lazy" alt="" className="desc-cards_card-image" />
                                 </div>
                             </div>
 
-
-                    {/* <div class="home-header_card">
-                        <div class="home-header_card-content-wrapper">
-                            <div class="home-header_card-texts-wrapper">
-                                <h2 class="home-header_card-heading">Tools</h2>
-                                <div class="home-header_card-text">Explore top tools to gain inspiration, optimise workflow, increase pipeline, monitor marketing performance, manage finances and more, to grow your business online. 
-                                </div>
-                            </div>
-                            <a href="/tools" class="button is-card w-inline-block">
-                                <div>View tools</div>
-                                <div class="tools-button-icon hide w-embed">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M23.6105 8.89856L15.3603 1.77426C14.6382 1.15059 13.5 1.65689 13.5 2.6257V6.37818C5.97052 6.46439 0 7.97343 0 15.109C0 17.9891 1.85536 20.8423 3.90623 22.334C4.54622 22.7995 5.45831 22.2152 5.22234 21.4606C3.09684 14.6632 6.23049 12.8586 13.5 12.754V16.875C13.5 17.8453 14.6391 18.3494 15.3603 17.7264L23.6105 10.6014C24.1295 10.1532 24.1302 9.34739 23.6105 8.89856V8.89856Z"></path>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                        <img src="https://assets.website-files.com/61e61bc712a95079885fb13f/62985b5dcc5210f337e9f484_header-card_image-tools.svg" loading="lazy" alt="" class="home-header_card-image" />
-                        <a href="/tools" class="home-header_card-link w-inline-block">
-                            <div class="hide">Link to the tools page</div>
-                        </a>
-                    </div> */}
                 </div>
             </section>
+
+            <section className="section mt">
+                <div className="container">
+                    <div className="grid is--resources">
+                       
+                        <a className="resources_text is--main-colour w-inline-block">
+                            <h1 className="display">HIMEROS CLUB</h1>
+                            <h1 className="display">HIMEROS CLUB</h1>
+                        </a>
+                        <a className="resources_text is--light-colour w-inline-block">
+                            <h1 className="display">HIMEROS CLUB</h1>
+                            <h1 className="display">HIMEROS CLUB</h1>
+                        </a>
+                        <div className="grid_item is--resources">
+                            <img src={greek1}  className="resources_img"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section className="section mt">
                 <div className="container">
                     <div className="merch">
                         <div className="grid is--merch-column">
                         
                             <div className="grid_item is--merch-title">
-                                <h5>La discoteca inizierà tra poco:</h5>
+                                <h5>il prossimo evento inizierà in:</h5>
                                 
                                 
                             </div>
@@ -333,50 +340,25 @@ const Checkout = () => {
                                 </a>
                             </div> */}
                         </div>
+
+                        
                         <div className="grid is--merch-column2">
-                            <div className="grid_item is--merch-img1">
-                                <img src="https://images.unsplash.com/photo-1574155376612-bfa4ed8aabfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmlnaHRjbHVifGVufDB8fDB8fA%3D%3D&w=1000&q=80" className="merch_img1"/>
+
+                        <div className="desc-cards_card">
+                            <div>
+                                <div className="desc-cards_card-texts-wrapper">
+                                    <h2 className="desc-cards_card-heading">perché abbiamo bisogno di un pass?</h2>
+                                    <div className="desc-cards_card-text">P O N T E C H E L E G A
+L E C R E A T O R C O N I L O R O FA N
+M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
+U N ’ E SP E R IE N Z A E SC L U SIV A
+E D IN IM IT A B IL E .</div>
+                                    </div>
+                                </div>
+                                <img src={question} loading="lazy" alt="" className="desc-cards_card-image" />
                             </div>
-                            <div className="grid_item is--merch-img2">
-                                <img src="https://images.pexels.com/photos/2114365/pexels-photo-2114365.jpeg" className="merch_img2"/>
-                            </div>
-                            <div className="grid_item is--merch-img3">
-                                <img src="https://thumbs.dreamstime.com/b/crowd-people-dancing-night-club-cheering-concert-95375453.jpg" className="merch_img3"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* <section className="section">
-                <div className="container is--wide">
-                    <div className="card">
-                        <div className="card_content">
-                            <h2>
-                                Old<br/>
-                                Church<br/>Basement
-                            </h2>
-                           
-                        </div>
-                    </div>
-                </div>
-            </section> */}
-            <section className="section mt">
-                <div className="container">
-                    <div className="grid is--resources">
-                        <a className="resources_text is--light-colour w-inline-block">
-                            <h1 className="display">HIMEROS CLUB</h1>
-                            <h1 className="display">HIMEROS CLUB</h1>
-                        </a>
-                        <a className="resources_text is--main-colour w-inline-block">
-                            <h1 className="display">HIMEROS CLUB</h1>
-                            <h1 className="display">HIMEROS CLUB</h1>
-                        </a>
-                        <a className="resources_text is--light-colour w-inline-block">
-                            <h1 className="display">HIMEROS CLUB</h1>
-                            <h1 className="display">HIMEROS CLUB</h1>
-                        </a>
-                        <div className="grid_item is--resources">
-                            <img src={greek1}  className="resources_img"/>
+
+                            
                         </div>
                     </div>
                 </div>
@@ -389,7 +371,7 @@ const Checkout = () => {
               <div className="checkoutRight">
                 <div className="style1">
                   <h1 className="tickets">BIGLIETTI</h1>
-                  <h1 className="checkout-price">€{total}</h1>
+                  <h1 className="checkout-price">€{total}/year</h1>
                   <div className="quantity-input">
 
                     <button className="quantity-input__modifier quantity-input__modifier--left" onClick={decNum}>—</button>

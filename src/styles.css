@@ -246,6 +246,7 @@ code {
 
 .right {
   display: inline-block;
+  margin-right: 1em;
 }
 .right1 {
   position: absolute;
@@ -256,6 +257,7 @@ code {
 }
 .left {
   display: inline-block;
+  margin-left: 1em;
 }
 .left1 {
   position: absolute;
