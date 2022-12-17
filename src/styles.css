@@ -363,5 +363,6 @@ code {
   .checkoutRight{
     justify-content: center;
     display: grid;
+    z-index: 10;
   }
 }
