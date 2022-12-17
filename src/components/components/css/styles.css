@@ -3568,6 +3568,25 @@ blockquote {
   object-fit: contain
 }
 
+.desc-cards_cards-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  grid-column-gap: 2rem;
+  grid-row-gap: 0.75rem
+}
+
+
 @media screen and (max-width: 479px) {
   h1 {
       padding-bottom: 0.33em;
@@ -3765,6 +3784,9 @@ blockquote {
   .container.is--nav{
     padding-top: 2em;
   }
+  .desc-cards_cards-wrapper{
+    margin-top: 20em;
+  }
 }
 
 @font-face {
@@ -3812,23 +3834,6 @@ blockquote {
 
 /* // cards */
 
-.desc-cards_cards-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 2rem;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  grid-column-gap: 2rem;
-  grid-row-gap: 0.75rem
-}
 
 .desc-cards_card {
   position: relative;

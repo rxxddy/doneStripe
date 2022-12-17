@@ -356,6 +356,7 @@ code {
     display: flex;
     position: absolute;
     max-width: 80%;
+    margin-top: 13em;
   }
   .ticket {
     width: 100%;
@@ -374,4 +375,8 @@ code {
   .fadeIn3{
     display: none;
   } */
+  .centerPass {
+    justify-content: center;
+    display: flex;
+  }
 }

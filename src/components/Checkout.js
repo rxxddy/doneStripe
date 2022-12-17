@@ -465,7 +465,7 @@ E D IN IM IT A B IL E .</div>
             </section>
 
             <div ref={ref} className="checkout mt">
-                <div ref={sectionRef3}>   
+                <div ref={sectionRef3} className="centerPass">   
                     <div className="checkoutLeft">
                         <img src={ticket} className="ticket fadeIn3"/>
                     </div>
