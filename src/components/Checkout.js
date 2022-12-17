@@ -208,9 +208,9 @@ const Checkout = () => {
                         </div>
 
 
-                        <a className="grid_item is--hamburger w-inline-block">
+                        {/* <a className="grid_item is--hamburger w-inline-block">
                             <div className="hamburger_icon"></div>
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </section>
@@ -299,7 +299,7 @@ E D IN IM IT A B IL E .</div>
                 </div>
             </section>
 
-            <section className="section mt">
+            <section className="section">
                 <div className="container">
                     <div className="merch">
                         <div className="grid is--merch-column">
@@ -355,7 +355,7 @@ U N ’ E SP E R IE N Z A E SC L U SIV A
 E D IN IM IT A B IL E .</div>
                                     </div>
                                 </div>
-                                <img src={question} loading="lazy" alt="" className="desc-cards_card-image" />
+
                             </div>
 
                             
@@ -370,7 +370,7 @@ E D IN IM IT A B IL E .</div>
               </div>
               <div className="checkoutRight">
                 <div className="style1">
-                  <h1 className="tickets">BIGLIETTI</h1>
+                  <h1 className="tickets">PASS</h1>
                   <h1 className="checkout-price">€{total}/year</h1>
                   <div className="quantity-input">
 

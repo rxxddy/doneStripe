@@ -318,3 +318,50 @@ code {
 .buttonwidth {
   width: 20em;
 }
+
+@media screen and (max-width: 991px) {
+  .image-135 {
+    padding: 3em;
+    border-radius: 5em;
+    border-bottom: 0;
+  }
+
+  .center {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .checkout-price{
+    font-size: xx-large;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .image-135 {
+    padding: 3em;
+    border-radius: 5em;
+    border-bottom: 0;
+  }
+
+  .center {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .checkoutLeft {
+    padding-bottom: 41em;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    max-width: 80%;
+  }
+  .ticket {
+    width: 100%;
+  }
+  .checkoutRight{
+    justify-content: center;
+    display: grid;
+  }
+}
