@@ -14,7 +14,6 @@
     "react-helmet": "^6.1.0",
     "react-router-dom": "6.0.2",
     "react-scripts": "4.0.0",
-    "react-scroll-motion": "https://github.com/rxxddy/js-animate-onscroll",
     "react-use": "^17.4.0"
   },
   "devDependencies": {
