@@ -13,6 +13,9 @@ import fashion from "../images/fashion.png";
 import disco from "../images/disco.png";
 import question from "../images/question.png";
 
+import { is } from "is_js"
+import { mobile } from "is-mobile"
+
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
 import { useIntersection } from 'react-use';
@@ -60,6 +63,7 @@ const Checkout = () => {
           document.body.removeChild(script);
         }
       }, []);
+
 
   const ref = useRef(null);
 
@@ -155,12 +159,12 @@ const Checkout = () => {
   const intersection = useIntersection(sectionRef, {
     root: null,
     rootMargin: "0px",
-    threshold: 1
+    threshold: 0.4
   });
 
   // Animation for fading in
-  const fadeIn = element => {
-    gsap.to(element, {
+  const fadeIn = element1 => {
+    gsap.to(element1, {
       duration: 1,
       opacity: 1,
       y: 0,
@@ -171,8 +175,8 @@ const Checkout = () => {
     });
   };
   // Animation for fading out
-  const fadeOut = element => {
-    gsap.to(element, {
+  const fadeOut = element1 => {
+    gsap.to(element1, {
       duration: 1,
       opacity: 0,
       y: -40,
@@ -181,7 +185,7 @@ const Checkout = () => {
   };
 
   // checking to see when the vieport is visible to the user
-  intersection && intersection.intersectionRatio < 0.3
+  intersection && intersection.intersectionRatio < 0.1
     ? fadeOut(".fadeIn")
     : fadeIn(".fadeIn");
 
@@ -191,12 +195,12 @@ const Checkout = () => {
   const intersection2 = useIntersection(sectionRef2, {
     root: null,
     rootMargin: "0px",
-    threshold: 1
+    threshold: 0.4
   });
 
   // Animation for fading in
-  const fadeIn2 = element => {
-    gsap.to(element, {
+  const fadeIn2 = element2 => {
+    gsap.to(element2, {
       duration: 1,
       opacity: 1,
       y: 0,
@@ -207,8 +211,8 @@ const Checkout = () => {
     });
   };
   // Animation for fading out
-  const fadeOut2 = element => {
-    gsap.to(element, {
+  const fadeOut2 = element2 => {
+    gsap.to(element2, {
       duration: 1,
       opacity: 0,
       y: -80,
@@ -226,12 +230,12 @@ const Checkout = () => {
   const intersection3 = useIntersection(sectionRef3, {
     root: null,
     rootMargin: "0px",
-    threshold: 1
+    threshold: 0.4
   });
 
   // Animation for fading in
-  const fadeIn3 = element => {
-    gsap.to(element, {
+  const fadeIn3 = element3 => {
+    gsap.to(element3, {
       duration: 1,
       opacity: 1,
       y: 0,
@@ -242,8 +246,8 @@ const Checkout = () => {
     });
   };
   // Animation for fading out
-  const fadeOut3 = element => {
-    gsap.to(element, {
+  const fadeOut3 = element3 => {
+    gsap.to(element3, {
       duration: 1,
       opacity: 0,
       y: -80,
@@ -255,6 +259,7 @@ const Checkout = () => {
   intersection3 && intersection3.intersectionRatio < 0.3
     ? fadeOut3(".fadeIn3")
     : fadeIn3(".fadeIn3");
+
 
 
   return (
@@ -339,8 +344,8 @@ const Checkout = () => {
             <img src={banner} loading="eager" width="514" sizes="90vw" alt="true" className="image-135"></img>
 
             
-            <section className="section mt" ref={sectionRef}>
-                <div className="container is--wide">
+            <section className="section mt">
+                <div className="container is--wide" ref={sectionRef}>
                     <div className="desc-cards_cards-wrapper cardtext">
                         <div className="desc-cards_card">
                             <img src={disco} loading="lazy" alt="" className="desc-cards_card-image fadeIn" />
