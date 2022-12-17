@@ -150,23 +150,116 @@ const Checkout = () => {
   }, []);
 
 
-//   window.onscroll = function (e) {
-//     var vertical_position = 0;
-//     if (pageYOffset)//usual
-//       vertical_position = pageYOffset;
-//     else if (document.documentElement.clientHeight)//ie
-//       vertical_position = document.documentElement.scrollTop;
-//     else if (document.body)//ie quirks
-//       vertical_position = document.body.scrollTop;
-  
-//     var your_div = document.getElementById('scroll');
-//     your_div.style.top = (vertical_position + 200) + 'px';//200 is arbitrary.. just to show you could now position it how you want
-//   }
+  const sectionRef = useRef(null);
+  // All the ref to be observed
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1
+  });
+
+  // Animation for fading in
+  const fadeIn = element => {
+    gsap.to(element, {
+      duration: 1,
+      opacity: 1,
+      y: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 1
+      }
+    });
+  };
+  // Animation for fading out
+  const fadeOut = element => {
+    gsap.to(element, {
+      duration: 1,
+      opacity: 0,
+      y: -40,
+      ease: "power4.out"
+    });
+  };
+
+  // checking to see when the vieport is visible to the user
+  intersection && intersection.intersectionRatio < 0.3
+    ? fadeOut(".fadeIn")
+    : fadeIn(".fadeIn");
+
+
+  const sectionRef2 = useRef(null);
+  // All the ref to be observed
+  const intersection2 = useIntersection(sectionRef2, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1
+  });
+
+  // Animation for fading in
+  const fadeIn2 = element => {
+    gsap.to(element, {
+      duration: 1,
+      opacity: 1,
+      y: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 0.6
+      }
+    });
+  };
+  // Animation for fading out
+  const fadeOut2 = element => {
+    gsap.to(element, {
+      duration: 1,
+      opacity: 0,
+      y: -80,
+      ease: "power4.out"
+    });
+  };
+
+  // checking to see when the vieport is visible to the user
+  intersection2 && intersection2.intersectionRatio < 0.1
+    ? fadeOut2(".fadeIn2")
+    : fadeIn2(".fadeIn2");
+
+  const sectionRef3 = useRef(null);
+  // All the ref to be observed
+  const intersection3 = useIntersection(sectionRef3, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1
+  });
+
+  // Animation for fading in
+  const fadeIn3 = element => {
+    gsap.to(element, {
+      duration: 1,
+      opacity: 1,
+      y: 0,
+      ease: "power4.out",
+      stagger: {
+        amount: 1
+      }
+    });
+  };
+  // Animation for fading out
+  const fadeOut3 = element => {
+    gsap.to(element, {
+      duration: 1,
+      opacity: 0,
+      y: -80,
+      ease: "power4.out"
+    });
+  };
+
+  // checking to see when the vieport is visible to the user
+  intersection3 && intersection3.intersectionRatio < 0.3
+    ? fadeOut3(".fadeIn3")
+    : fadeIn3(".fadeIn3");
 
 
   return (
     
-      <div className="page-wrapper" ref={top}>
+      <div className="page-wrapper">
 
 
 
@@ -214,7 +307,8 @@ const Checkout = () => {
                     </div>
                 </div>
             </section>
-            <section className="section ">
+            
+            <section className="section">
                 <div className="container is--hero">
                     <div className="grid borderio">
 
@@ -245,13 +339,13 @@ const Checkout = () => {
             <img src={banner} loading="eager" width="514" sizes="90vw" alt="true" className="image-135"></img>
 
             
-            <section className="section mt">
+            <section className="section mt" ref={sectionRef}>
                 <div className="container is--wide">
                     <div className="desc-cards_cards-wrapper cardtext">
                         <div className="desc-cards_card">
-                                <img src={disco} loading="lazy" alt="" className="desc-cards_card-image" />
+                            <img src={disco} loading="lazy" alt="" className="desc-cards_card-image fadeIn" />
                             <div>
-                                <div className="desc-cards_card-texts-wrapper">
+                                <div className="desc-cards_card-texts-wrapper fadeIn">
                                     <h2 className="desc-cards_card-heading">Artistic</h2>
                                     <div className="desc-cards_card-text">P O N T E C H E L E G A
                                         L E C R E A T O R C O N I L O R O FA N
@@ -259,23 +353,24 @@ const Checkout = () => {
                                         U N ’ E SP E R IE N Z A E SC L U SIV A
                                         E D IN IM IT A B IL E .
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="desc-cards_card">
+                            <div>
+                                <div className="desc-cards_card-texts-wrapper fadeIn">
+                                    <h2 className="desc-cards_card-heading">Mission</h2>
+                                    <div className="desc-cards_card-text">P O N T E C H E L E G A
+                                        L E C R E A T O R C O N I L O R O FA N
+                                        M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
+                                        U N ’ E SP E R IE N Z A E SC L U SIV A
+                                        E D IN IM IT A B IL E .
                                     </div>
                                 </div>
                             </div>
-                            <div className="desc-cards_card">
-                                <div>
-                                    <div className="desc-cards_card-texts-wrapper">
-                                        <h2 className="desc-cards_card-heading">Mission</h2>
-                                        <div className="desc-cards_card-text">P O N T E C H E L E G A
-L E C R E A T O R C O N I L O R O FA N
-M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
-U N ’ E SP E R IE N Z A E SC L U SIV A
-E D IN IM IT A B IL E .</div>
-                                        </div>
-                                    </div>
-                                    <img src={fashion} loading="lazy" alt="" className="desc-cards_card-image" />
-                                </div>
-                            </div>
+                            <img src={fashion} loading="lazy" alt="" className="desc-cards_card-image fadeIn" />
+                        </div>
+                    </div>
 
                 </div>
             </section>
@@ -299,35 +394,35 @@ E D IN IM IT A B IL E .</div>
                 </div>
             </section>
 
-            <section className="section">
+            <section className="section" ref={sectionRef2}>
                 <div className="container">
                     <div className="merch">
                         <div className="grid is--merch-column">
                         
-                            <div className="grid_item is--merch-title">
+                            <div className="grid_item is--merch-title fadeIn2">
                                 <h5>il prossimo evento inizierà in:</h5>
                                 
                                 
                             </div>
-                            <div className="grid_item is--merch-link">
+                            <div className="grid_item is--merch-link fadeIn2">
                                 <a className="merch_link is--active w-inline-block">
                                     <h5 id="day">{days < 10 ? "0" + days : days}</h5>
                                     <p className="bold">days</p>
                                 </a>
                             </div>
-                            <div className="grid_item is--merch-link">
+                            <div className="grid_item is--merch-link fadeIn2">
                                 <a className="merch_link w-inline-block">
                                     <h5 id="hour">{hours < 10 ? "0" + hours : hours}</h5>
                                     <p className="bold">hours</p>
                                 </a>
                             </div>
-                            <div className="grid_item is--merch-link">
+                            <div className="grid_item is--merch-link fadeIn2">
                                 <a className="merch_link w-inline-block">
                                     <h5 id="minute">{minutes < 10 ? "0" + minutes : minutes}</h5>
                                     <p className="bold">minutes</p>
                                 </a>
                             </div>
-                            <div className="grid_item is--merch-link">
+                            <div className="grid_item is--merch-link fadeIn2">
                                 <a className="merch_link w-inline-block">
                                     <h5 id="second">{seconds < 10 ? "0" + seconds : seconds}</h5>
                                     <p className="bold">seconds</p>
@@ -346,7 +441,7 @@ E D IN IM IT A B IL E .</div>
 
                         <div className="desc-cards_card">
                             <div>
-                                <div className="desc-cards_card-texts-wrapper">
+                                <div className="desc-cards_card-texts-wrapper fadeIn2">
                                     <h2 className="desc-cards_card-heading">perché abbiamo bisogno di un pass?</h2>
                                     <div className="desc-cards_card-text">P O N T E C H E L E G A
 L E C R E A T O R C O N I L O R O FA N
@@ -365,33 +460,35 @@ E D IN IM IT A B IL E .</div>
             </section>
 
             <div ref={ref} className="checkout mt">
-              <div className="checkoutLeft">
-                <img src={ticket} className="ticket"/>
-              </div>
-              <div className="checkoutRight">
-                <div className="style1">
-                  <h1 className="tickets">PASS</h1>
-                  <h1 className="checkout-price">€{total}/year</h1>
-                  <div className="quantity-input">
-
-                    <button className="quantity-input__modifier quantity-input__modifier--left" onClick={decNum}>—</button>
-
-                    <input type="text" className="quantity-input__screen" value={num} onChange={handleChange}/>
-                    
-                    <button className="quantity-input__modifier quantity-input__modifier--right" onClick={incNum}>＋</button>
-
-                  </div>
-                  <button
-                    className="checkout-button"
-                    onClick={redirectToCheckout}
-                    disabled={isLoading}
-                  >
-                    <div className="text-container">
-                      <div className="text">{isLoading ? "Carico..." : "paga"}</div>
+                <div ref={sectionRef3}>   
+                    <div className="checkoutLeft">
+                        <img src={ticket} className="ticket fadeIn3"/>
                     </div>
-                  </button>
+                    <div className="checkoutRight">
+                        <div className="style1">
+                        <h1 className="tickets fadeIn3">PASS</h1>
+                        <h1 className="checkout-price fadeIn3">€{total}/year</h1>
+                        <div className="quantity-input">
+
+                            <button className="quantity-input__modifier quantity-input__modifier--left fadeIn3" onClick={decNum}>—</button>
+
+                            <input type="text" className="quantity-input__screen fadeIn3" value={num} onChange={handleChange}/>
+                            
+                            <button className="quantity-input__modifier quantity-input__modifier--right fadeIn3" onClick={incNum}>＋</button>
+
+                        </div>
+                        <button
+                            className="checkout-button fadeIn3"
+                            onClick={redirectToCheckout}
+                            disabled={isLoading}
+                        >
+                            <div className="text-container fadeIn3">
+                            <div className="text">{isLoading ? "Carico..." : "paga"}</div>
+                            </div>
+                        </button>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
 
             {/* <section className="section mt">
@@ -447,6 +544,7 @@ E D IN IM IT A B IL E .</div>
                 </div>
             </section> */}
         </div>
+
 
   );
 };

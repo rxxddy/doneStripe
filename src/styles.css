@@ -235,7 +235,7 @@ code {
 .ticket {
   float: left;
   margin-top: 6em;
-  width: 70%;
+  width: 90%;
   height: auto;
 }
 
@@ -365,4 +365,13 @@ code {
     display: grid;
     z-index: 10;
   }
+  /* .fadeIn{
+    display: none;
+  }
+  .fadeIn2{
+    display: none;
+  }
+  .fadeIn3{
+    display: none;
+  } */
 }
