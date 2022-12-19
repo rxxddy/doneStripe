@@ -23,11 +23,15 @@ export default function App() {
       <CookieConsent 
         debug={true} 
         style={{
-          width: "50%", 
-          marginLeft: "25%", 
+          width: "70%", 
+          marginLeft: "15%", 
           borderRadius: "2em 2em 0 0", 
           zIndex: "999999",
           alignItems: "center",
+          display: "flex",
+          justifyContent:"center",
+          paddingBottom: "3em",
+          
           }}
 
         buttonStyle={{
@@ -35,8 +39,22 @@ export default function App() {
             color: "white",
             fontWeight: "bolder",
             textShadow: "2px 2px black",
-        }}>
-          <div style={{maxWidth: "50%"}}> {`
+            display: "flex",
+            justifyContent: "center",
+            fontSize: "initial",
+            width: "80%"
+            
+        }}
+        contentStyle={{
+          maxWidth: "100%",
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "1.5em"
+        }}
+        
+        >
+
+          <div style={{maxWidth: "65%"}}> {`
             By visiting this site you agree to our terms and conditions,
             privacy policy, confirm that you are 18 years old
             and accept the use of cookies
