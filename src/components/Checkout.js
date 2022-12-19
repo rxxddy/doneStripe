@@ -7,23 +7,18 @@ import greek1 from '../images/greek1.png';
 import gsap from "gsap";
 import banner from "../images/banner.png";
 import bghex from "../images/bghex.png";
-import buy from "../images/buy.png";
 import arrow from "../images/arrow.png";
 import fashion from "../images/fashion.png";
 import disco from "../images/disco.png";
-import question from "../images/question.png";
-
-import { is } from "is_js"
-import { mobile } from "is-mobile"
+import {Link} from "react-router-dom";
 
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
 import { useIntersection } from 'react-use';
-import { ScrollTrigger } from 'react-gsap';
 
 let stripePromise;
 
-var userInputQuantity = 5;
+
 
 const getStripe = () => {
   if (!stripePromise) {
@@ -32,6 +27,7 @@ const getStripe = () => {
 
   return stripePromise;
 };
+
 
 
 
@@ -96,7 +92,7 @@ const Checkout = () => {
 
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
-
+//   const coupon = await stripe.coupons.create({percent_off: 20, duration: 'once'});
 
   const item = {
 
@@ -114,7 +110,10 @@ const Checkout = () => {
     lineItems: [item],
     mode: "subscription",
     successUrl: `${window.location.origin}/success`,
-    cancelUrl: `${window.location.origin}/cancel`
+    cancelUrl: `${window.location.origin}/cancel`,
+    shippingAddressCollection: {
+        allowedCountries: ['IT'],
+      },
   };
 
   const redirectToCheckout = async () => {
@@ -297,18 +296,13 @@ const Checkout = () => {
                                 </div>
 
 
-                                <div className="right">
-                                    <p className="menu_p w-inline-block">CONTACT</p>
-                                </div>
+                                <Link  to="/Account" className="right">
+                                    <p className="menu_p w-inline-block">Account</p>
+                                </Link>
                             </div>
 
 
                         </div>
-
-
-                        {/* <a className="grid_item is--hamburger w-inline-block">
-                            <div className="hamburger_icon"></div>
-                        </a> */}
                     </div>
                 </div>
             </section>
@@ -495,59 +489,6 @@ E D IN IM IT A B IL E .</div>
                     </div>
                 </div>
             </div>
-
-            {/* <section className="section mt">
-                <div className="container">
-                    <div className="grid is--footer">
-                        <div className="grid_item">
-                            <h4>
-                                FOLlow US
-                            </h4>
-                        </div>
-                        <div className="grid_item is--social">
-                            <a className="social_link w-inline-block">
-                                <div className="social_circle">
-                                    <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a4e2462e59d_footer-facebook.svg" className="social_icon"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="grid_item is--social">
-                            <a className="social_link w-inline-block">
-                                <div className="social_circle">
-                                    <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3ab8f762e5a2_footer-instagram.svg" className="social_icon"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="grid_item is--social">
-                            <a className="social_link w-inline-block">
-                                <div className="social_circle">
-                                    <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a243d62e5a0_footer-youtube.svg" className="social_icon"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="grid_item is--social">
-                            <a className="social_link w-inline-block">
-                                <div className="social_circle">
-                                    <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3ac46762e5a6_footer-spotify.svg" className="social_icon"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div className="grid_item is--social">
-                            <a className="social_link w-inline-block">
-                                <div className="social_circle">
-                                    <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3a50c162e5a3_footer-apple.svg" className="social_icon"/>
-                                </div>
-                            </a>
-                        </div>
-                        <button className="grid_item is--footer_top w-inline-block bgbutton" onClick={handleTop}>
-                            <img src="https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/622210ec2e3d3af18b62e5b1_footer-arrow.svg" className="footer_top-img"/>
-                        </button>
-                        <div className="grid_item is--footer-copyright">
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
         </div>
 
 

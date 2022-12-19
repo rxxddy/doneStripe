@@ -1,7 +1,7 @@
 import logo from '../images/logo.png';
 import {Link} from "react-router-dom";
 
-const Cancel = () => {
+const Account = () => {
     return (
       
       <div>
@@ -52,12 +52,12 @@ const Cancel = () => {
                 </section>
                 </div>
         <div className="Canceled">
-          <h1 className="Canceled-cancel">Cancel</h1>
-          <h2>Your payment was canceled.</h2>
+          <h1 className="Canceled-cancel">Account</h1>
+          <h2>Auth</h2>
         </div>
       </div>
     );
   };
   
-  export default Cancel;
+  export default Account;
   
