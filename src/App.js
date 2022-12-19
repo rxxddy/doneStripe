@@ -27,6 +27,7 @@ export default function App() {
           marginLeft: "25%", 
           borderRadius: "2em 2em 0 0", 
           zIndex: "999999",
+          alignItems: "center",
           }}
 
         buttonStyle={{
