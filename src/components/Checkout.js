@@ -246,7 +246,7 @@ const Checkout = () => {
 
   return (
     
-      <div className="page-wrapper">
+      <div className="main-container">
 
 
 
@@ -449,7 +449,7 @@ E D IN IM IT A B IL E .</div>
                     <div className="checkoutRight">
                         <div className="style1">
                         <h1 className="tickets fadeIn3">PASS</h1>
-                        <h1 className="checkout-price fadeIn3">€{total}/year</h1>
+                        <h1 className="checkout-price fadeIn3" style={{justifyContent: "center", display: "flex"}}>€{total}/year</h1>
                         <div className="quantity-input">
 
                             <button className="quantity-input__modifier quantity-input__modifier--left fadeIn3" onClick={decNum}>—</button>
@@ -463,6 +463,7 @@ E D IN IM IT A B IL E .</div>
                             className="checkout-button fadeIn3"
                             onClick={redirectToCheckout}
                             disabled={isLoading}
+                            style={{justifyContent: "center"}}
                         >
                             <div className="text-block fadeIn3">
                             <div className="text">{isLoading ? "Carico..." : "paga"}</div>

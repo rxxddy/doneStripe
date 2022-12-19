@@ -47,6 +47,7 @@ code {
 .tickets {
   justify-content: center;
   display: flex;
+  font-family: auto;
 }
 
 .checkout-title {
@@ -67,8 +68,7 @@ code {
   margin: 0;
   color: #bf2d06;
   margin-top: 1em;
-  display: flex;
-  justify-content: center;
+  font-family: auto;
 }
 
 .checkout-description {
@@ -97,7 +97,7 @@ code {
   border-radius: 20px;
 
   display: flex;
-  justify-content: center;
+
   padding: 4px;
   width: 169px;
   cursor: pointer;
@@ -117,6 +117,7 @@ code {
   /* transform: translateY(-2px); */
   transition: all 0.5s ease-in-out;
   scale: 1.1;
+
 }
 
 .checkout-button .grey-circle {
@@ -139,6 +140,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-items: center;
 }
 
 .checkout-button .icon {
@@ -156,6 +158,7 @@ code {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center;
 }
 
 .checkout-button .text {
@@ -166,7 +169,7 @@ code {
   margin: 0;
   color: #bf2d06;
   margin: 0;
-  
+  justify-content: center;
 }
 
 
