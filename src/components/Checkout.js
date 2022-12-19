@@ -269,10 +269,10 @@ const Checkout = () => {
 
             <section className="section">
                     
-                <div className="container is--nav ">
-                    <div className="grid2 is--nav center">
+                <div className="block mains">
+                    <div className="container2 mains center">
 
-                        <div className="grid_item is--menu vercent">
+                        <div className="container_item is--menu vercent">
 
 
                                 <div className="left1">
@@ -308,14 +308,14 @@ const Checkout = () => {
             </section>
             
             <section className="section">
-                <div className="container is--hero">
-                    <div className="grid borderio">
+                <div className="block is--hero">
+                    <div className="container borderio">
 
-                        <div className="grid_item">
+                        <div className="container_item">
                             <h1 className="naming">HIMEROS <br/> CLUB</h1>
                             <img src={bghex} className="bghex" />
                         </div>
-                        <div className=" grid_item is--hero-img1 ">
+                        <div className=" container_item is--hero-img1 ">
                  
                             <div className="is--3-bp">
                                 <p>
@@ -339,7 +339,7 @@ const Checkout = () => {
 
             
             <section className="section mt">
-                <div className="container is--wide" ref={sectionRef}>
+                <div className="block is--wide" ref={sectionRef}>
                     <div className="desc-cards_cards-wrapper cardtext">
                         <div className="desc-cards_card">
                             <img src={disco} loading="lazy" alt="" className="desc-cards_card-image fadeIn" />
@@ -375,8 +375,8 @@ const Checkout = () => {
             </section>
 
             <section className="section mt">
-                <div className="container">
-                    <div className="grid is--resources">
+                <div className="block">
+                    <div className="container is--resources">
                        
                         <a className="resources_text is--main-colour w-inline-block">
                             <h1 className="display">HIMEROS CLUB</h1>
@@ -386,7 +386,7 @@ const Checkout = () => {
                             <h1 className="display">HIMEROS CLUB</h1>
                             <h1 className="display">HIMEROS CLUB</h1>
                         </a>
-                        <div className="grid_item is--resources">
+                        <div className="container_item is--resources">
                             <img src={greek1}  className="resources_img"/>
                         </div>
                     </div>
@@ -394,40 +394,40 @@ const Checkout = () => {
             </section>
 
             <section className="section" ref={sectionRef2}>
-                <div className="container">
+                <div className="block">
                     <div className="merch">
-                        <div className="grid is--merch-column">
+                        <div className="container is--merch-column">
                         
-                            <div className="grid_item is--merch-title fadeIn2">
+                            <div className="container_item is--merch-title fadeIn2">
                                 <h5>il prossimo evento inizierà in:</h5>
                                 
                                 
                             </div>
-                            <div className="grid_item is--merch-link fadeIn2">
+                            <div className="container_item is--merch-link fadeIn2">
                                 <a className="merch_link is--active w-inline-block">
                                     <h5 id="day">{days < 10 ? "0" + days : days}</h5>
                                     <p className="bold">days</p>
                                 </a>
                             </div>
-                            <div className="grid_item is--merch-link fadeIn2">
+                            <div className="container_item is--merch-link fadeIn2">
                                 <a className="merch_link w-inline-block">
                                     <h5 id="hour">{hours < 10 ? "0" + hours : hours}</h5>
                                     <p className="bold">hours</p>
                                 </a>
                             </div>
-                            <div className="grid_item is--merch-link fadeIn2">
+                            <div className="container_item is--merch-link fadeIn2">
                                 <a className="merch_link w-inline-block">
                                     <h5 id="minute">{minutes < 10 ? "0" + minutes : minutes}</h5>
                                     <p className="bold">minutes</p>
                                 </a>
                             </div>
-                            <div className="grid_item is--merch-link fadeIn2">
+                            <div className="container_item is--merch-link fadeIn2">
                                 <a className="merch_link w-inline-block">
                                     <h5 id="second">{seconds < 10 ? "0" + seconds : seconds}</h5>
                                     <p className="bold">seconds</p>
                                 </a>
                             </div>
-                            {/* <div className="grid_item is--merch-link">
+                            {/* <div className="container_item is--merch-link">
                                 <a className="merch_link w-inline-block">
                                     <h5>05</h5>
                                     <p className="bold">Signs</p>
@@ -436,7 +436,7 @@ const Checkout = () => {
                         </div>
 
                         
-                        <div className="grid is--merch-column2">
+                        <div className="container is--merch-column2">
 
                         <div className="desc-cards_card">
                             <div>
@@ -481,7 +481,7 @@ E D IN IM IT A B IL E .</div>
                             onClick={redirectToCheckout}
                             disabled={isLoading}
                         >
-                            <div className="text-container fadeIn3">
+                            <div className="text-block fadeIn3">
                             <div className="text">{isLoading ? "Carico..." : "paga"}</div>
                             </div>
                         </button>
