@@ -967,7 +967,7 @@ a {
   }
 
   .block3233 {
-      font-size: .875rem
+      font-size: medium;
   }
 
   .container {
@@ -1010,5 +1010,8 @@ a {
 @media screen and (max-width: 289px) {
   .navlink1 {
     font-size: 10px;
+  }
+  .block3233 {
+    font-size: x-small;
   }
 }
