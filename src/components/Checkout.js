@@ -11,13 +11,13 @@ import arrow from "../images/arrow.png";
 import fashion from "../images/fashion.png";
 import disco from "../images/disco.png";
 import {Link} from "react-router-dom";
-
+import { useScroll, useTransform } from "framer-motion/dist/framer-motion";
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
 import { useIntersection } from 'react-use';
-
+// import { Header } from "./style";
 let stripePromise;
-
+import { Title } from "./style";
 
 
 const getStripe = () => {
@@ -259,6 +259,12 @@ const Checkout = () => {
     ? fadeOut3(".fadeIn3")
     : fadeIn3(".fadeIn3");
 
+    const { scrollYProgress } = useScroll();
+    const x = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+
+    // const { scrollYProgress } = useScroll();
+    // const x = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+
 
 
   return (
@@ -379,12 +385,12 @@ const Checkout = () => {
                     <div className="container is--resources">
                        
                         <a className="resources_text is--main-colour w-inline-block">
-                            <h1 className="display">HIMEROS CLUB</h1>
-                            <h1 className="display">HIMEROS CLUB</h1>
+                            <Title className="display" style={{ x }}>HIMEROS CLUB</Title>
+                            <Title className="display" style={{ x }}>HIMEROS CLUB</Title>
                         </a>
                         <a className="resources_text is--light-colour w-inline-block">
-                            <h1 className="display">HIMEROS CLUB</h1>
-                            <h1 className="display">HIMEROS CLUB</h1>
+                            <Title className="display" style={{ x }}>HIMEROS CLUB</Title>
+                            <Title className="display" style={{ x }}>HIMEROS CLUB</Title>
                         </a>
                         <div className="container_item is--resources">
                             <img src={greek1}  className="resources_img"/>
