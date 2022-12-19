@@ -336,6 +336,7 @@ code {
   .checkout-price{
     font-size: xx-large;
   }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -372,5 +373,8 @@ code {
   .centerPass {
     justify-content: center;
     display: flex;
+  }
+  .buttonwidth {
+    width: 70%;
   }
 }
