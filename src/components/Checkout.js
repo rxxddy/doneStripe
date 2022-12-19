@@ -35,30 +35,7 @@ const getStripe = () => {
 
 const Checkout = () => {
 
-    useEffect(() => {
-        const script = document.createElement('script');
-      
-        script.src = "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=622210ec2e3d3a1a0c62e591";
-        script.async = true;
-      
-        document.body.appendChild(script);
-      
-        return () => {
-          document.body.removeChild(script);
-        }
-      }, []);
-    useEffect(() => {
-        const script = document.createElement('script');
-      
-        script.src = "https://uploads-ssl.webflow.com/622210ec2e3d3a1a0c62e591/js/webflow.353aee397.js";
-        script.async = true;
-      
-        document.body.appendChild(script);
-      
-        return () => {
-          document.body.removeChild(script);
-        }
-      }, []);
+
 
 
   const ref = useRef(null);
@@ -260,7 +237,7 @@ const Checkout = () => {
     : fadeIn3(".fadeIn3");
 
     const { scrollYProgress } = useScroll();
-    const x = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+    const x = useTransform(scrollYProgress, [0, 1], [-200, 200]);
 
     // const { scrollYProgress } = useScroll();
     // const x = useTransform(scrollYProgress, [0, 1], [-300, 300]);
@@ -278,32 +255,32 @@ const Checkout = () => {
                 <div className="block mains">
                     <div className="container2 mains center">
 
-                        <div className="container_item is--menu vercent">
+                        <div className="section22 navbar vercent">
 
 
                                 <div className="left1">
                                     <div className="left">
-                                        <p className="menu_p menu_link w-inline-block">MAIN</p>
+                                        <p className="navlink1 navlink2 ">MAIN</p>
                                     </div>
 
 
                                     <div className="left">
-                                        <p className="menu_p w-inline-block">INFO</p>
+                                        <p className="navlink1 ">INFO</p>
                                     </div>
                                 </div>
                            
-                                <a className="nav_logo w-inline-block  w-inline-block center">
+                                <a className="nav_logo    center">
                                     <img src={logo} className="nav_logo-img"/>
                                 </a>
 
                             <div className="right1">
                                 <div className="right">
-                                    <p className="menu_p menu_link w-inline-block">ABOUT</p>
+                                    <p className="navlink1 navlink2 ">ABOUT</p>
                                 </div>
 
 
                                 <Link  to="/Account" className="right">
-                                    <p className="menu_p w-inline-block">Account</p>
+                                    <p className="navlink1 ">Account</p>
                                 </Link>
                             </div>
 
@@ -314,23 +291,23 @@ const Checkout = () => {
             </section>
             
             <section className="section">
-                <div className="block is--hero">
+                <div className="block section23">
                     <div className="container borderio">
 
-                        <div className="container_item">
+                        <div className="section22">
                             <h1 className="naming">HIMEROS <br/> CLUB</h1>
                             <img src={bghex} className="bghex" />
                         </div>
-                        <div className=" container_item is--hero-img1 ">
+                        <div className=" section22 section23-img1 ">
                  
-                            <div className="is--3-bp">
+                            <div className="title22">
                                 <p>
-                                  DISCO Capitolo 1: <span className="hero_span">La villa dello zio Nathaniel</span>
+                                  DISCO Capitolo 1: <span className="title23">La villa dello zio Nathaniel</span>
                                 </p>
                             </div>
-                            <button className="main-button w-inline-block bgbutton buttonwidth" onClick={handleClick}>
+                            <button className="buyticket1  bgbutton buttonwidth" onClick={handleClick}>
                               
-                                <p className="main-button_p buybuttontop2">Acquista i biglietti </p>
+                                <p className="buyticket2 buybuttontop2">Acquista i biglietti </p>
                                 <img src={arrow} className="buybuttontop"/>
                             </button>
                     
@@ -345,14 +322,14 @@ const Checkout = () => {
 
             
             <section className="section mt">
-                <div className="block is--wide" ref={sectionRef}>
-                    <div className="desc-cards_cards-wrapper cardtext">
-                        <div className="desc-cards_card">
-                            <img src={disco} loading="lazy" alt="" className="desc-cards_card-image fadeIn" />
+                <div className="block block2">
+                    <div className="block31 cardtext" ref={sectionRef}>
+                        <div className="block323">
+                            <img src={disco} loading="lazy" alt="" className="block323-image fadeIn" />
                             <div>
-                                <div className="desc-cards_card-texts-wrapper fadeIn">
-                                    <h2 className="desc-cards_card-heading">Artistic</h2>
-                                    <div className="desc-cards_card-text">P O N T E C H E L E G A
+                                <div className="block3231 fadeIn">
+                                    <h2 className="block3232">Artistic</h2>
+                                    <div className="block3233">P O N T E C H E L E G A
                                         L E C R E A T O R C O N I L O R O FA N
                                         M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
                                         U N ’ E SP E R IE N Z A E SC L U SIV A
@@ -361,11 +338,11 @@ const Checkout = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="desc-cards_card">
+                        <div className="block323">
                             <div>
-                                <div className="desc-cards_card-texts-wrapper fadeIn">
-                                    <h2 className="desc-cards_card-heading">Mission</h2>
-                                    <div className="desc-cards_card-text">P O N T E C H E L E G A
+                                <div className="block3231 fadeIn">
+                                    <h2 className="block3232">Mission</h2>
+                                    <div className="block3233">P O N T E C H E L E G A
                                         L E C R E A T O R C O N I L O R O FA N
                                         M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
                                         U N ’ E SP E R IE N Z A E SC L U SIV A
@@ -373,7 +350,7 @@ const Checkout = () => {
                                     </div>
                                 </div>
                             </div>
-                            <img src={fashion} loading="lazy" alt="" className="desc-cards_card-image fadeIn" />
+                            <img src={fashion} loading="lazy" alt="" className="block323-image fadeIn" />
                         </div>
                     </div>
 
@@ -382,18 +359,18 @@ const Checkout = () => {
 
             <section className="section mt">
                 <div className="block">
-                    <div className="container is--resources">
+                    <div className="container container34">
                        
-                        <a className="resources_text is--main-colour w-inline-block">
+                        <a className="himerosclub1 himerosclub11 ">
                             <Title className="display" style={{ x }}>HIMEROS CLUB</Title>
                             <Title className="display" style={{ x }}>HIMEROS CLUB</Title>
                         </a>
-                        <a className="resources_text is--light-colour w-inline-block">
+                        <a className="himerosclub1 himerosclub12 ">
                             <Title className="display" style={{ x }}>HIMEROS CLUB</Title>
                             <Title className="display" style={{ x }}>HIMEROS CLUB</Title>
                         </a>
-                        <div className="container_item is--resources">
-                            <img src={greek1}  className="resources_img"/>
+                        <div className="section22 container34">
+                            <img src={greek1}  className="himerosclub-middle-img"/>
                         </div>
                     </div>
                 </div>
@@ -401,54 +378,54 @@ const Checkout = () => {
 
             <section className="section" ref={sectionRef2}>
                 <div className="block">
-                    <div className="merch">
-                        <div className="container is--merch-column">
+                    <div className="block4">
+                        <div className="container block41">
                         
-                            <div className="container_item is--merch-title fadeIn2">
+                            <div className="section22 block412 fadeIn2">
                                 <h5>il prossimo evento inizierà in:</h5>
                                 
                                 
                             </div>
-                            <div className="container_item is--merch-link fadeIn2">
-                                <a className="merch_link is--active w-inline-block">
+                            <div className="section22 block413 fadeIn2">
+                                <a className="x-141 x-142 ">
                                     <h5 id="day">{days < 10 ? "0" + days : days}</h5>
-                                    <p className="bold">days</p>
+                                    <p className="x-213">days</p>
                                 </a>
                             </div>
-                            <div className="container_item is--merch-link fadeIn2">
-                                <a className="merch_link w-inline-block">
+                            <div className="section22 block413 fadeIn2">
+                                <a className="x-141 ">
                                     <h5 id="hour">{hours < 10 ? "0" + hours : hours}</h5>
-                                    <p className="bold">hours</p>
+                                    <p className="x-213">hours</p>
                                 </a>
                             </div>
-                            <div className="container_item is--merch-link fadeIn2">
-                                <a className="merch_link w-inline-block">
+                            <div className="section22 block413 fadeIn2">
+                                <a className="x-141 ">
                                     <h5 id="minute">{minutes < 10 ? "0" + minutes : minutes}</h5>
-                                    <p className="bold">minutes</p>
+                                    <p className="x-213">minutes</p>
                                 </a>
                             </div>
-                            <div className="container_item is--merch-link fadeIn2">
-                                <a className="merch_link w-inline-block">
+                            <div className="section22 block413 fadeIn2">
+                                <a className="x-141 ">
                                     <h5 id="second">{seconds < 10 ? "0" + seconds : seconds}</h5>
-                                    <p className="bold">seconds</p>
+                                    <p className="x-213">seconds</p>
                                 </a>
                             </div>
-                            {/* <div className="container_item is--merch-link">
-                                <a className="merch_link w-inline-block">
+                            {/* <div className="section22 block413">
+                                <a className="x-141 ">
                                     <h5>05</h5>
-                                    <p className="bold">Signs</p>
+                                    <p className="x-213">Signs</p>
                                 </a>
                             </div> */}
                         </div>
 
                         
-                        <div className="container is--merch-column2">
+                        <div className="container block42">
 
-                        <div className="desc-cards_card">
+                        <div className="block323">
                             <div>
-                                <div className="desc-cards_card-texts-wrapper fadeIn2">
-                                    <h2 className="desc-cards_card-heading">perché abbiamo bisogno di un pass?</h2>
-                                    <div className="desc-cards_card-text">P O N T E C H E L E G A
+                                <div className="block3231 fadeIn2">
+                                    <h2 className="block3232">perché abbiamo bisogno di un pass?</h2>
+                                    <div className="block3233">P O N T E C H E L E G A
 L E C R E A T O R C O N I L O R O FA N
 M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
 U N ’ E SP E R IE N Z A E SC L U SIV A

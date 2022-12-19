@@ -9,5 +9,5 @@ margin-top: 0px;
     line-height: 0.96;
     font-weight: 700;
     letter-spacing: -0.09em;
-  transition: all 0.01s ease-in-out;
+  transition: all 0.0000001s ease;
 `;
