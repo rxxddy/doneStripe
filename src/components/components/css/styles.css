@@ -3787,6 +3787,16 @@ blockquote {
   .desc-cards_cards-wrapper{
     margin-top: 20em;
   }
+
+  .menu_p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 289px) {
+  .menu_p {
+    font-size: 10px;
+  }
 }
 
 @font-face {
