@@ -67,6 +67,8 @@ code {
   margin: 0;
   color: #bf2d06;
   margin-top: 1em;
+  display: flex;
+  justify-content: center;
 }
 
 .checkout-description {
@@ -95,7 +97,7 @@ code {
   border-radius: 20px;
 
   display: flex;
-
+  justify-content: center;
   padding: 4px;
   width: 169px;
   cursor: pointer;
