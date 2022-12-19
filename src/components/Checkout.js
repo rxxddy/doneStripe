@@ -15,7 +15,6 @@ import { useScroll, useTransform } from "framer-motion/dist/framer-motion";
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
 import { useIntersection } from 'react-use';
-// import { Header } from "./style";
 let stripePromise;
 import { Title } from "./style";
 
@@ -28,15 +27,7 @@ const getStripe = () => {
   return stripePromise;
 };
 
-
-
-
-
-
 const Checkout = () => {
-
-
-
 
   const ref = useRef(null);
 
@@ -51,7 +42,7 @@ const Checkout = () => {
   };
 
   let [num, setNum]= useState(1);
-  let incNum =()=>{
+  let incNum = () =>{
     if(num<99)
     {
     setNum(Number(num)+1);
@@ -275,7 +266,7 @@ const Checkout = () => {
 
                             <div className="right1">
                                 <div className="right">
-                                    <p className="navlink1 navlink2 ">ABOUT</p>
+                                    <p className="navlink1 navlink2 "></p>
                                 </div>
 
 
@@ -387,25 +378,25 @@ const Checkout = () => {
                                 
                             </div>
                             <div className="section22 block413 fadeIn2">
-                                <a className="x-141 x-142 ">
+                                <a className="x-141 x-142" style={{fontFamily:"fantasy"}}>
                                     <h5 id="day">{days < 10 ? "0" + days : days}</h5>
                                     <p className="x-213">days</p>
                                 </a>
                             </div>
                             <div className="section22 block413 fadeIn2">
-                                <a className="x-141 ">
+                                <a className="x-141" style={{fontFamily:"fantasy"}}>
                                     <h5 id="hour">{hours < 10 ? "0" + hours : hours}</h5>
                                     <p className="x-213">hours</p>
                                 </a>
                             </div>
                             <div className="section22 block413 fadeIn2">
-                                <a className="x-141 ">
+                                <a className="x-141" style={{fontFamily:"fantasy"}}>
                                     <h5 id="minute">{minutes < 10 ? "0" + minutes : minutes}</h5>
                                     <p className="x-213">minutes</p>
                                 </a>
                             </div>
                             <div className="section22 block413 fadeIn2">
-                                <a className="x-141 ">
+                                <a className="x-141" style={{fontFamily:"fantasy"}}>
                                     <h5 id="second">{seconds < 10 ? "0" + seconds : seconds}</h5>
                                     <p className="x-213">seconds</p>
                                 </a>
@@ -454,7 +445,7 @@ E D IN IM IT A B IL E .</div>
 
                             <button className="quantity-input__modifier quantity-input__modifier--left fadeIn3" onClick={decNum}>—</button>
 
-                            <input type="text" className="quantity-input__screen fadeIn3" value={num} onChange={handleChange}/>
+                            <input type="text" className="quantity-input__screen fadeIn3" style={{ color: "wheat"}} value={num} onChange={handleChange}/>
                             
                             <button className="quantity-input__modifier quantity-input__modifier--right fadeIn3" onClick={incNum}>＋</button>
 

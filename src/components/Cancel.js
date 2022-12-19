@@ -5,51 +5,46 @@ const Cancel = () => {
     return (
       
       <div>
-      <div className="container is--nav">
-      <section className="section">
+<div className="main-container">
+            <section className="section">
                     
-                    <div className="container is--nav ">
-                        <div className="grid2 is--nav center">
-    
-                            <div className="grid_item is--menu vercent">
-    
+                <div className="block mains">
+                    <div className="container2 mains center">
 
-                                    <div className="left1" src="/">
-                                        <Link  to="/" className="left">
-                                            <p className="menu_p menu_link w-inline-block">MAIN</p>
-                                        </Link>
-    
-    
-                                        <div className="left">
-                                            <p className="menu_p w-inline-block">INFO</p>
-                                        </div>
-                                    </div>
-                               
-                                    <a className="nav_logo w-inline-block  w-inline-block center">
-                                        <img src={logo} className="nav_logo-img"/>
-                                    </a>
-    
-                                <div className="right1">
-                                    <div className="right">
-                                        <p className="menu_p menu_link w-inline-block">ABOUT</p>
-                                    </div>
-    
-    
-                                    <div className="right">
-                                        <p className="menu_p w-inline-block">CONTACT</p>
+                        <div className="section22 navbar vercent">
+
+
+                                <div className="left1">
+                                    <Link to="/" className="left">
+                                        <p className="navlink1 navlink2 ">MAIN</p>
+                                    </Link>
+
+
+                                    <div className="left">
+                                        <p className="navlink1 ">INFO</p>
                                     </div>
                                 </div>
-    
-    
+                           
+                                <a className="nav_logo    center">
+                                    <img src={logo} className="nav_logo-img"/>
+                                </a>
+
+                            <div className="right1">
+
+                                <div className="right">
+                                    <p className="navlink1 navlink2 "></p>
+                                </div>
+
+                                <Link  to="/Account" className="right">
+                                    <p className="navlink1 ">Account</p>
+                                </Link>
                             </div>
-    
-    
-                            <a className="grid_item is--hamburger w-inline-block">
-                                <div className="hamburger_icon"></div>
-                            </a>
+
+
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
                 </div>
         <div className="Canceled">
           <h1 className="Canceled-cancel">Cancel</h1>

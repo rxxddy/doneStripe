@@ -37,7 +37,6 @@ code {
   max-width: 1040px;
   margin: auto;
   width: 50%;
-  /* border: 3px solid white; */
   padding: 10px;
   margin-top: 100px;
   position: relative;
@@ -87,7 +86,6 @@ code {
 }
 
 .checkout-button {
-  /* background: linear-gradient(180deg, #a4349e 0%, #d9dfff 100%); */
 
   background-color: transparent;
   border: 0.5px solid rgba(255, 255, 255, 0.5);
@@ -293,7 +291,6 @@ code {
   height: 50%;
   width: 100%;
   max-width: 1460px;
-    /* justify-content: center; */
     display: initial;
     height: 50%;
     max-height: 500px;
@@ -371,15 +368,7 @@ code {
     display: grid;
     z-index: 10;
   }
-  /* .fadeIn{
-    display: none;
-  }
-  .fadeIn2{
-    display: none;
-  }
-  .fadeIn3{
-    display: none;
-  } */
+
   .centerPass {
     justify-content: center;
     display: flex;
