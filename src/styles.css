@@ -353,7 +353,7 @@ code {
   width: 70%;
   height: 57vh;
   /* background-color: rgb(99, 99, 99); */
-  border: solid 1px #bf2d06;
+  border: solid 1px #252525;
   backdrop-filter: blur(8px);  
   /* filter: blur(9999999px);
   display: block;
@@ -449,6 +449,7 @@ code {
   border: none;
   padding: 0.15rem 1.5rem;
   border-bottom: solid 1px #252525;
+  border-radius: 0;
 }
 
 .actions .toggle:hover {
