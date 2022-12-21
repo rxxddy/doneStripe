@@ -1,25 +1,29 @@
 import "@stripe/stripe-js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+// import AuthForm from "./components/Auth/AuthForm";
 import Checkout from "./components/Checkout";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
 import Account from "./components/Account";
 import CookieConsent from "react-cookie-consent";
+import Layout from "./components/Layout/Layout";
 
 import "./styles.css";
 
 export default function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route index element={<Checkout />} />
-          <Route path="success" element={<Success />} />
-          <Route path="cancel" element={<Cancel />} />
-          <Route path="account" element={<Account />} />
-        </Routes>
-      </Router>
+          <Router>
+            <Routes>
+              <Route index element={<Checkout />} />
+              <Route path="success" element={<Success />} />
+              <Route path="cancel" element={<Cancel />} />
+              <Route path="account" element={<Account />} />
+              {/* <Route path="auth" element={<AuthForm />} /> */}
+            </Routes>
+          </Router>
+
+
       <CookieConsent 
         debug={true} 
         style={{

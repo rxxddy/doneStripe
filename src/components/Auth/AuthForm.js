@@ -1,20 +1,52 @@
-import { useState, createRef, useContext } from "react";
+import { useState, createRef, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context";
 import "./AuthForm.css";
 
-const AuthForm = () => {
+
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDUdOj-zVrEGRjs2icLM58-X4FSbUZCAhU",
+//   authDomain: "himeros2-27067.firebaseapp.com",
+//   projectId: "himeros2-27067",
+//   storageBucket: "himeros2-27067.appspot.com",
+//   messagingSenderId: "707660886902",
+//   appId: "1:707660886902:web:3398279231de5906c2c057",
+//   measurementId: "G-XH9CXXSVGL"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+
+const Account = () => {
   const { login } = useContext(AuthContext);
   const emailRef = createRef(null);
   const passwordRef = createRef(null);
   const navigate = useNavigate();
+  navigate('/');
   const [showSignUpText, setShowSignUpText] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    setIsLoading(true);
+
+    // useEffect(() => {
+    //   setIsLoading(true);
+    // }, []);
+
+    useEffect(() => {
+       setIsLoading(true);
+    }, [setIsLoading])
+
     const extractCurrentEmailValue = emailRef.current.value;
     const extractCurrentPasswordValue = passwordRef.current.value;
     console.log(extractCurrentEmailValue, extractCurrentPasswordValue);
@@ -42,20 +74,22 @@ const AuthForm = () => {
     };
 
     try {
-      const response = await fetch(url, { ...options });
-      const data = await response.json();
-      console.log(response);
-      if (response && response.ok) {
-        setIsLoading(false);
-        login(data.idToken);
-        navigate("/");
-      } else {
-        setError(true);
-        setIsLoading(false);
-      }
-    } catch (e) {
-      console.log(e);
-    }
+          const response = await fetch(url, { ...options });
+          const data = await response.json();
+          console.log(response);
+          useEffect(() => {
+            if (response && response.ok) {
+              setIsLoading(false);
+              login(data.idToken);
+              navigate.push("/");
+            } else {
+                setError(true); 
+                setIsLoading(false);  
+            }
+          }, [setIsLoading, setError])
+            } catch (e) {
+              console.log(e);
+            }
   };
 
   return (
@@ -94,4 +128,5 @@ const AuthForm = () => {
   );
 };
 
-export default AuthForm;
+export default Account;
+

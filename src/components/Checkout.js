@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import ticket from '../images/ticket.png';
 import logo from '../images/logo.png';
@@ -18,6 +18,7 @@ import { useIntersection } from 'react-use';
 let stripePromise;
 import { Title } from "./style";
 
+import { AuthContext } from "../context";
 
 const getStripe = () => {
   if (!stripePromise) {
@@ -234,6 +235,8 @@ const Checkout = () => {
     // const x = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
 
+  const { isLoggedIn , logout } = useContext(AuthContext);
+
 
   return (
     
@@ -265,10 +268,20 @@ const Checkout = () => {
                                 </a>
 
                             <div className="right1">
-                                <div className="right">
-                                    <p className="navlink1 navlink2 "></p>
-                                </div>
-
+                              <nav className="right">
+                                <ul>
+                                  {isLoggedIn && (
+                                    <li>
+                                      <button onClick={logout}>Logout</button>
+                                    </li>
+                                  )}
+                                  {!isLoggedIn && (
+                                    <li>
+                                      <Link to="/account">Login</Link>
+                                    </li>
+                                  )}
+                                </ul>
+                              </nav>
 
                                 <Link  to="/Account" className="right">
                                     <p className="navlink1 ">Account</p>
