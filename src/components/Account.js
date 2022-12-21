@@ -61,45 +61,8 @@ const AuthForm = () => {
   };
 
   return (      
-    <div className="main-container">
-      <div className="section">
-                          
-          <div className="block mains">
-              <div className="container2 mains center">
-
-                  <div className="section22 navbar vercent">
-
-
-                          <div className="left1">
-                              <div className="left">
-                                  <p className="navlink1 navlink2 ">MAIN</p>
-                              </div>
-
-
-                              
-                          </div>
-                    
-                          <a className="nav_logo    center">
-                              <img src={logo} className="nav_logo-img"/>
-                          </a>
-
-
-                          <div className="right1">
-                              
-
-
-                              <div className="right">
-                                  <p className="navlink1 ">INFO</p>
-                              </div>
-                          </div>
-                    
-
-
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div style={{backgroundColor: "wheat"}}>
+    <div className="main-container2">
+      <div className="main-container3">
         <div className="accountLeft">
           hello
         </div>

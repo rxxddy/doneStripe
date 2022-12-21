@@ -328,16 +328,17 @@ code {
   width: 50%;
   float: left;
   background-image: url('./images/vector1.png');
-  min-height: 100vh;
-background-size: cover;
-background-position: right;
+  min-height: 100%;
+  background-size: cover;
+  background-position: right;
+  border-radius: 4em;
 }
 
 .accountRight {
   width: 50%;
   float: right;
-  background-color: #9076e7;
-  min-height: 100vh
+  background-color: wheat;
+  min-height: 100%;
 }
 
 @media screen and (max-width: 991px) {
