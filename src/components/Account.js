@@ -67,7 +67,7 @@ const AuthForm = () => {
         </div>
         <div className="accountRight">
           <section className="auth">
-            <h1>{showSignUpText ? "SignUp" : "Login"}</h1>
+            <h1>{showSignUpText ? "Sign Up" : "Log in"}</h1>
             <form onSubmit={handleFormSubmit}>
               <div className="control">
                 <label htmlFor="email">Email</label>
@@ -81,8 +81,9 @@ const AuthForm = () => {
                 {isLoading ? (
                   "Loading. Please Wait..."
                 ) : (
-                  <button>{showSignUpText ? "SignUp" : "Login"}</button>
+                  <button className="sendinfo">{showSignUpText ? "Sign Up" : "Log in"}</button>
                 )}
+                <div> or </div>
                 <button
                   type="button"
                   className="toggle"
