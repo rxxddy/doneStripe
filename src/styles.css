@@ -251,6 +251,7 @@ code {
   display: inline-block;
   margin-right: 1em;
   color: wheat;
+  border: transparent;
 }
 .right1 {
   position: absolute;
