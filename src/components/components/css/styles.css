@@ -499,6 +499,8 @@ a {
   flex-wrap: wrap;
   display: flex;
   background-color: #ca3912;
+  
+  
 }
 .main-container3 {
   background: rgb(202,57,18);
@@ -506,6 +508,7 @@ a {
   width: 60%;
   height: 75%;
   border-radius: 4em;
+  box-shadow: 30px 30px 30px rgb(0 0 0 / 30%);
 }
 
 

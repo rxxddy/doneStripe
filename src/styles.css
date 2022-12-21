@@ -332,6 +332,9 @@ code {
   background-size: cover;
   background-position: right;
   border-radius: 4em;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .accountRight {
@@ -344,6 +347,31 @@ code {
   align-items: center;
   display: flex;
 }
+
+.insideLeft {
+  border-radius: 2em;
+  width: 70%;
+  height: 57vh;
+  /* background-color: rgb(99, 99, 99); */
+  border: solid 1px #bf2d06;
+  backdrop-filter: blur(8px);  
+  /* filter: blur(9999999px);
+  display: block;
+  margin: auto;
+  backdrop-filter: blur(9999999px);
+  box-shadow: 10px 10px 20px rgb(0 0 0 / 70%); */
+}
+
+.insideLefttext {
+  margin-top: 6vh;
+    justify-content: flex-start;
+    display: flex;
+    margin-left: 2vh;
+    font-size: xx-large;
+    color: wheat;
+    font-weight: 900;
+}
+
 
 .auth {
   margin: 3rem auto;
@@ -378,7 +406,7 @@ code {
   font: inherit;
   background-color: wheat;
   color: #252525;
-  border-radius: 4px;
+  border-radius: 0.9em;
   border: 1px solid #252525;
   width: 100%;
   text-align: left;

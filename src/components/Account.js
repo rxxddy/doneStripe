@@ -4,6 +4,8 @@ import { AuthContext } from "../context";
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
 import logo from '../images/logo.png';
+import {Link} from "react-router-dom";
+
 const AuthForm = () => {
   const { login } = useContext(AuthContext);
   const emailRef = createRef(null);
@@ -63,7 +65,10 @@ const AuthForm = () => {
     <div className="main-container2">
       <div className="main-container3">
         <div className="accountLeft">
-          hello
+          <div className="insideLeft">
+            <div className="insideLefttext">Invite Only Right now</div>
+            <Link to="/" className="insideLefttext">Home➤</Link>
+          </div>
         </div>
         <div className="accountRight">
           <section className="auth">
