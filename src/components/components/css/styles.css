@@ -498,13 +498,14 @@ a {
   align-items: center;
   flex-wrap: wrap;
   display: flex;
-  background-color: #252525;
+  background-color: #ca3912;
 }
 .main-container3 {
-  background: rgb(37,37,37);
-  background: linear-gradient(90deg, rgba(37,37,37,1) 33%, rgba(245,222,179,1) 35%, rgba(245,222,179,1) 55%, rgba(245,222,179,1) 100%);
+  background: rgb(202,57,18);
+  background: linear-gradient(90deg, rgba(202,57,18,1) 33%, rgba(245,222,179,1) 35%, rgba(245,222,179,1) 55%, rgba(245,222,179,1) 100%);
   width: 60%;
   height: 75%;
+  border-radius: 4em;
 }
 
 

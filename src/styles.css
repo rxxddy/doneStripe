@@ -339,6 +339,86 @@ code {
   float: right;
   background-color: wheat;
   min-height: 100%;
+  border-radius: 0 4em 4em 0;
+  color: #252525;
+  align-items: center;
+  display: flex;
+}
+
+.auth {
+  margin: 3rem auto;
+  width: 95%;
+  max-width: 35rem;
+  border-radius: 6px;
+  background-color: transparent;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); */
+  padding: 1rem;
+  text-align: center;
+  color: #252525;
+}
+
+.auth h1 {
+  text-align: center;
+  color: #252525;
+  margin-bottom: 7vh;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  display: block;
+  color: #252525;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  font: inherit;
+  background-color: wheat;
+  color: wheat;
+  border-radius: 4px;
+  border: 1px solid #252525;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions button {
+  cursor: pointer;
+  font: inherit;
+  color: #252525;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}
+
+.actions button:hover {
+  background-color: rgb(132, 13, 13);
+  border-color: rgb(132, 13, 13);
+}
+
+.actions .toggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #252525;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+
+.actions .toggle:hover {
+  background-color: rgb(132, 13, 13);
+  border-color: rgb(132, 13, 13);
+  color: #252525;
 }
 
 @media screen and (max-width: 991px) {
