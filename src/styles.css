@@ -427,11 +427,12 @@ code {
 
 .actions button {
   cursor: pointer;
+  width: 100%;
   /* font: inherit; */
-  color: #252525;
-  background-color: transparent;
+  color: wheat;
+  background-color: #252525;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.9em;
   padding: 0.5rem 2.5rem;
 }
 
