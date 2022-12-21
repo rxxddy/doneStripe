@@ -324,6 +324,22 @@ code {
   width: 20em;
 }
 
+.accountLeft {
+  width: 50%;
+  float: left;
+  background-image: url('./images/vector1.png');
+  min-height: 100vh;
+background-size: cover;
+background-position: right;
+}
+
+.accountRight {
+  width: 50%;
+  float: right;
+  background-color: #9076e7;
+  min-height: 100vh
+}
+
 @media screen and (max-width: 991px) {
   .image-135 {
     padding: 3em;
