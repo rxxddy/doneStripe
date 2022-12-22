@@ -5,7 +5,6 @@ import ticket from '../images/ticket.png';
 import logo from '../images/logo.png';
 import greek1 from '../images/greek1.png';
 import gsap from "gsap";
-import banner from "../images/banner.png";
 import bghex from "../images/bghex.png";
 import arrow from "../images/arrow.png";
 import fashion from "../images/fashion.png";
@@ -17,8 +16,14 @@ import "../../src/components/components/css/styles.css";
 import { useIntersection } from 'react-use';
 let stripePromise;
 import { Title } from "./style";
-
+import { Carousel } from 'react-carousel-minimal';
 import { AuthContext } from "../context";
+
+import banner1 from "../images/1.png";
+import banner2 from "../images/2.png";
+import banner3 from "../images/3.png";
+import banner4 from "../images/4.png";
+import banner5 from "../images/5.png";
 
 const getStripe = () => {
   if (!stripePromise) {
@@ -237,6 +242,57 @@ const Checkout = () => {
 
   const { isLoggedIn , logout } = useContext(AuthContext);
 
+  const data = [
+    {
+      image: "http://localhost:3000/static/media/1.c84b2f38.png",
+      // caption: `<div>
+      //             San Francisco
+      //             <br/>
+      //             Next line
+      //           </div>`
+    },
+    {
+      image: "http://localhost:3000/static/media/2.eb2ac827.png",
+      // caption: "Scotland"
+    },
+    {
+      image: "http://localhost:3000/static/media/3.a7d43f08.png",
+      // caption: "Darjeeling"
+    },
+    {
+      image: "http://localhost:3000/static/media/4.0f84b99b.png",
+      // caption: "San Francisco"
+    },
+    {
+      image: "http://localhost:3000/static/media/5.dc0b828b.png",
+      // caption: "Scotland"
+    },
+    // {
+    //   image: "https://www.tusktravel.com/blog/wp-content/uploads/2020/07/Best-Time-to-Visit-Darjeeling-for-Honeymoon.jpg",
+    //   // caption: "Darjeeling"
+    // },
+    // {
+    //   image: "https://www.omm.com/~/media/images/site/locations/san_francisco_780x520px.ashx",
+    //   // caption: "San Francisco"
+    // },
+    // {
+    //   image: "https://images.ctfassets.net/bth3mlrehms2/6Ypj2Qd3m3jQk6ygmpsNAM/61d2f8cb9f939beed918971b9bc59bcd/Scotland.jpg?w=750&h=422&fl=progressive&q=50&fm=jpg",
+    //   // caption: "Scotland"
+    // },
+    // {
+    //   image: "https://www.oyorooms.com/travel-guide/wp-content/uploads/2019/02/summer-7.jpg",
+    //   // caption: "Darjeeling"
+    // }
+  ];
+
+  const captionStyle = {
+    fontSize: '2em',
+    fontWeight: 'bold',
+  }
+  const slideNumberStyle = {
+    fontSize: '20px',
+    fontWeight: 'bold',
+  }
 
   return (
     
@@ -318,9 +374,46 @@ const Checkout = () => {
                     </div>
                 </div>
             </section>
+            
+            <div style={{ textAlign: "center",   width: "1460px", maxWidth: "100%", marginRight: "auto", marginLeft: "auto" }}>
+              <div style={{
+                padding: "0 20px"
+              }}>
+                <Carousel
+                  data={data}
+                  time={2000}
+                  width="100%"
+                  height="500px"
+                  captionStyle={captionStyle}
+                  radius="10px"
+                  slideNumber={true}
+                  slideNumberStyle={slideNumberStyle}
+                  captionPosition="bottom"
+                  automatic={true}
+                  dots={true}
+                  pauseIconColor="white"
+                  pauseIconSize="40px"
+                  slideBackgroundColor="darkgrey"
+                  slideImageFit="cover"
+                  // thumbnails={true}
+                  thumbnailWidth="100px"
+                  style={{
+                    textAlign: "center",
+                    width: "100%",
+                    maxHeight: "500px",
+                    margin: "40px auto",
+                    zIndex: "9999",
 
+                  }}
+                />
+              </div>
+            </div>
 
-            <img src={banner} loading="eager" width="514" sizes="90vw" alt="true" className="image-135"></img>
+            <img src={banner1} loading="eager" width="1" sizes="90vw" alt="true" className="image-135"></img>
+            <img src={banner2} loading="eager" width="1" sizes="90vw" alt="true" className="image-135"></img>
+            <img src={banner3} loading="eager" width="1" sizes="90vw" alt="true" className="image-135"></img>
+            <img src={banner4} loading="eager" width="1" sizes="90vw" alt="true" className="image-135"></img>
+            <img src={banner5} loading="eager" width="1" sizes="90vw" alt="true" className="image-135"></img>
 
             
             <section className="section mt">

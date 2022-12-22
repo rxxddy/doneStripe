@@ -1,5 +1,5 @@
 html {
-  font-family: sans-serif;
+  font-family: ui-monospace;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%
 }
@@ -60,7 +60,7 @@ body {
   margin: 0;
   min-height: 100%;
   background-color: #fff;
-  font-family: Arial,sans-serif;
+  font-family: ui-monospace;
   font-size: 14px;
   line-height: 20px;
   color: #333
@@ -106,7 +106,7 @@ p {
 
 body {
   background-color: #121212;
-  font-family: 'Neue Haas Grotesk', sans-serif;
+  font-family: ui-monospace;
   color: #bf2d06;
   line-height: 1.6;
 }
@@ -114,7 +114,7 @@ body {
 h1 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: Caxton, sans-serif;
+  font-family: ui-monospace;
   font-size: 8.98em;
   line-height: 0.96;
   font-weight: 700;
@@ -124,7 +124,7 @@ h1 {
 h2 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: Caxton, sans-serif;
+  font-family: ui-monospace;
   font-size: 7.77em;
   line-height: 1;
   font-weight: 700;
@@ -134,7 +134,7 @@ h2 {
 h3 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: Caxton, sans-serif;
+  font-family: ui-monospace;
   font-size: 6.56em;
   line-height: 0.9;
   font-weight: 700;
@@ -315,13 +315,13 @@ a {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   justify-content: center;
-  font-family: auto;
+  font-family: ui-monospace;
 }
 
 .naming {
   justify-content: left;
   display: flex;
-  font-family: auto;
+  font-family: ui-monospace;
     color: wheat;
     text-align: left;
 
@@ -383,7 +383,7 @@ a {
 }
 
 .section22.block412 {
-  font-family: auto;
+  font-family: ui-monospace;
   padding-top: 8.24em;
   position: absolute;
   top: 0;
@@ -674,7 +674,7 @@ a {
 .block3232 {
   font-size: 2.5rem;
   margin-bottom: 1em;
-  font-family: auto;
+  font-family: ui-monospace;
 }
 
 .block323-link {
@@ -803,7 +803,7 @@ a {
   }
 
   .tickets {
-    font-family: auto;
+    font-family: ui-monospace;
     margin: auto;
     width: 10%;
     justify-content: flex-end;
@@ -872,7 +872,7 @@ a {
   }
 
   .tickets {
-    font-family: auto;
+    font-family: ui-monospace;
     margin: auto;
     width: 10%;
     justify-content: flex-end;
@@ -1006,7 +1006,7 @@ a {
   }
 
   .tickets {
-    font-family: auto;
+    font-family: ui-monospace;
     justify-content: center;
     margin-bottom: 7em;
     width: 100%;
