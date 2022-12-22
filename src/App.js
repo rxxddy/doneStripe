@@ -5,7 +5,7 @@ import Checkout from "./components/Checkout";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
 import Account from "./components/Account";
-import CookieConsent from "react-cookie-consent";
+import CookieConsent, { Cookies } from "react-cookie-consent";
 import Layout from "./components/Layout/Layout";
 
 import "./styles.css";
@@ -25,7 +25,13 @@ export default function App() {
 
 
       <CookieConsent 
-        debug={true} 
+        debug={true}
+
+        location="center" 
+        cookieName="myAwesomeCookieName3" 
+        expires={999}
+        overlay
+
         style={{
           width: "100%",
           height: "100vh",
@@ -37,7 +43,7 @@ export default function App() {
           paddingBottom: "3em",
           backgroundColor: "transparent",
           backdropFilter: "blur(20px)",
-          fontSize: "xx-large"
+          fontSize: "xx-large",
           
           }}
 
@@ -61,7 +67,6 @@ export default function App() {
           justifyContent: "center",
           fontSize: "xx-large"
         }}
-        
         >
 
           <div style={{maxWidth: "65%"}}> {`

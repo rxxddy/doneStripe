@@ -248,6 +248,28 @@ a {
   align-content: flex-end;
   flex-direction: row;
 }
+
+.container3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: grid;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  /* justify-content: center; */
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: center;
+  flex-direction: row;
+}
 .container2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -341,7 +363,7 @@ a {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 40%;
+  /* width: 40%; */
   margin-right: 0px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

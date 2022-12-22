@@ -350,11 +350,11 @@ const Checkout = () => {
             
             <section className="section">
                 <div className="block section23">
-                    <div className="container borderio">
+                    <div className="container3 borderio">
 
                         <div className="section22">
-                            <h1 className="naming">HIMEROS <br/> CLUB</h1>
-                            <img src={bghex} className="bghex" />
+                            <h1 className="naming">HIMEROS CLUB</h1>
+                            {/* <img src={bghex} className="bghex" /> */}
                         </div>
                         <div className=" section22 section23-img1 ">
                  

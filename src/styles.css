@@ -368,7 +368,18 @@ code {
     margin-left: 2vh;
     font-size: xx-large;
     color: wheat;
+    font-weight: 700;
+}
+.insideLefttext2 {
+  margin-top: 1vh;
+    justify-content: flex-start;
+    display: flex;
+    margin-left: 2vh;
+    font-size: small;
+    color: rgb(184, 176, 160);
     font-weight: 900;
+  text-align: left;
+  max-width: 70%;
 }
 
 
