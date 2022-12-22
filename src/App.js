@@ -10,6 +10,7 @@ import Layout from "./components/Layout/Layout";
 
 import "./styles.css";
 
+
 export default function App() {
   return (
     <div className="App">
@@ -25,12 +26,9 @@ export default function App() {
 
 
       <CookieConsent 
-        debug={true}
+        cookieName="AcceptAll"
+        expires={30}
 
-        location="center" 
-        cookieName="myAwesomeCookieName3" 
-        expires={999}
-        overlay
 
         style={{
           width: "100%",
@@ -44,7 +42,7 @@ export default function App() {
           backgroundColor: "transparent",
           backdropFilter: "blur(20px)",
           fontSize: "xx-large",
-          
+          fontWeight: "900"
           }}
 
         buttonStyle={{
@@ -54,7 +52,7 @@ export default function App() {
             textShadow: "2px 2px black",
             display: "flex",
             justifyContent: "center",
-            fontSize: "initial",
+            fontSize: "large",
             width: "40%",
             marginLeft: "30%",
             padding: "0",         
@@ -67,7 +65,7 @@ export default function App() {
           justifyContent: "center",
           fontSize: "xx-large"
         }}
-        >
+        expires={150}>
 
           <div style={{maxWidth: "65%"}}> {`
             By visiting this site you agree to our terms and conditions,
