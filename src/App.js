@@ -5,6 +5,7 @@ import Checkout from "./components/Checkout";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
 import Account from "./components/Account";
+import Profile from "./components/Profile";
 import CookieConsent, { Cookies } from "react-cookie-consent";
 import Layout from "./components/Layout/Layout";
 
@@ -20,6 +21,7 @@ export default function App() {
               <Route path="success" element={<Success />} />
               <Route path="cancel" element={<Cancel />} />
               <Route path="account" element={<Account />} />
+              <Route path="Profile" element={<Profile />} />
               {/* <Route path="auth" element={<AuthForm />} /> */}
             </Routes>
           </Router>

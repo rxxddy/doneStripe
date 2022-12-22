@@ -328,7 +328,8 @@ const Checkout = () => {
                                 <ul>
                                   {isLoggedIn && (
                                     <li>
-                                      <button onClick={logout} className="right">Logout</button>
+                                      {/* <button onClick={logout} className="right">Logout</button> */}
+                                      <Link to="/profile" className="right">Profile</Link>
                                     </li>
                                   )}
                                   {!isLoggedIn && (

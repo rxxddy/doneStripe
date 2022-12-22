@@ -339,12 +339,13 @@ code {
 .accountRight {
   width: 50%;
   float: right;
-  background-color: wheat;
+  /* background-color: wheat; */
   min-height: 100%;
   border-radius: 0 4em 4em 0;
   color: #252525;
   align-items: center;
   display: flex;
+  visibility: visible;
 }
 
 .insideLeft {
@@ -468,6 +469,13 @@ code {
   color: #252525; */
 }
 
+.hideonmobile {
+  visibility: visible;
+}
+.hiddenOnDesctop {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 991px) {
   .image-135 {
     padding: 3em;
@@ -484,9 +492,22 @@ code {
     font-size: xx-large;
   }
 
+  .insideLeft {
+    height: 45vh;
+  }
+
 }
 
 @media screen and (max-width: 767px) {
+
+  .insideLefttext {
+    text-align: left;
+  }
+
+  .insideLefttext2 {
+    font-size: smaller;
+  }
+
   .image-135 {
     padding: 3em;
     border-radius: 5em;
@@ -500,6 +521,47 @@ code {
 }
 
 @media screen and (max-width: 479px) {
+
+  .actions .toggle {
+    font-size: initial;
+    color: wheat;
+    margin-top: 0;
+  }
+
+  .auth {
+    color: wheat;
+    margin: auto;
+  }
+  
+  .auth h1 {
+    color: wheat;
+    margin-bottom: 1vh;
+  }
+
+  .control label {
+    color: wheat;
+    font-size: small;
+  }
+
+  .accountRight {
+    visibility: hidden;
+    display: none;
+  }
+
+  .accountLeft {
+    width: 100%;
+    min-height: 70vh;
+  }
+
+  .hideonmobile {
+    visibility: hidden;
+    display: none;
+  }
+
+  .hiddenOnDesctop {
+    visibility: visible;
+  }
+
   .checkoutLeft {
     padding-bottom: 41em;
     justify-content: center;
@@ -523,5 +585,11 @@ code {
   }
   .buttonwidth {
     width: 70%;
+  }
+}
+
+@media screen and (max-height: 810px) {
+  h1 {
+    font-size: 5.5em;
   }
 }
