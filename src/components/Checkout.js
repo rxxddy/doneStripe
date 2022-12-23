@@ -18,7 +18,7 @@ let stripePromise;
 import { Title } from "./style";
 import { Carousel } from 'react-carousel-minimal';
 import { AuthContext } from "../context";
-
+import banner from "../images/banner.png";
 import banner1 from "../images/1.png";
 import banner2 from "../images/2.png";
 import banner3 from "../images/3.png";
@@ -351,7 +351,7 @@ const Checkout = () => {
             
             <section className="section">
                 <div className="block section23">
-                    <div className="container3 borderio">
+                    <div className="container3">
 
                         <div className="section22">
                             <h1 className="naming">HIMEROS CLUB</h1>
@@ -359,11 +359,6 @@ const Checkout = () => {
                         </div>
                         <div className=" section22 section23-img1 ">
                  
-                            <div className="title22">
-                                <p>
-                                  DISCO Capitolo 1: <span className="title23">La villa dello zio Nathaniel</span>
-                                </p>
-                            </div>
                             <button className="buyticket1  bgbutton buttonwidth" onClick={handleClick}>
                               
                                 <p className="buyticket2 buybuttontop2">Acquista i biglietti </p>
@@ -415,44 +410,56 @@ const Checkout = () => {
             <img src={banner3} loading="eager" width="1" sizes="90vw" alt="true" className="image-135"></img>
             <img src={banner4} loading="eager" width="1" sizes="90vw" alt="true" className="image-135"></img>
             <img src={banner5} loading="eager" width="1" sizes="90vw" alt="true" className="image-135"></img>
-
             
             <section className="section mt">
-                <div className="block block2">
-                    <div className="block31 cardtext" ref={sectionRef}>
-                        <div className="block323">
-                            <img src={disco} loading="lazy" alt="" className="block323-image fadeIn" />
-                            <div>
-                                <div className="block3231 fadeIn">
-                                    <h2 className="block3232">Artistic</h2>
-                                    <div className="block3233">P O N T E C H E L E G A
-                                        L E C R E A T O R C O N I L O R O FA N
-                                        M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
-                                        U N ’ E SP E R IE N Z A E SC L U SIV A
-                                        E D IN IM IT A B IL E .
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="block323">
-                            <div>
-                                <div className="block3231 fadeIn">
-                                    <h2 className="block3232">Mission</h2>
-                                    <div className="block3233">P O N T E C H E L E G A
-                                        L E C R E A T O R C O N I L O R O FA N
-                                        M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
-                                        U N ’ E SP E R IE N Z A E SC L U SIV A
-                                        E D IN IM IT A B IL E .
-                                    </div>
-                                </div>
-                            </div>
-                            <img src={fashion} loading="lazy" alt="" className="block323-image fadeIn" />
-                        </div>
-                    </div>
+              <div className="block block2">
+                <div className="text11">
+                  <div className="text12">
+                    <h5>VISION</h5>
+                    <br></br>
 
+                    CREARE UN AMBIENTE
+                    DOVE IL LEGAME TRA CREATOR E FAN
+                    POSSA INTENSIFICARSI.
+                  </div>
+                  
+                  <div className="text12">
+                    <h5>MISSION</h5>
+                    <br></br>
+
+                    REALIZZARE EVENTI
+                    UNICI ED ESCLUSIVI CAPACI DI DONARE
+                    UN’ ESPERIENZA IRRIPETIBILE 
+                    AGLI UTENTI FIDELIZZATI.
+                  </div>
                 </div>
+              </div>
             </section>
+            
+            <img src={banner} loading="eager" width="514" sizes="90vw" alt="true" className="image-136"></img>
 
+            <section className="section mt">
+              <div className="block block2">
+                <div className="text21">
+                  <div className="text22">
+                    <h5 style={{letterSpacing: "40px"}}>EVENTO PRIVATO: </h5>
+                    <br></br>
+
+                    EVENTI IN LOCATION DI ALTISSIMO LIVELLO<br/> DOVE LA PARTECIPAZIONE È CONCESSA<br/> AI SOLI TESSERATI DEL CLUB.<br/>
+                    <br></br>
+                    I PRESUPPOSTI:<br/>
+                    <br></br>
+                      -	ESCLUSIVITÀ <br/>
+                      - AFFIDABILITÀ<br/>
+                      -	SEGRETEZZA <br/>
+                      - QUALITÀ<br/>
+                      <br></br>
+                    L’EVENTO OFFRIRÀ INTRATTENIMENTI VARI,<br/>
+                    DJ SET , S P ETTACOL I , BUFFET E CONSUMAZIONI DA BAR.
+                  </div>
+                </div>
+              </div>
+            </section>
             <section className="section mt">
                 <div className="block">
                     <div className="container container34">
@@ -472,69 +479,24 @@ const Checkout = () => {
                 </div>
             </section>
 
-            <section className="section" ref={sectionRef2}>
-                <div className="block">
-                    <div className="block4">
-                        <div className="container block41">
-                        
-                            <div className="section22 block412 fadeIn2">
-                                <h5>il prossimo evento inizierà in:</h5>
-                                
-                                
-                            </div>
-                            <div className="section22 block413 fadeIn2">
-                                <a className="x-141 x-142" style={{fontFamily:"fantasy"}}>
-                                    <h5 id="day">{days < 10 ? "0" + days : days}</h5>
-                                    <p className="x-213">days</p>
-                                </a>
-                            </div>
-                            <div className="section22 block413 fadeIn2">
-                                <a className="x-141" style={{fontFamily:"fantasy"}}>
-                                    <h5 id="hour">{hours < 10 ? "0" + hours : hours}</h5>
-                                    <p className="x-213">hours</p>
-                                </a>
-                            </div>
-                            <div className="section22 block413 fadeIn2">
-                                <a className="x-141" style={{fontFamily:"fantasy"}}>
-                                    <h5 id="minute">{minutes < 10 ? "0" + minutes : minutes}</h5>
-                                    <p className="x-213">minutes</p>
-                                </a>
-                            </div>
-                            <div className="section22 block413 fadeIn2">
-                                <a className="x-141" style={{fontFamily:"fantasy"}}>
-                                    <h5 id="second">{seconds < 10 ? "0" + seconds : seconds}</h5>
-                                    <p className="x-213">seconds</p>
-                                </a>
-                            </div>
-                            {/* <div className="section22 block413">
-                                <a className="x-141 ">
-                                    <h5>05</h5>
-                                    <p className="x-213">Signs</p>
-                                </a>
-                            </div> */}
-                        </div>
+            <section className="section mt">
+              <div className="block block2">
+                <div className="text31">
+                  <div className="text312">
+                    <div className="text32">
+                      <h5 style={{letterSpacing: "20px"}}>VANTAGGI CLIENTE: </h5>
+                      <br></br>
+                      <br></br>
 
-                        
-                        <div className="container block42">
-
-                        <div className="block323">
-                            <div>
-                                <div className="block3231 fadeIn2">
-                                    <h2 className="block3232">perché abbiamo bisogno di un pass?</h2>
-                                    <div className="block3233">P O N T E C H E L E G A
-L E C R E A T O R C O N I L O R O FA N
-M A N T E N E N D O SE R IE T à E F O R N E N D O a l L E PA R T I
-U N ’ E SP E R IE N Z A E SC L U SIV A
-E D IN IM IT A B IL E .</div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            
-                        </div>
+                      -POSSIBILITÀ DI ADERIRE AGLI EVENTI<br/> ESCLUSIVI <br/>
+                      <br></br>
+                      - PIATAFOR.MA DI CONTENUTI ESCLUSIVI DECENTRALIZZATA DA ONLYFANS<br/>
+                      <br></br>
+                      -	(N) CONTENUTI ESCLUSIVI DELLE RAGAZZE COME BENVENUTO NEL CLUB<br/>
                     </div>
+                  </div>
                 </div>
+              </div>
             </section>
 
             <div ref={ref} className="checkout mt">

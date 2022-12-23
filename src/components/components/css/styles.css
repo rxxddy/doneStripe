@@ -5,7 +5,7 @@ html {
 }
 
 .mt {
-  margin-top: 15em;
+  margin-top: 1em;
 }
 
 a {
@@ -211,7 +211,10 @@ a {
   border-style: solid;
   border-width: 0px 0px 1px;
   border-color: #000 #000 #bf2d06;
-  background-color: #121212;
+  background-image: url("../../../images/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   z-index: 200;
   border-radius: 0 0 2em 2em;
 }
@@ -510,6 +513,10 @@ a {
   position: relative;
   overflow: hidden;
   width: 100%;
+  background-image: url("../../../images/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .main-container2 {
   position: relative;

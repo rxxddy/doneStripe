@@ -476,6 +476,96 @@ code {
   visibility: hidden;
 }
 
+.text11 {
+  height: 100%;
+  background-image: url("./images/logoOpac.png");
+  background-position: center;
+  background-size: 51em;
+  padding: 9em;
+  background-repeat: no-repeat;
+  margin: auto;
+  max-width: 80%;
+}
+
+.text12 {
+  font-weight: bold;
+  margin-top: 3vh;
+  color: wheat;
+  font-size: x-large;
+  letter-spacing: 9px;
+}
+.text21 {
+  height: 100%;
+  background-image: url("./images/columns.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  max-width: 1460px;
+  background-size: 100%;
+  padding: 19em 8em 19em 8em;
+}
+
+.text22 {
+  font-weight: bold;
+  margin-top: 3vh;
+  color: wheat;
+  font-size: x-large;
+  letter-spacing: 9px;
+}
+.text31 {
+  border-bottom: 2px solid #bf2d06;
+  height: 100%;
+  background-image: url("./images/leaf.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  max-width: 1460px;
+  background-size: 100%;
+  padding: 19em 8em 19em 8em;
+}
+.text312 {
+
+  height: 100%;
+  background-image: url("./images/logoOpac.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  max-width: 1460px;
+  background-size: 60%;
+  padding: 3em
+}
+
+.text32 {
+  font-weight: bold;
+  margin-top: 3vh;
+  color: wheat;
+  font-size: x-large;
+  letter-spacing: 9px;
+}
+
+.image-136 {
+  position: static;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  display: block;
+  width: 100%;
+  height: 60%;
+  border-radius: 2em;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 50%;
+  width: 100%;
+  max-width: 1460px;
+    display: initial;
+    height: 50%;
+    max-height: 500px;
+    margin-top: 4em;
+    border-bottom: 2px solid #bf2d06;
+    padding-top: 1.5em;
+}
+
 @media screen and (max-width: 991px) {
   .image-135 {
     padding: 3em;
