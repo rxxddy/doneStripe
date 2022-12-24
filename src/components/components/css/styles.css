@@ -938,6 +938,11 @@ a {
 }
 
 @media screen and (max-width: 479px) {
+
+  .main-container3 {
+    display: contents;
+  }
+
   h1 {
       padding-bottom: 0.33em;
       font-size: 7.5em;

@@ -408,7 +408,7 @@ code {
 }
 
 .control input {
-  font: inherit;
+
   background-color: wheat;
   color: #252525;
   border-radius: 0.9em;
@@ -665,11 +665,13 @@ code {
   .auth {
     color: wheat;
     margin: auto;
+    margin-top: 30%;
   }
   
   .auth h1 {
     color: wheat;
     margin-bottom: 1vh;
+
   }
 
   .control label {
@@ -678,13 +680,14 @@ code {
   }
 
   .accountRight {
-    visibility: hidden;
-    display: none;
+    display: table;
+    position: fixed;
+    width: 90%;
   }
 
   .accountLeft {
     width: 100%;
-    min-height: 70vh;
+    min-height: 100vh;
   }
 
   .hideonmobile {

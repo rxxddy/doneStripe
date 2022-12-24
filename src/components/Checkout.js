@@ -127,76 +127,76 @@ const Checkout = () => {
   }, []);
 
 
-  const sectionRef = useRef(null);
-  // All the ref to be observed
-  const intersection = useIntersection(sectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.4
-  });
+  // const sectionRef = useRef(null);
+  // // All the ref to be observed
+  // const intersection = useIntersection(sectionRef, {
+  //   root: null,
+  //   rootMargin: "0px",
+  //   threshold: 0.4
+  // });
+
+  // // Animation for fading in
+  // const fadeIn = element1 => {
+  //   gsap.to(element1, {
+  //     duration: 1,
+  //     opacity: 1,
+  //     y: 0,
+  //     ease: "power4.out",
+  //     stagger: {
+  //       amount: 1
+  //     }
+  //   });
+  // };
+  // // Animation for fading out
+  // const fadeOut = element1 => {
+  //   gsap.to(element1, {
+  //     duration: 1,
+  //     opacity: 0,
+  //     y: -40,
+  //     ease: "power4.out"
+  //   });
+  // };
+
+  // // checking to see when the vieport is visible to the user
+  // intersection && intersection.intersectionRatio < 0.1
+  //   ? fadeOut(".fadeIn")
+  //   : fadeIn(".fadeIn");
+
+
+  // const sectionRef2 = useRef(null);
+  // // All the ref to be observed
+  // const intersection2 = useIntersection(sectionRef2, {
+  //   root: null,
+  //   rootMargin: "0px",
+  //   threshold: 0.4
+  // });
 
   // Animation for fading in
-  const fadeIn = element1 => {
-    gsap.to(element1, {
-      duration: 1,
-      opacity: 1,
-      y: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 1
-      }
-    });
-  };
-  // Animation for fading out
-  const fadeOut = element1 => {
-    gsap.to(element1, {
-      duration: 1,
-      opacity: 0,
-      y: -40,
-      ease: "power4.out"
-    });
-  };
+  // const fadeIn2 = element2 => {
+  //   gsap.to(element2, {
+  //     duration: 1,
+  //     opacity: 1,
+  //     y: 0,
+  //     ease: "power4.out",
+  //     stagger: {
+  //       amount: 0.6
+  //     }
+  //   });
+  // };
+  // // Animation for fading out
+  // const fadeOut2 = element2 => {
+  //   gsap.to(element2, {
+  //     duration: 1,
+  //     opacity: 0,
+  //     y: -80,
+  //     ease: "power4.out"
+  //   });
+  // };
 
-  // checking to see when the vieport is visible to the user
-  intersection && intersection.intersectionRatio < 0.1
-    ? fadeOut(".fadeIn")
-    : fadeIn(".fadeIn");
-
-
-  const sectionRef2 = useRef(null);
-  // All the ref to be observed
-  const intersection2 = useIntersection(sectionRef2, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.4
-  });
-
-  // Animation for fading in
-  const fadeIn2 = element2 => {
-    gsap.to(element2, {
-      duration: 1,
-      opacity: 1,
-      y: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 0.6
-      }
-    });
-  };
-  // Animation for fading out
-  const fadeOut2 = element2 => {
-    gsap.to(element2, {
-      duration: 1,
-      opacity: 0,
-      y: -80,
-      ease: "power4.out"
-    });
-  };
-
-  // checking to see when the vieport is visible to the user
-  intersection2 && intersection2.intersectionRatio < 0.1
-    ? fadeOut2(".fadeIn2")
-    : fadeIn2(".fadeIn2");
+  // // checking to see when the vieport is visible to the user
+  // intersection2 && intersection2.intersectionRatio < 0.1
+  //   ? fadeOut2(".fadeIn2")
+  //   : fadeIn2(".fadeIn2");
 
   const sectionRef3 = useRef(null);
   // All the ref to be observed
