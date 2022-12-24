@@ -244,7 +244,7 @@ const Checkout = () => {
 
   const data = [
     {
-      image: "http://localhost:3000/static/media/1.c84b2f38.png",
+      image: "http://himeros-club.pages.dev/static/media/1.c84b2f38.png",
       // caption: `<div>
       //             San Francisco
       //             <br/>
@@ -252,19 +252,19 @@ const Checkout = () => {
       //           </div>`
     },
     {
-      image: "http://localhost:3000/static/media/2.eb2ac827.png",
+      image: "http://himeros-club.pages.dev/static/media/2.eb2ac827.png",
       // caption: "Scotland"
     },
     {
-      image: "http://localhost:3000/static/media/3.a7d43f08.png",
+      image: "http://himeros-club.pages.dev/static/media/3.a7d43f08.png",
       // caption: "Darjeeling"
     },
     {
-      image: "http://localhost:3000/static/media/4.0f84b99b.png",
+      image: "http://himeros-club.pages.dev/static/media/4.0f84b99b.png",
       // caption: "San Francisco"
     },
     {
-      image: "http://localhost:3000/static/media/5.dc0b828b.png",
+      image: "http://himeros-club.pages.dev/static/media/5.dc0b828b.png",
       // caption: "Scotland"
     },
     // {
