@@ -435,8 +435,9 @@ const Checkout = () => {
                 </div>
               </div>
             </section>
-            
-            <img src={banner} loading="eager" width="514" sizes="90vw" alt="true" className="image-136"></img>
+            <div  style={{padding: "0 20px"}}>
+              <img src={banner} loading="eager" width="514" sizes="90vw" alt="true" className="image-136"></img>
+            </div>
 
             <section className="section mt">
               <div className="block block2">

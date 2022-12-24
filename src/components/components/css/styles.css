@@ -344,7 +344,7 @@ a {
 }
 
 .naming {
-  justify-content: left;
+  justify-content: center;
   display: flex;
   font-family: ui-monospace;
     color: wheat;

@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 const AuthForm = () => {
   const { login } = useContext(AuthContext);
   const emailRef = createRef(null);
+  const Name = createRef(null);
   const passwordRef = createRef(null);
   const navigate = useNavigate();
   const [showSignUpText, setShowSignUpText] = useState(false);

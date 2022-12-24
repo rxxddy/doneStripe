@@ -485,13 +485,14 @@ code {
   background-repeat: no-repeat;
   margin: auto;
   max-width: 80%;
+  text-align: center;
 }
 
 .text12 {
   font-weight: bold;
   margin-top: 3vh;
   color: wheat;
-  font-size: x-large;
+  font-size: 2vh;
   letter-spacing: 9px;
 }
 .text21 {
@@ -509,7 +510,7 @@ code {
   font-weight: bold;
   margin-top: 3vh;
   color: wheat;
-  font-size: x-large;
+  font-size: 2vh;
   letter-spacing: 9px;
 }
 .text31 {
@@ -539,7 +540,7 @@ code {
   font-weight: bold;
   margin-top: 3vh;
   color: wheat;
-  font-size: x-large;
+  /* font-size: 2vh; */
   letter-spacing: 9px;
 }
 
@@ -558,12 +559,13 @@ code {
   height: 50%;
   width: 100%;
   max-width: 1460px;
-    display: initial;
-    height: 50%;
-    max-height: 500px;
-    margin-top: 4em;
-    border-bottom: 2px solid #bf2d06;
-    padding-top: 1.5em;
+  display: initial;
+  height: 50%;
+  max-height: 500px;
+  margin-top: 4em;
+  border-bottom: 2px solid #bf2d06;
+  padding-top: 1.5em;
+
 }
 
 @media screen and (max-width: 991px) {
@@ -611,6 +613,35 @@ code {
 }
 
 @media screen and (max-width: 479px) {
+
+  .text11 {
+    padding: 0;
+  }
+  .text12 {
+    display: table;
+    font-size: 1.7vh;
+  }
+  .text21 {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .text22 {
+    display: table;
+    /* font-size: 0.8em; */
+    scale: 0.55;
+    text-align: justify;
+    /* font-size: large; */
+  }
+  .text31 {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .text32 {
+    display: table;
+    font-size: 1.1vh;
+  }
 
   .actions .toggle {
     font-size: initial;
