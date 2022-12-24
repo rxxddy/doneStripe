@@ -533,14 +533,14 @@ code {
   margin: auto;
   max-width: 1460px;
   background-size: 60%;
-  padding: 3em
+  padding: 10em 6em;
 }
 
 .text32 {
   font-weight: bold;
   margin-top: 3vh;
   color: wheat;
-  /* font-size: 2vh; */
+  font-size: 2vh;
   letter-spacing: 9px;
 }
 
