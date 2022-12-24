@@ -352,14 +352,8 @@ code {
   border-radius: 2em;
   width: 70%;
   height: 57vh;
-  /* background-color: rgb(99, 99, 99); */
   border: solid 1px #252525;
   backdrop-filter: blur(8px);  
-  /* filter: blur(9999999px);
-  display: block;
-  margin: auto;
-  backdrop-filter: blur(9999999px);
-  box-shadow: 10px 10px 20px rgb(0 0 0 / 70%); */
 }
 
 .insideLefttext {
@@ -613,6 +607,25 @@ code {
 }
 
 @media screen and (max-width: 479px) {
+
+  .insideLeft {
+    border-radius: none;
+    width: auto;
+    height: auto;
+    border: none;
+    backdrop-filter: none;  
+  }
+
+  .auth {
+    max-width: 50rem;
+    background-color: transparent;
+    padding: 4rem;
+    text-align: center;
+    border-radius: 2em;
+    width: 100%;
+    border: solid 1px #252525;
+    backdrop-filter: blur(8px);
+  }
 
   .text11 {
     padding: 0;

@@ -92,7 +92,7 @@ const AuthForm = () => {
                     ) : (
                       <button className="sendinfo">{showSignUpText ? "Sign Up" : "Log in"}</button>
                     )}
-                    <div> or </div>
+                    <div style={{fontSize: "2vh", marginTop: "1vh"}}> or </div>
                     <button
                       type="button"
                       className="toggle"
