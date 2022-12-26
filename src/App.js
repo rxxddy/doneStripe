@@ -6,10 +6,14 @@ import Success from "./components/Success";
 import Cancel from "./components/Cancel";
 import Account from "./components/Account";
 import Profile from "./components/Profile";
+import Home from "./components/Home";
+import Singin from "./components/login";
+import Singup from "./components/Singup";
 import CookieConsent, { Cookies } from "react-cookie-consent";
 import Layout from "./components/Layout/Layout";
 
 import "./styles.css";
+import Login from "./components/login";
 
 
 export default function App() {
@@ -22,6 +26,9 @@ export default function App() {
               <Route path="cancel" element={<Cancel />} />
               <Route path="account" element={<Account />} />
               <Route path="Profile" element={<Profile />} />
+              <Route path="/singup" element={<Singup />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/singin" element={<Login />} />
               {/* <Route path="auth" element={<AuthForm />} /> */}
             </Routes>
           </Router>
