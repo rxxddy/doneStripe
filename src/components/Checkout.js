@@ -326,6 +326,9 @@ const Checkout = () => {
                             <div className="right1">
                               <nav className="right">
                                 <ul>
+                                <Link to="/singup" className="right">Sign Up</Link>
+                                </ul>
+                                <ul>
                                   {isLoggedIn && (
                                     <li>
                                       {/* <button onClick={logout} className="right">Logout</button> */}

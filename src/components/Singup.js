@@ -10,7 +10,7 @@ import {Link} from "react-router-dom";
 
 class Singup extends Component {
 
-  // const navigate = useNavigate();
+
 
   state = { address: '', lastName: '', displayName: '', phone: '', email: '', password: '' };
 
@@ -36,7 +36,6 @@ class Singup extends Component {
 
     this.setState({ address: '', lastName: '', displayName: '', phone: '', email: '', password: '' });
 
-    // navigate("/");
   };
 
   render() {
@@ -58,52 +57,64 @@ class Singup extends Component {
           <section className="auth">
             <h1>Sign Up</h1>
             <form className="signup-login" onSubmit={this.handleSubmit}>
-          <h2>Signup</h2>
-
-          <input
-            type="name"
-            name="displayName"
-            value={displayName}
-            onChange={this.handleChange}
-            placeholder="Name"
-          />
-          <input
-            type="lastName"
-            name="lastName"
-            value={lastName}
-            onChange={this.handleChange}
-            placeholder="lastName"
-          />
-          <input
-            type="phone"
-            name="phone"
-            value={phone}
-            onChange={this.handleChange}
-            placeholder="phone"
-          />
-          <input
-            type="address"
-            name="address"
-            value={address}
-            onChange={this.handleChange}
-            placeholder="address"
-          />
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-            placeholder="Email"
-          />
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-            placeholder="Password"
-          />
-          <button>Signup</button>
-        </form>
+              <div className="control">
+                <input
+                  type="name"
+                  name="displayName"
+                  value={displayName}
+                  onChange={this.handleChange}
+                  placeholder="Name"
+                />
+              </div>
+              <div className="control">
+                <input
+                  type="lastName"
+                  name="lastName"
+                  value={lastName}
+                  onChange={this.handleChange}
+                  placeholder="lastName"
+                />
+              </div>
+              <div className="control">
+                <input
+                  type="phone"
+                  name="phone"
+                  value={phone}
+                  onChange={this.handleChange}
+                  placeholder="phone"
+                />
+              </div>
+              <div className="control">
+                <input
+                  type="address"
+                  name="address"
+                  value={address}
+                  onChange={this.handleChange}
+                  placeholder="address"
+                />
+              </div>
+              <div className="control">
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                  placeholder="Email"
+                />
+              </div>
+              <div className="control">
+                <input
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleChange}
+                  placeholder="Password"
+                />
+              </div>
+              <div className="actions">
+                <button className="sendinfo">Signup</button>
+              </div>
+            </form>
           </section>
         </div>
       </div>
