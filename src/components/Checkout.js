@@ -317,17 +317,26 @@ const Checkout = () => {
                                     <div className="left">
                                         <p className="navlink1 ">INFO</p>
                                     </div>
+
+
+                                    <Link to="/singup" className="left">
+                                        <p className="navlink1 navlink2 ">singup</p>
+                                    </Link>
+                                    <Link to="/login" className="left">
+                                        <p className="navlink1 navlink2 ">login</p>
+                                    </Link>
                                 </div>
                            
                                 <a className="nav_logo    center">
                                     <img src={logo} className="nav_logo-img"/>
                                 </a>
+                               
 
                             <div className="right1">
                               <nav className="right">
-                                <ul>
+                                {/* <ul>
                                 <Link to="/singup" className="right">Sign Up</Link>
-                                </ul>
+                                </ul> */}
                                 <ul>
                                   {isLoggedIn && (
                                     <li>

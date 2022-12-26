@@ -28,7 +28,7 @@ export default function App() {
               <Route path="Profile" element={<Profile />} />
               <Route path="/singup" element={<Singup />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/singin" element={<Login />} />
+              <Route path="/login" element={<Login />} />
               {/* <Route path="auth" element={<AuthForm />} /> */}
             </Routes>
           </Router>
