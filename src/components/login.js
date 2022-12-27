@@ -46,7 +46,7 @@ class Login extends Component {
           </div>
           <div className="accountRight">
             <section className="auth">
-              <h1>Sign Up</h1>
+              <h1>Log In</h1>
               <form className="signup-login" onSubmit={this.handleSubmit}>
                 <div className="control">
                   <input
@@ -67,7 +67,7 @@ class Login extends Component {
                   />
                 </div>
                 <div className="actions">
-                  <button className="sendinfo">Signup</button>
+                  <button className="sendinfo">Log In</button>
                 </div>
               </form>
             </section>
