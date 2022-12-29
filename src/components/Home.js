@@ -27,9 +27,13 @@
 //   return (
 //     <div className="home">
 //       <button onClick={handleLogOut}>Log Out</button>
-//       <h2>{auth.currentUser.firstName}</h2>
-//       <h2>{auth.currentUser.lastName}</h2>
+//       <h2>{auth.currentUser.displayName}</h2>
+//       <h2>{auth.currentUser.displaySecondName}</h2>
+//       <h2>{auth.currentUser.displayPhone}</h2>
+//       <h2>{auth.currentUser.displayIndex}</h2>
 //       <h2>{auth.currentUser.email}</h2>
+//       <h2>{auth.currentUser.photoURL}</h2>
+//       <h2>{auth.currentUser.uid}</h2>
 //     </div>
 //   );
 // };

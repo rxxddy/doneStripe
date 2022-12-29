@@ -24,6 +24,10 @@ import banner2 from "../images/2.png";
 import banner3 from "../images/3.png";
 import banner4 from "../images/4.png";
 import banner5 from "../images/5.png";
+import { auth, createUserDocument } from '../firebase';
+import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
 
 const getStripe = () => {
   if (!stripePromise) {
@@ -242,6 +246,12 @@ const Checkout = () => {
 
   const { isLoggedIn , logout } = useContext(AuthContext);
 
+  // const handleLogOut = () => {
+  //   signOut(auth)
+  //     .then(r => console.log(r)) // undefined
+  //     .catch();
+  // };
+
   const data = [
     {
       image: "http://himeros-club.pages.dev/static/media/1.c84b2f38.png",
@@ -293,6 +303,16 @@ const Checkout = () => {
     fontSize: '20px',
     fontWeight: 'bold',
   }
+  const navigate = useNavigate();
+
+  let handleLogOut = () => {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      console.log("Sign-out successful")
+      navigate("/singup");
+    });
+  };
+  
 
   return (
     
@@ -325,6 +345,9 @@ const Checkout = () => {
                                     <Link to="/login" className="left">
                                         <p className="navlink1 navlink2 ">login</p>
                                     </Link>
+                                    <button onClick={handleLogOut} className="left">
+                                        <p className="navlink1 navlink2 ">Log Out</p>
+                                    </button>
                                 </div>
                            
                                 <a className="nav_logo    center">
@@ -340,7 +363,7 @@ const Checkout = () => {
                                 <ul>
                                   {isLoggedIn && (
                                     <li>
-                                      {/* <button onClick={logout} className="right">Logout</button> */}
+                                      <button onClick={handleLogOut} className="right">Logout</button>
                                       <Link to="/profile" className="right">Profile</Link>
                                     </li>
                                   )}

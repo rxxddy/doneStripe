@@ -3,11 +3,11 @@ import { auth, createUserDocument } from '../firebase';
 import {Link} from "react-router-dom";
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
-
+import { Navigate } from "react-router-dom";
 
 
 class Login extends Component {
-  state = { email: '', password: '' };
+  state = { user: false, email: '', password: '' };
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,12 +21,13 @@ class Login extends Component {
     if (email && password) {
       try {
         await auth.signInWithEmailAndPassword(email, password);
+        console.log(email, password);
       } catch (error) {
         console.log('error logging in', error);
       }
     }
 
-    // this.setState({ email: '', password: '' });
+    this.setState({ user: true });
   };
 
   render() {
@@ -70,6 +71,9 @@ class Login extends Component {
                   <button className="sendinfo">Log In</button>
                 </div>
               </form>
+              {this.state.user && (
+                <Navigate to="/" replace={true} />
+              )}
             </section>
           </div>
         </div>
