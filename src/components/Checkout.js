@@ -578,16 +578,26 @@ const Checkout = () => {
                             <button className="quantity-input__modifier quantity-input__modifier--right fadeIn3" onClick={incNum}>＋</button>
 
                         </div>
-                        <button
+                        {(function() {
+                          if (auth.currentUser != null) {
+                            return <button
                             className="checkout-button fadeIn3"
                             onClick={redirectToCheckout}
                             disabled={isLoading}
                             style={{justifyContent: "center"}}
                         >
                             <div className="text-block fadeIn3">
-                            <div className="text">{isLoading ? "Carico..." : "paga"}</div>
+                              <div className="text">{isLoading ? "Carico..." : "paga"}</div>
                             </div>
                         </button>
+                          } else {
+                            return <li>
+                              <Link to="/login" className="right" style={{    margin: "auto", padding: "0.5em",
+    textAlign: "center", border: "solid 2px wheat", borderRadius: "1em" }}>Please login first 🢂</Link>
+                            </li>
+                          }
+                        })()}
+                        
                         </div>
                     </div>
                 </div>
