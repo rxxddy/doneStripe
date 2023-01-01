@@ -24,7 +24,7 @@ import banner2 from "../images/2.png";
 import banner3 from "../images/3.png";
 import banner4 from "../images/4.png";
 import banner5 from "../images/5.png";
-import { auth, createUserDocument } from '../firebase';
+// import { auth, createUserDocument } from '../firebase';
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -238,7 +238,7 @@ const Checkout = () => {
     : fadeIn3(".fadeIn3");
 
     const { scrollYProgress } = useScroll();
-    const x = useTransform(scrollYProgress, [0, 1], [-200, 200]);
+    const x = useTransform(scrollYProgress, [0, 1], [-600, 600]);
 
     // const { scrollYProgress } = useScroll();
     // const x = useTransform(scrollYProgress, [0, 1], [-300, 300]);
@@ -304,13 +304,17 @@ const Checkout = () => {
     fontWeight: 'bold',
   }
   const navigate = useNavigate();
-
+  const auth = getAuth();
   let handleLogOut = () => {
     signOut(auth).then(() => {
       // Sign-out successful.
-      console.log("Sign-out successful")
+      console.log("Sign-out successful");
+      
       navigate("/singup");
     });
+  };
+  let handleLogOut2 = () => {
+    console.log(auth.currentUser);
   };
   
 
@@ -339,7 +343,7 @@ const Checkout = () => {
                                     </div>
 
 
-                                    <Link to="/singup" className="left">
+                                    {/* <Link to="/singup" className="left">
                                         <p className="navlink1 navlink2 ">singup</p>
                                     </Link>
                                     <Link to="/login" className="left">
@@ -347,6 +351,9 @@ const Checkout = () => {
                                     </Link>
                                     <button onClick={handleLogOut} className="left">
                                         <p className="navlink1 navlink2 ">Log Out</p>
+                                    </button> */}
+                                    <button onClick={handleLogOut2} className="left">
+                                        <p className="navlink1 navlink2 ">check</p>
                                     </button>
                                 </div>
                            
@@ -360,7 +367,9 @@ const Checkout = () => {
                                 {/* <ul>
                                 <Link to="/singup" className="right">Sign Up</Link>
                                 </ul> */}
-                                <ul>
+
+
+                                {/* <ul>
                                   {isLoggedIn && (
                                     <li>
                                       <button onClick={handleLogOut} className="right">Logout</button>
@@ -372,7 +381,23 @@ const Checkout = () => {
                                       <Link to="/account" className="right">Login</Link>
                                     </li>
                                   )}
+                                </ul> */}
+                                <ul>
+                                {(function() {
+                                  if (auth.currentUser != null) {
+                                    return <li>
+                                      <button onClick={handleLogOut} className="right">Logout</button>
+                                      <Link to="/profile" className="right">Profile</Link>
+                                    </li>
+                                  } else {
+                                    return <li>
+                                      <Link to="/login" className="right">Login</Link>
+                                    </li>
+                                  }
+                                })()}
                                 </ul>
+
+                                
                               </nav>
 
                         

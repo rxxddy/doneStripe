@@ -28,12 +28,13 @@ class Singup extends Component {
         );
         console.log(user);
         await createUserDocument(user, { displayName, lastName, address, phone });
+        console.log(auth);
+        this.setState({  user: true });
         
       } catch (error) {
         console.log('error', error);
       }
       
-      this.setState({  user: true });
       
       
  
@@ -52,6 +53,10 @@ class Singup extends Component {
               <div className="insideLefttext">Invite Only Right now</div>
               <div className="insideLefttext2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text   ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
               <Link to="/" className="insideLefttext">Home➤</Link>
+              <Link to="/login" className="insideLefttext" style={{fontSize: "medium"}}>
+                Already have an account? <br />
+                Login
+              </Link>
             </div>
           </div>
         </div>
@@ -116,6 +121,7 @@ class Singup extends Component {
               <div className="actions">
                 <button className="sendinfo">Signup</button>
               </div>
+
             </form>
             {this.state.user && (
               <Navigate to="/" replace={true} />

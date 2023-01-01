@@ -5,9 +5,30 @@ import "../styles.css";
 import "../../src/components/components/css/styles.css";
 import logo from '../images/logo.png';
 import {Link} from "react-router-dom";
+import React from "react";
+import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 
 const Profile = () => {
   const { isLoggedIn , logout } = useContext(AuthContext);
+
+  const auth = getAuth();
+  const navigate = useNavigate();
+  
+  let handleLogOut = () => {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      navigate("/singin");
+    });
+  };
+  
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log(auth.currentUser);
+    } else {
+      // User is signed out
+      navigate("/singin");
+    }
+  });
 
   return (      
     <div className="main-container">
@@ -37,11 +58,11 @@ const Profile = () => {
     
                     <div className="right1">
                       <nav className="right">
-                        <ul>
+                        {/* <ul>
                           {isLoggedIn && (
                             <li>
-                              <button onClick={logout} className="right">Logout</button>
-                              {/* <Link to="/profile" className="right">Profile</Link> */}
+                              <button onClick={handleLogOut} className="right">Logout</button>
+                              <Link to="/profile" className="right">Profile</Link>
                             </li>
                           )}
                           {!isLoggedIn && (
@@ -49,7 +70,8 @@ const Profile = () => {
                               <Link to="/account" className="right">Login</Link>
                             </li>
                           )}
-                        </ul>
+                        </ul> */}
+                        <button onClick={handleLogOut} className="right">Logout</button>
                       </nav>
     
                 
@@ -59,6 +81,10 @@ const Profile = () => {
                 </div>
             </div>
         </div>
+      </section>
+      <section className="section">
+        {/* <h2>{auth.currentUser.email}</h2> */}
+        <h2>"auth.currentUser.email"</h2>
       </section>
       </div>
     </div>
