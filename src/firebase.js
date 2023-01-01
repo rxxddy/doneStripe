@@ -47,3 +47,6 @@ export const createUserDocument = async (user, additionalData) => {
     }
   }
 };
+
+const firebaseApp=firebase.initializeApp(firebaseConfig);
+export const db=firebase.firestore();

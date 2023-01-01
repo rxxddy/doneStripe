@@ -238,7 +238,7 @@ const Checkout = () => {
     : fadeIn3(".fadeIn3");
 
     const { scrollYProgress } = useScroll();
-    const x = useTransform(scrollYProgress, [0, 1], [-600, 600]);
+    const x = useTransform(scrollYProgress, [0, 1], [-400, 400]);
 
     // const { scrollYProgress } = useScroll();
     // const x = useTransform(scrollYProgress, [0, 1], [-300, 300]);

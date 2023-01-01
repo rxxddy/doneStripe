@@ -1,4 +1,4 @@
-import { useState, createRef, useContext } from "react";
+import { useState, createRef, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context";
 import "../styles.css";
@@ -7,19 +7,14 @@ import logo from '../images/logo.png';
 import {Link} from "react-router-dom";
 import React from "react";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import { auth, db } from '../firebase';
 
 const Profile = () => {
   const { isLoggedIn , logout } = useContext(AuthContext);
 
   const auth = getAuth();
   const navigate = useNavigate();
-  
-  let handleLogOut = () => {
-    signOut(auth).then(() => {
-      // Sign-out successful.
-      navigate("/singin");
-    });
-  };
+
   
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -29,6 +24,27 @@ const Profile = () => {
       navigate("/singin");
     }
   });
+
+  let handleLogOut = () => {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      console.log("Sign-out successful");
+      
+      navigate("/singup");
+    });
+  };
+
+
+  useEffect(() => {
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const snapshot = await getDoc(doc(db, "users", user.uid))
+        console.log(snapshot.data())
+      }
+    });
+  }, []);
+
+  const email = user.email;
 
   return (      
     <div className="main-container">
@@ -58,20 +74,20 @@ const Profile = () => {
     
                     <div className="right1">
                       <nav className="right">
-                        {/* <ul>
-                          {isLoggedIn && (
-                            <li>
-                              <button onClick={handleLogOut} className="right">Logout</button>
-                              <Link to="/profile" className="right">Profile</Link>
-                            </li>
-                          )}
-                          {!isLoggedIn && (
-                            <li>
-                              <Link to="/account" className="right">Login</Link>
-                            </li>
-                          )}
-                        </ul> */}
-                        <button onClick={handleLogOut} className="right">Logout</button>
+                        <ul>
+                          {(function() {
+                            if (auth.currentUser != null) {
+                              return <li>
+                                <button onClick={handleLogOut} className="right">Logout</button>
+                                <Link to="/profile" className="right">Profile</Link>
+                              </li>
+                            } else {
+                              return <li>
+                                <Link to="/login" className="right">Login</Link>
+                              </li>
+                            }
+                          })()}
+                        </ul>
                       </nav>
     
                 
@@ -83,12 +99,17 @@ const Profile = () => {
         </div>
       </section>
       <section className="section">
-        {/* <h2>{auth.currentUser.email}</h2> */}
-        <h2>"auth.currentUser.email"</h2>
+        <div className="section22" style={{marginTop: "20vh"}}>
+          Hello world
+        </div>
+        <div>
+                          {email}
+        </div>
       </section>
       </div>
     </div>
   );
 };
+
 
 export default Profile;
