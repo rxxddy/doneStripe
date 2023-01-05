@@ -562,6 +562,78 @@ code {
 
 }
 
+.profile1 {
+  width: 100%;
+  top: 10%;
+  max-width: 1460px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: flex-start;
+  /* margin-top: -13%; */
+
+}
+
+.profile0 {
+  background-color: rgb(132 13 13);
+  max-width: 1460px;
+  width: 100%;
+  height: 35vh;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+  border-radius: 4em;
+  
+}
+.profile01 {
+  background-image: url("./images/leaf.png");
+  max-width: 1460px;
+  width: 100%;
+  height: 35vh;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+  border-radius: 4em;
+  
+}
+
+.profile2 {
+
+  top: 10%;
+  max-width: 1460px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 70%;
+}
+
+.profileImage2 {
+  scale: 0.6;
+  transform: translateY(37%);
+
+  border-radius: 100%;
+  border: 0.5em solid black;
+}
+
+.profileImage1 {
+  margin-left: 5vh;
+  width: 30%;
+}
+
+.profile2 {
+  width: 70%;
+}
+
+.profileText1 {
+  font-size: xx-large;
+  font-family: fantasy;
+  color: wheat;
+}
+
 @media screen and (max-width: 991px) {
   .image-135 {
     padding: 3em;

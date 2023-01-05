@@ -1,30 +1,16 @@
 import React from 'react';
 import { useState, useRef, useEffect, useContext } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import ticket from '../images/ticket.png';
 import logo from '../images/logo.png';
-import greek1 from '../images/greek1.png';
-import gsap from "gsap";
-import bghex from "../images/bghex.png";
-import arrow from "../images/arrow.png";
-import fashion from "../images/fashion.png";
-import disco from "../images/disco.png";
+import userLogo from '../images/user.png';
 import {Link} from "react-router-dom";
-import { useScroll, useTransform } from "framer-motion/dist/framer-motion";
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
-import { useIntersection } from 'react-use';
+import '../firebase';
+// import { getAuth } from "firebase/auth";
+
 let stripePromise;
-import { Title } from "./style";
-import { Carousel } from 'react-carousel-minimal';
-import { AuthContext } from "../context";
-import banner from "../images/banner.png";
-import banner1 from "../images/1.png";
-import banner2 from "../images/2.png";
-import banner3 from "../images/3.png";
-import banner4 from "../images/4.png";
-import banner5 from "../images/5.png";
-// import { auth, createUserDocument } from '../firebase';
+
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -83,6 +69,23 @@ const Checkout = () => {
   let check = () => {
     console.log(auth.currentUser.email);
   };
+
+
+
+  const user = auth.currentUser;
+
+  let checkInfo = () => {
+    if (user !== null) {
+      user.providerData.forEach((profile) => {
+        // console.log("Sign-in provider: " + profile.providerId);
+        console.log("  Provider-specific UID: " + profile.uid);
+        console.log("  Name: " + profile.displayName);
+        console.log("  Second Name: " + profile.lastName);
+        console.log("  Email: " + profile.email);
+        // console.log("  Photo URL: " + profile.photoURL);
+      });
+    }
+  }
   
 
 
@@ -144,31 +147,50 @@ const Checkout = () => {
                     </div>
                 </div>
             </section>
-            <section className="section">
-              <div className="section22" style={{marginTop: "20vh"}}>
+            <section className="section" style={{height: "100vh"}}>
+              {/* <div className="section22" style={{marginTop: "20vh"}}>
                 Hello world
               </div>
               <div>
 
-                <button onClick={check}>Check</button>
-              </div>
-              <div>
-                {/* <div>{userEmail}</div> */}
-                {(function() 
-                  
-                {
+                <button onClick={checkInfo}>Check</button>
+              </div> */}
+              <div style={{marginTop: "10%"}}>
+                <div className="profile0">
+                  <div className="profile01">
+                
+                    <div className="profileImage1">
+                      <img src={userLogo} className="profileImage2"/>
+                    </div>
+                    <div className="profile2">
+                      {(function() 
+                        
+                        {
+                            
+                          if (auth.currentUser != null) {
+                            let userEmail = (auth.currentUser.email);
+                            return <div>
+                              <div className="profileText1">{userEmail}</div>
+                            </div>
+                          } else {
+                            return <div>
+                              <Link to="/login" className="profileText1">Please login first</Link>
+                            </div>
+                          }
+                        })()}
+                    </div>
+                  </div>
+                </div>
+                <div className="profile2">
+                  {/* <div className="profileImage">
+                    <img src={userLogo}/>
                     
-                   if (auth.currentUser != null) {
-                    let userEmail = (auth.currentUser.email);
-                     return <div>
-                      <div>{userEmail}</div>
-                     </div>
-                   } else {
-                     return <div>
-                      <Link to="/login">Please login first</Link>
-                     </div>
-                   }
-                 })()}
+                  </div> */}
+                </div>
+                  <div className="profile1">
+                    {/* <div>{userEmail}</div> */}
+                    
+                  </div>
               </div>
             </section>
             
