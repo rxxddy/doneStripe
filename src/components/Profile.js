@@ -161,7 +161,6 @@ const Checkout = () => {
                 
                     <div className="profileImage1">
                       <img src={userLogo} className="profileImage2"/>
-                    </div>
                     <div className="profile2">
                       {(function() 
                         
@@ -178,6 +177,7 @@ const Checkout = () => {
                             </div>
                           }
                         })()}
+                    </div>
                     </div>
                   </div>
                 </div>
