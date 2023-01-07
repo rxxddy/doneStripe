@@ -310,7 +310,7 @@ const Checkout = () => {
       // Sign-out successful.
       console.log("Sign-out successful");
       
-      navigate("/singup");
+      navigate("/Signup");
     });
   };
   let handleLogOut2 = () => {
@@ -323,8 +323,36 @@ const Checkout = () => {
       <div className="main-container">
 
 
-
-            <section className="section">
+            <nav style={{zIndex: "99999999999999", position: "absolute"}}>
+              <div className="navbar">
+                <div className="container nav-container">
+                    <input className="checkbox" type="checkbox" name="" id="" />
+                    <div className="hamburger-lines">
+                      <span className="line line1"></span>
+                      <span className="line line2"></span>
+                      <span className="line line3"></span>
+                    </div>  
+                  <div className="menu-items">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/">info</Link></li>
+                      {(function() {
+                        if (auth.currentUser != null) {
+                          return <li style={{display: "grid"}}>
+                            <button onClick={handleLogOut} style={{border: "none"}}>Logout</button>
+                            <Link to="/profile" >Profile</Link>
+                          </li>
+                        } else {
+                          return <li style={{display: "grid"}}>
+                            <Link to="/login" c>Login</Link>
+                            <Link to="/Signup" c>Sing Up</Link>
+                          </li>
+                        }
+                      })()}
+                  </div>
+                </div>
+              </div>
+            </nav>
+            <section className="sectionD">
                     
                 <div className="block mains">
                     <div className="container2 mains center">
@@ -343,8 +371,8 @@ const Checkout = () => {
                                     </div>
 
 
-                                    {/* <Link to="/singup" className="left">
-                                        <p className="navlink1 navlink2 ">singup</p>
+                                    {/* <Link to="/Signup" className="left">
+                                        <p className="navlink1 navlink2 ">Signup</p>
                                     </Link>
                                     <Link to="/login" className="left">
                                         <p className="navlink1 navlink2 ">login</p>
@@ -365,7 +393,7 @@ const Checkout = () => {
                             <div className="right1">
                               <nav className="right">
                                 {/* <ul>
-                                <Link to="/singup" className="right">Sign Up</Link>
+                                <Link to="/Signup" className="right">Sign Up</Link>
                                 </ul> */}
 
 

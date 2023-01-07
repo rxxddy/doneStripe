@@ -6,7 +6,7 @@ import "../../src/components/components/css/styles.css";
 import { Navigate } from "react-router-dom";
 import {Link} from "react-router-dom";
 
-class Singup extends Component {
+class Signup extends Component {
   // state = { user: null, error: null };
 
   state = { user: false, address: '', lastName: '', displayName: '', phone: '', email: '', password: '' };
@@ -46,6 +46,36 @@ class Singup extends Component {
       return (
         <div className="main-container2">
       <div className="main-container3">
+      <nav style={{zIndex: "99999999999999", position: "absolute", justifyContent: "center", display: "flex",
+    alignItems: "flex-start", top: "0", position: "absolute"}}>
+              <div className="navbar">
+                <div className="container nav-container">
+                    <input className="checkbox" type="checkbox" name="" id="" />
+                    <div className="hamburger-lines">
+                      <span className="line line1"></span>
+                      <span className="line line2"></span>
+                      <span className="line line3"></span>
+                    </div>  
+                  <div className="menu-items">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/">info</Link></li>
+                      {(function() {
+                        if (auth.currentUser != null) {
+                          return <li style={{display: "grid"}}>
+                            <Link to="/profile" >Profile</Link>
+                          </li>
+                        } else {
+                          return <li style={{display: "grid"}}>
+                            <Link to="/login" c>Login</Link>
+                            <Link to="/Signup" c>Sing Up</Link>
+                          </li>
+                        }
+                      })()}
+                  </div>
+                </div>
+              </div>
+            </nav>
+            
         <div className="accountLeft">
           <div className="insideLeft">
 
@@ -134,4 +164,4 @@ class Singup extends Component {
   };
 }
 
-export default Singup;
+export default Signup;

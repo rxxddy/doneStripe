@@ -8,7 +8,7 @@ import Account from "./components/Account";
 import Profile from "./components/Profile";
 import Home from "./components/Home";
 import Singin from "./components/login";
-import Singup from "./components/Singup";
+import Signup from "./components/Signup";
 import CookieConsent, { Cookies } from "react-cookie-consent";
 import Layout from "./components/Layout/Layout";
 
@@ -26,7 +26,7 @@ export default function App() {
               <Route path="cancel" element={<Cancel />} />
               <Route path="account" element={<Account />} />
               <Route path="Profile" element={<Profile />} />
-              <Route path="/singup" element={<Singup />} />
+              <Route path="/Signup" element={<Signup />} />
               <Route path="/home" element={<Home />} />
               <Route path="/login" element={<Login />} />
               {/* <Route path="auth" element={<AuthForm />} /> */}
@@ -74,7 +74,7 @@ export default function App() {
           justifyContent: "center",
           fontSize: "xx-large"
         }}
-        expires={150}>
+        >
 
           <div style={{maxWidth: "65%"}}> {`
             By visiting this site you agree to our terms and conditions,

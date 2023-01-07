@@ -59,7 +59,7 @@ const Checkout = () => {
       // Sign-out successful.
       console.log("Sign-out successful");
       
-      navigate("/singup");
+      navigate("/Signup");
     });
   };
   let handleLogOut2 = () => {
@@ -93,9 +93,37 @@ const Checkout = () => {
     
       <div className="main-container">
 
+            <nav style={{zIndex: "99999999999999", position: "absolute"}}>
+              <div className="navbar">
+                <div className="container nav-container">
+                    <input className="checkbox" type="checkbox" name="" id="" />
+                    <div className="hamburger-lines">
+                      <span className="line line1"></span>
+                      <span className="line line2"></span>
+                      <span className="line line3"></span>
+                    </div>  
+                  <div className="menu-items">
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/">info</Link></li>
+                      {(function() {
+                        if (auth.currentUser != null) {
+                          return <li style={{display: "grid"}}>
+                            <button onClick={handleLogOut} style={{border: "none"}}>Logout</button>
+                            <Link to="/profile" >Profile</Link>
+                          </li>
+                        } else {
+                          return <li style={{display: "grid"}}>
+                            <Link to="/login" c>Login</Link>
+                            <Link to="/Signup" c>Sing Up</Link>
+                          </li>
+                        }
+                      })()}
+                  </div>
+                </div>
+              </div>
+            </nav>
 
-
-            <section className="section">
+            <section className="sectionD">
                     
                 <div className="block mains">
                     <div className="container2 mains center">
@@ -155,7 +183,7 @@ const Checkout = () => {
 
                 <button onClick={checkInfo}>Check</button>
               </div> */}
-              <div style={{marginTop: "10%"}}>
+              <div className="profile00" style={{marginTop: "10%"}}>
                 <div className="profile0">
                   <div className="profile01">
                 
