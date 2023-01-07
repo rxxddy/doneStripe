@@ -380,9 +380,9 @@ const Checkout = () => {
                                     <button onClick={handleLogOut} className="left">
                                         <p className="navlink1 navlink2 ">Log Out</p>
                                     </button> */}
-                                    <button onClick={handleLogOut2} className="left">
+                                    {/* <button onClick={handleLogOut2} className="left">
                                         <p className="navlink1 navlink2 ">check</p>
-                                    </button>
+                                    </button> */}
                                 </div>
                            
                                 <a className="nav_logo    center">
@@ -529,8 +529,8 @@ const Checkout = () => {
 
             <section className="section mt">
               <div className="block block2">
-                <div className="text21">
-                  <div className="text22">
+                <div className="text31">
+                  <div className="text32">
                     <h5 style={{letterSpacing: "40px"}}>EVENTO PRIVATO: </h5>
                     <br></br>
 
