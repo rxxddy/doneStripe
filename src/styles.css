@@ -986,3 +986,12 @@ body {
     font-size: 5.5em;
   }
 }
+
+@media screen and (max-width: 479px) {
+  .text22 {
+    scale: 0.45;
+  }
+  .text32 {
+    font-size: 0.8vh;
+  }
+}
