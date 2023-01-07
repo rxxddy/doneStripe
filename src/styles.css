@@ -603,9 +603,6 @@ code {
   max-width: 1460px;
   display: flex;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
   align-items: flex-end;
 
 }
@@ -622,7 +619,7 @@ code {
 }
 
 .profileText1 {
-  max-width: 40vh;
+  max-width: 30vh;
   font-size: xx-large;
   font-family: fantasy;
   color: wheat;
@@ -828,7 +825,7 @@ body {
   }
 
   .profileImage2 {
-    max-width: 40vh;
+    max-width: 30vh;
     transform: translateY(0);
   }
 
@@ -862,7 +859,9 @@ body {
 }
 
 @media screen and (max-width: 479px) {
-
+  .profileText1 {
+    font-size: 3vh;
+  }
   .insideLeft {
     border-radius: none;
     width: auto;
