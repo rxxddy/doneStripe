@@ -821,6 +821,8 @@ body {
     justify-content: center;
   }
   .profile0 {
+    display: flex;
+    justify-content: center;
     /* margin-left: 5em;
     margin-right: 5em; */
   }
