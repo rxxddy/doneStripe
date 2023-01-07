@@ -325,7 +325,7 @@ const Checkout = () => {
 
             <nav style={{zIndex: "99999999999999", position: "absolute"}}>
               <div className="navbar">
-                <div className="container nav-container">
+                <div className="containerH nav-container">
                     <input className="checkbox" type="checkbox" name="" id="" />
                     <div className="hamburger-lines">
                       <span className="line line1"></span>
@@ -529,8 +529,8 @@ const Checkout = () => {
 
             <section className="section mt">
               <div className="block block2">
-                <div className="text31">
-                  <div className="text32">
+                <div className="text21">
+                  <div className="text22">
                     <h5 style={{letterSpacing: "40px"}}>EVENTO PRIVATO: </h5>
                     <br></br>
 

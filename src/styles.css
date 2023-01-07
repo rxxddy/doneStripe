@@ -636,7 +636,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.container {
+.containerH {
   position: fixed;
   max-width: 1050px;
   /* width: 90%; */
@@ -881,6 +881,7 @@ body {
   }
 
   .text11 {
+    display: inline-table;
     padding: 0;
   }
   .text12 {
