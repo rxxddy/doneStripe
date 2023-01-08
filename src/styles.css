@@ -792,6 +792,7 @@ body {
 
 .cookie {
   width: 65%;
+  margin-top: 5vh;
 }
 
 @media screen and (max-width: 991px) {
