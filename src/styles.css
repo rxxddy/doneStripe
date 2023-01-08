@@ -825,7 +825,7 @@ body {
   }
 
   .profileImage2 {
-    max-width: 30vh;
+    max-width: 100%;
     transform: translateY(0);
   }
 
