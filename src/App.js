@@ -37,7 +37,7 @@ export default function App() {
       <CookieConsent 
         cookieName="AcceptAll"
         expires={30}
-
+        className="cookie"
 
         style={{
           width: "100%",
@@ -61,7 +61,7 @@ export default function App() {
             textShadow: "2px 2px black",
             display: "flex",
             justifyContent: "center",
-            fontSize: "large",
+            fontSize: "2vh",
             width: "40vh",
             margin: "auto",
             padding: "0",         
@@ -72,11 +72,11 @@ export default function App() {
           maxWidth: "100%",
           display: "flex",
           justifyContent: "center",
-          fontSize: "xx-large"
+          fontSize: "4vh"
         }}
         >
 
-          <div style={{maxWidth: "65%"}}> {`
+          <div className="cookie"> {`
             By visiting this site you agree to our terms and conditions,
             privacy policy, confirm that you are 18 years old
             and accept the use of cookies

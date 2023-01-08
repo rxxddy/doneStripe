@@ -790,6 +790,9 @@ body {
   display: none;
 }
 
+.cookie {
+  width: 65%;
+}
 
 @media screen and (max-width: 991px) {
   .navbar{
@@ -859,6 +862,9 @@ body {
 }
 
 @media screen and (max-width: 479px) {
+  .cookie {
+    width: 90%;
+  }
   .profileText1 {
     font-size: 3vh;
   }
