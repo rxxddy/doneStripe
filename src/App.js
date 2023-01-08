@@ -42,7 +42,7 @@ export default function App() {
         style={{
           width: "100%",
           height: "100vh",
-          borderRadius: "2em 2em 0 0", 
+          borderRadius: "3vh", 
           zIndex: "999999",
           alignItems: "center",
           display: "grid",
@@ -50,7 +50,7 @@ export default function App() {
           paddingBottom: "3em",
           backgroundColor: "transparent",
           backdropFilter: "blur(20px)",
-          fontSize: "xx-large",
+          fontSize: "3vh",
           fontWeight: "900"
           }}
 
@@ -62,10 +62,10 @@ export default function App() {
             display: "flex",
             justifyContent: "center",
             fontSize: "large",
-            width: "40%",
-            marginLeft: "30%",
+            width: "40vh",
+            margin: "auto",
             padding: "0",         
-            padding: "3em",
+            padding: "3vh",
             borderRadius: "10em"         
         }}
         contentStyle={{
