@@ -93,7 +93,7 @@ const Checkout = () => {
     
       <div className="main-container">
 
-            <nav style={{zIndex: "99999999999999", position: "absolute"}}>
+            <nav style={{zIndex: "999999", position: "absolute"}}>
               <div className="navbar">
                 <div className="container nav-container">
                     <input className="checkbox" type="checkbox" name="" id="" />

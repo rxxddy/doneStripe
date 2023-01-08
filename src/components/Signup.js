@@ -46,7 +46,7 @@ class Signup extends Component {
       return (
         <div className="main-container2">
       <div className="main-container3">
-      <nav style={{zIndex: "99999999999999", position: "absolute", justifyContent: "center", display: "flex",
+      <nav style={{zIndex: "999999", position: "absolute", justifyContent: "center", display: "flex",
     alignItems: "flex-start", top: "0", position: "absolute"}}>
               <div className="navbar">
                 <div className="container nav-container">

@@ -428,6 +428,7 @@ a {
 }
 
 .section22.navbar {
+  max-width: 1460px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
