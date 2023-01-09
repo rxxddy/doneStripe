@@ -794,8 +794,7 @@ body {
   width: 65%;
   margin-top: 5vh;
 }
-
-.resetpass {
+.resetpassio {
   text-transform: lowercase;
   margin-top: 2vh;
   font-size: 2vh;
@@ -871,14 +870,12 @@ body {
 }
 
 @media screen and (max-width: 479px) {
-
-  .resetpass {
-    margin-top: 2vh;
-    color: wheat;
-  }
-
   .cookie {
     width: 90%;
+  }
+  .resetpassio {
+    margin-top: 2vh;
+    color: wheat;
   }
   .profileText1 {
     font-size: 3vh;
