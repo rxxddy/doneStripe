@@ -120,7 +120,7 @@ class Login extends Component {
               {this.state.user && (
                 <Navigate to="/" replace={true} />
               )}
-              <Link to="/resetpass"><div className="resetpass">Forgot password?➤</div></Link>
+              <Link to="/resetpass"><div className="resetpassio">Forgot password?➤</div></Link>
             </section>
           </div>
         </div>
