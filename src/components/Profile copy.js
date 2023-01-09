@@ -40,7 +40,7 @@ const Profile = () => {
       // Sign-out successful.
       console.log("Sign-out successful");
       
-      navigate("/singup");
+      navigate("/Signup");
     });
   };
 

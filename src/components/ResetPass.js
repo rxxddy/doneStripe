@@ -1,48 +1,38 @@
 import React, { Component } from 'react';
-import { auth, createUserDocument } from '../firebase';
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import "../styles.css";
 import "../../src/components/components/css/styles.css";
-import { Navigate } from "react-router-dom";
-import { useState, useRef, useEffect, useContext } from "react";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-const getStripe = () => {
-  const [errorMessage, setErrorMessage] = useState('');
-}
+// import { Navigate } from "react-router-dom";
+// import { useState } from "react";
+// import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+// import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+// import { sendPasswordResetEmail } from "firebase/auth"
+import { auth } from "../firebase";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-class Login extends Component {
-  state = { user: false, email: '', password: '' };
-  
-  handleChange = (e) => {
-    const { name, value } = e.target;
-    
-    this.setState({ [name]: value });
-  };
-  
-  handleSubmit = async (e) => {
+export default function ResetPass() {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+
+  function onChange(e) {
+    setEmail(e.target.value);
+  }
+
+  async function onSubmit(e) {
     e.preventDefault();
-    const { email, password } = this.state;
-    if (email && password) {
-      try {
-        await auth.signInWithEmailAndPassword(email, password);
-        console.log(email, password);
-        console.log(createUserDocument);
-        this.setState({ user: true });
-      } catch (error) {
-        console.log('error logging in', error);
-        setErrorMessage('Example error message!');
-      }
+    try {
+      const auth = getAuth();
+      await sendPasswordResetEmail(auth, email);
+      navigate('/login');
+      console.log("Email was sent");
+    } catch (error) {
+      console.log("Could not send reset password");
     }
-  };
-  handleSubmit2 = async (e) => {
-    e.preventDefault();
-    const auth = getAuth();
-    console.log(auth.currentUser);
-  };
-
-  render() {
-    const { email, password } = this.state;
-    return (
+  }
+  return (
         <div className="main-container2">
         <div className="main-container3">
         <nav style={{zIndex: "999999", position: "absolute", justifyContent: "center", display: "flex",
@@ -90,43 +80,35 @@ class Login extends Component {
           </div>
           <div className="accountRight">
             <section className="auth">
-              <h1>Log In</h1>
-              <form className="signup-login" onSubmit={this.handleSubmit}>
+              <h1>Reset Password</h1>
+
+              {/* <input className="resetEmailInput" placeholder="Email" type="email" required /> <br/>
+              <input className="resetPwInput" placeholder="Password" type="password"  /> <br/>
+              <button className="resetBtn" type="button" onClick={triggerResetEmail}>Ripristina password</button> */}
+
+              <form className="signup-login" onSubmit={onSubmit}>
                 <div className="control">
-                  <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={this.handleChange}
-                    placeholder="Email"
-                  />
+                  <input placeholder="Email" value={email} onChange={onChange} type="email" required />
                 </div>
-                <div className="control">
-                  <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={this.handleChange}
-                    placeholder="Password"
-                  />
-                </div>
+                {/* <div className="control">
+                  <input placeholder="Password" type="password" required />
+                </div> */}
                 <div className="actions">
-                  <button className="sendinfo">Log In</button>
+                  <button className="sendinfo">Reset Password</button>
                 </div>
               </form>
+
                 {/* {errorMessage && (
                   <p className="error"> {errorMessage} </p>
                 )} */}
-              {this.state.user && (
+              {/* {this.state.user && (
                 <Navigate to="/" replace={true} />
-              )}
-              <Link to="/resetpass"><div className="resetpass">Forgot password?➤</div></Link>
+              )} */}
             </section>
           </div>
         </div>
       </div>
     );
   }
-}
 
-export default Login;
+

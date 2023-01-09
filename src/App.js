@@ -6,9 +6,11 @@ import Success from "./components/Success";
 import Cancel from "./components/Cancel";
 import Account from "./components/Account";
 import Profile from "./components/Profile";
+import ResetPass2 from "./components/ResetPass2";
+import ResetPass from "./components/ResetPass";
 import Home from "./components/Home";
 import Singin from "./components/login";
-import Singup from "./components/Singup";
+import Signup from "./components/Signup";
 import CookieConsent, { Cookies } from "react-cookie-consent";
 import Layout from "./components/Layout/Layout";
 
@@ -26,9 +28,11 @@ export default function App() {
               <Route path="cancel" element={<Cancel />} />
               <Route path="account" element={<Account />} />
               <Route path="Profile" element={<Profile />} />
-              <Route path="/singup" element={<Singup />} />
+              <Route path="/Signup" element={<Signup />} />
               <Route path="/home" element={<Home />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/ResetPass2" element={<ResetPass2 />} />
+              <Route path="/ResetPass" element={<ResetPass />} />
               {/* <Route path="auth" element={<AuthForm />} /> */}
             </Routes>
           </Router>
@@ -37,12 +41,12 @@ export default function App() {
       <CookieConsent 
         cookieName="AcceptAll"
         expires={30}
-
+        className="cookie"
 
         style={{
           width: "100%",
           height: "100vh",
-          borderRadius: "2em 2em 0 0", 
+          borderRadius: "3vh", 
           zIndex: "999999",
           alignItems: "center",
           display: "grid",
@@ -50,7 +54,7 @@ export default function App() {
           paddingBottom: "3em",
           backgroundColor: "transparent",
           backdropFilter: "blur(20px)",
-          fontSize: "xx-large",
+          fontSize: "3vh",
           fontWeight: "900"
           }}
 
@@ -61,22 +65,22 @@ export default function App() {
             textShadow: "2px 2px black",
             display: "flex",
             justifyContent: "center",
-            fontSize: "large",
-            width: "40%",
-            marginLeft: "30%",
+            fontSize: "2vh",
+            width: "40vh",
+            margin: "auto",
             padding: "0",         
-            padding: "3em",
+            padding: "3vh",
             borderRadius: "10em"         
         }}
         contentStyle={{
           maxWidth: "100%",
           display: "flex",
           justifyContent: "center",
-          fontSize: "xx-large"
+          fontSize: "4vh"
         }}
-        expires={150}>
+        >
 
-          <div style={{maxWidth: "65%"}}> {`
+          <div className="cookie"> {`
             By visiting this site you agree to our terms and conditions,
             privacy policy, confirm that you are 18 years old
             and accept the use of cookies

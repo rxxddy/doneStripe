@@ -191,6 +191,10 @@ a {
 
 }
 
+.sectionD {
+
+}
+
 .block.section23 {
   padding-top: 15.42em;
 }
@@ -207,7 +211,7 @@ a {
   right: 0%;
   bottom: auto;
   z-index: 99;
-  padding-top: 1.61em;
+  padding-top: 7.609999999999999em;
   border-style: solid;
   border-width: 0px 0px 1px;
   border-color: #000 #000 #bf2d06;
@@ -424,6 +428,7 @@ a {
 }
 
 .section22.navbar {
+  max-width: 1460px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -728,6 +733,9 @@ a {
 }
 
 @media screen and (max-width: 991px) {
+  .sectionD {
+    display: none;
+  }
 
   .main-container3 {
     width: 80%;
@@ -867,6 +875,9 @@ a {
 }
 
 @media screen and (max-width: 767px) {
+  .sectionD {
+    display: none;
+  }
 
   .main-container3 {
     width: 90%;
@@ -939,6 +950,10 @@ a {
 }
 
 @media screen and (max-width: 479px) {
+
+  .sectionD {
+    display: none;
+  }
 
   .main-container3 {
     display: contents;
@@ -1075,6 +1090,10 @@ a {
 }
 
 @media screen and (max-width: 289px) {
+  .sectionD {
+    display: none;
+  }
+
   .navlink1 {
     font-size: 10px;
   }
