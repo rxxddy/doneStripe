@@ -131,6 +131,8 @@ const Checkout = () => {
   }, []);
 
 
+
+
   // const sectionRef = useRef(null);
   // // All the ref to be observed
   // const intersection = useIntersection(sectionRef, {
@@ -316,7 +318,12 @@ const Checkout = () => {
   let handleLogOut2 = () => {
     console.log(auth.currentUser);
   };
-  
+
+  if (auth.currentUser != null) {
+    let userUID = (auth.currentUser.uid);
+    // console.log(userUID)
+  };
+
 
   return (
     
@@ -435,6 +442,27 @@ const Checkout = () => {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section>
+              <div>
+              {(function() 
+                        
+                        {
+                            
+                          if (auth.currentUser != null) {
+                            let userUID = (auth.currentUser.uid);
+                            return <div>
+                              <div className="profileText1">{userUID}</div>
+                              {/* <button onClick={check}>Check</button> */}
+
+                            </div>
+                          } else {
+                            return <div>
+                              <Link to="/login" className="profileText1">Please login first</Link>
+                            </div>
+                          }
+                        })()}
+              </div>
             </section>
             
             <section className="section">

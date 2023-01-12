@@ -2,6 +2,10 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword  } from "firebase/auth";
+
 require('firebase/auth');
 
 const firebaseConfig = {
@@ -16,7 +20,7 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-export const auth = firebase.auth();
+// export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 export const createUserDocument = async (user, additionalData) => {
@@ -49,4 +53,11 @@ export const createUserDocument = async (user, additionalData) => {
 };
 
 const firebaseApp=firebase.initializeApp(firebaseConfig);
-export const db=firebase.firestore();
+// export const db=firebase.firestore();
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+export { auth };
+export default db;
