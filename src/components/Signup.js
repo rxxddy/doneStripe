@@ -5,7 +5,7 @@ import "../styles.css";
 import "../../src/components/components/css/styles.css";
 import { Navigate } from "react-router-dom";
 import {Link} from "react-router-dom";
-
+import firebase from 'firebase/compat/app';
 class Signup extends Component {
   // state = { user: null, error: null };
 
@@ -22,7 +22,7 @@ class Signup extends Component {
     const { email, password, displayName, phone, lastName, address } = this.state;
     try {
       
-      const { user } = await auth.createUserWithEmailAndPassword(
+      const { user } = await firebase.auth().createUserWithEmailAndPassword(
         email,
         password
         );

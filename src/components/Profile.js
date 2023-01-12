@@ -300,7 +300,7 @@ function Checkout() {
                             return <div>
                               <div className="profileText1">{userEmail}</div>
                               <button onClick={check}>Check</button>
-
+                              <button onClick={checkInfo}>Check FULL</button>
                             </div>
                           } else {
                             return <div>
