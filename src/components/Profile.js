@@ -28,11 +28,13 @@ import { async } from "@firebase/util";
 import { useSelector } from "react-redux";
 import { selectUser } from "./userSlice";
 
-let stripePromise;
 
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
+let stripePromise;
+
+// setTimeout(Checkout, 3000);
 
 function Checkout() {
   
@@ -87,8 +89,18 @@ function Checkout() {
     });
   };
   let handleLogOut2 = () => {
-    console.log(auth.currentUser);
+    // console.log(auth.currentUser);
+    console.log(subscription);
   };
+
+
+  // if (auth.currentUser != null) {
+  //     const userUID = (auth.currentUser.uid);
+  //   {/* console.log(auth.currentUser); */}
+  //   return userUID
+    
+  // }
+
 
   let check = () => {
     console.log(products);
@@ -113,45 +125,68 @@ function Checkout() {
       });
     }
   }
+  let checkInfo2 = () => {
+    if (user !== null) {
+      user.providerData.forEach((profile) => {
+        // console.log("Sign-in provider: " + profile.providerId);
+        console.log("  user: " + auth.currentUser);
+        // console.log("  Photo URL: " + profile.photoURL);
+      });
+    }
+  }
 
-  // if (auth.currentUser != null) {
-  //   let userUID = (auth.currentUser.uid);
-  // };
 
-  // console.log(userUID)
+  let checkSubscription = () => {
+    if (subscription !== null) {
 
-  useEffect(() => {
+        console.log("  Subscription: ACTIVATED" );
+      } else {
+        console.log("  Dummass get this pass rn💀" );
+      }
+    }
+  
 
-    const q = query(collection(db, "customers", auth.currentUser.uid, "subscriptions"));
 
-    onSnapshot(q, (querySnapshot) => {
-      querySnapshot.forEach(async (subscription) => {
-          setSubscription({
-            role: subscription.data().role,
-            current_period_start:
-              subscription.data().current_period_start.seconds,
-            current_period_end: subscription.data().current_period_end.seconds,
+    // if(auth.currentUser.uid != null){
+    //   const userUID = (auth.currentUser.uid);
+    //   console.log(userUID);
+    // }
+    
+    if (auth.currentUser != null) {
+      
+      // console.log(auth.currentUser.uid);
+    } 
+
+  // (auth.currentUser.uid) = '5xgIaT8r4rSnCcJuGWE2zgqsdK73'
+ 
+  if(auth.currentUser != null){
+    
+    let userUID = (auth.currentUser.uid)
+  
+    if(userUID.length > 0){
+      console.log(userUID.length)
+      
+      
+      useEffect(() => {
+        
+        const q = query(collection(db, "users", userUID, "subscriptions"));
+ 
+        onSnapshot(q, (querySnapshot) => {
+            querySnapshot.forEach(async (subscription) => {
+                  setSubscription({
+                      role: subscription.data().role,
+                      current_period_start:
+                subscription.data().current_period_start.seconds,
+              current_period_end: subscription.data().current_period_end.seconds,
+            });
           });
         });
-      });
-    }, [auth.currentUser.uid]); // must include   << auth.currentUser.uid >>
 
-
-  // useEffect(() => {
-
-  //   if(auth.currentUser.uid){ const q = query(collection(db, "customers", auth.currentUser.uid, "subscriptions"));
-
-  //   onSnapshot(q, (querySnapshot) => {
-  //       querySnapshot.forEach(async (subscription) => {
-  //         setSubscription({
-  //           role: subscription.data().role,
-  //           current_period_start:
-  //             subscription.data().current_period_start.seconds,
-  //           current_period_end: subscription.data().current_period_end.seconds,
-  //       });
-  //     });
-  //   });
-  // }}, [auth.currentUser.uid]);
+      }, [userUID])
+      
+    }
+  }
+       
 
           
   useEffect(() => {
@@ -184,6 +219,7 @@ function Checkout() {
       collection(db, "users", auth.currentUser.uid, "checkout_sessions"),
       {
         price: priceId,
+        allow_promotion_codes: true,
         success_url: window.location.origin,
         cancel_url: window.location.origin,
       }
@@ -316,10 +352,13 @@ function Checkout() {
                             
                           if (auth.currentUser != null) {
                             let userEmail = (auth.currentUser.email);
+                            {/* console.log(auth.currentUser); */}
                             return <div>
                               <div className="profileText1">{userEmail}</div>
+                              {/* <div className="profileText1">{userSubscription}</div> */}
                               <button onClick={check}>Check</button>
                               <button onClick={checkInfo}>Check FULL</button>
+                              <button onClick={checkSubscription}>Check user</button>
                             </div>
                           } else {
                             return <div>
@@ -331,20 +370,41 @@ function Checkout() {
                     </div>
                   </div>
                 </div>
-                <div className="profile2">
+                <div style={{marginTop: "20em"}}>
                  
 
 
 
-                    <div className="plansScreen">
-                      {subscription && (
-                        <p>
-                          Renewal date:{" "}
-                          {new Date(
-                            subscription?.current_period_end * 1000
-                          ).toLocaleDateString()}
-                        </p>
-                      )}
+                    <div>
+                        <div  style={{display: "flex", justifyContent: "center"}}>
+                          {(function() 
+                            
+                            {
+                                
+                              if (subscription != null) {
+                              
+                                return <div>
+                                  <div className="profileText1">Subscription: ACTIVATED</div>
+
+                                  {subscription && (
+                                    <p>
+                                      Renewal date:{" "}
+                                      {new Date(
+                                        subscription?.current_period_end * 1000
+                                      ).toLocaleDateString()}
+                                    </p>
+                                  )}
+
+                                </div>
+                              } else {
+                                return <div>
+                                  <div className="profileText1">Subscription: NOT FOUND💀</div>
+                                </div>
+                              }
+                          })()}
+
+                        </div>
+                      
                       {Object.entries(products).map(([productId, productData]) => {
                         ///  TODO: add logic
                         const isCurrentPackage = productData.name
