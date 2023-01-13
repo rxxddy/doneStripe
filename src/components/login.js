@@ -9,6 +9,7 @@ import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "firebas
 const getStripe = () => {
   const [errorMessage, setErrorMessage] = useState('');
 }
+import firebase from 'firebase/compat/app';
 
 class Login extends Component {
   state = { user: false, email: '', password: '' };
@@ -24,7 +25,7 @@ class Login extends Component {
     const { email, password } = this.state;
     if (email && password) {
       try {
-        await auth.signInWithEmailAndPassword(email, password);
+        await firebase.auth().signInWithEmailAndPassword(email, password);
         console.log(email, password);
         console.log(createUserDocument);
         this.setState({ user: true });

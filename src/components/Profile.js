@@ -114,12 +114,13 @@ function Checkout() {
     }
   }
 
+  // if (auth.currentUser != null) {
+  //   let userUID = (auth.currentUser.uid);
+  // };
+
+  // console.log(userUID)
 
   useEffect(() => {
-
-    setTimeout(() => {
-      console.log("timeout2 secs");
-    }, 2000);
 
     const q = query(collection(db, "customers", auth.currentUser.uid, "subscriptions"));
 
@@ -133,7 +134,25 @@ function Checkout() {
           });
         });
       });
-    }, []); // must include   << auth.currentUser.uid >>
+    }, [auth.currentUser.uid]); // must include   << auth.currentUser.uid >>
+
+
+  // useEffect(() => {
+
+  //   if(auth.currentUser.uid){ const q = query(collection(db, "customers", auth.currentUser.uid, "subscriptions"));
+
+  //   onSnapshot(q, (querySnapshot) => {
+  //       querySnapshot.forEach(async (subscription) => {
+  //         setSubscription({
+  //           role: subscription.data().role,
+  //           current_period_start:
+  //             subscription.data().current_period_start.seconds,
+  //           current_period_end: subscription.data().current_period_end.seconds,
+  //       });
+  //     });
+  //   });
+  // }}, [auth.currentUser.uid]);
+
           
   useEffect(() => {
     const q = query(collection(db, "products"), where("active", "==", true));
@@ -162,7 +181,7 @@ function Checkout() {
 
   const loadCheckOut = async (priceId) => {
     const docRef = await addDoc(
-      collection(db, "customers", auth.currentUser.uid, "checkout_sessions"),
+      collection(db, "users", auth.currentUser.uid, "checkout_sessions"),
       {
         price: priceId,
         success_url: window.location.origin,
@@ -363,6 +382,7 @@ function Checkout() {
             </section>
             
         </div>
+
 
 
   );
