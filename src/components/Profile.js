@@ -159,19 +159,18 @@ function Checkout() {
 
   // (auth.currentUser.uid) = '5xgIaT8r4rSnCcJuGWE2zgqsdK73'
  
-  if(auth.currentUser != null){
-    
-    let userUID = (auth.currentUser.uid)
   
-    if(userUID.length > 0){
-      console.log(userUID.length)
+  
+   
       
       
       useEffect(() => {
-        
-        const q = query(collection(db, "users", userUID, "subscriptions"));
+        if(auth.currentUser != null){
+    
+         let userUID = (auth.currentUser.uid)
+         const q = query(collection(db, "users", userUID, "subscriptions"));
  
-        onSnapshot(q, (querySnapshot) => {
+         onSnapshot(q, (querySnapshot) => {
             querySnapshot.forEach(async (subscription) => {
                   setSubscription({
                       role: subscription.data().role,
@@ -181,11 +180,11 @@ function Checkout() {
             });
           });
         });
-
-      }, [userUID])
+       }
+      });
       
-    }
-  }
+    
+
        
 
           
