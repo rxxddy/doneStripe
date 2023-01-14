@@ -366,84 +366,90 @@ const Checkout = () => {
 
         console.log("  Subscription: ACTIVATED" );
       } else {
-        console.log("  Dummass get this pass rn💀" );
+        console.log("  Get this pass rn💀" );
       }
     }
-  
-
-
-  // useEffect(() => {
-
-  //   const q = query(collection(db, "users", auth.currentUser.uid, "subscriptions"));
-
-  //   onSnapshot(q, (querySnapshot) => {
-  //     querySnapshot.forEach(async (subscription) => {
-  //         setSubscription({
-  //           role: subscription.data().role,
-  //           current_period_start:
-  //             subscription.data().current_period_start.seconds,
-  //           current_period_end: subscription.data().current_period_end.seconds,
-  //         });
-  //       });
-  //     });
-  //   }, [auth.currentUser.uid]); 
-
-          
-  useEffect(() => {
-    const q = query(collection(db, "products"), where("active", "==", true));
     
-    onSnapshot(q, (querySnapshot) => {
-      const products = {};
-      
-      querySnapshot.forEach(async (productDoc) => {
-        products[productDoc.id] = productDoc.data();
-        
-        const productDocRef = doc(db, "products", productDoc.id);
-        const priceSnap = await getDocs(collection(productDocRef, "prices"));
-        
-        priceSnap.forEach((price) => {
-          products[productDoc.id].prices = {
-            priceId: price.id,
-            priceData: price.data(),
-          };
+    
+    useEffect(() => {
+      if(auth.currentUser != null){
+  
+       let userUID = (auth.currentUser.uid)
+       const q = query(collection(db, "users", userUID, "subscriptions"));
+
+       onSnapshot(q, (querySnapshot) => {
+          querySnapshot.forEach(async (subscription) => {
+                setSubscription({
+                    role: subscription.data().role,
+                    current_period_start:
+              subscription.data().current_period_start.seconds,
+            current_period_end: subscription.data().current_period_end.seconds,
+          });
         });
       });
-      setProducts(products);
+     }
     });
-  }, []);
+    
+  
 
+     
 
-
-  const loadCheckOut = async (priceId) => {
-    const docRef = await addDoc(
-      collection(db, "users", auth.currentUser.uid, "checkout_sessions"),
-      {
-        price: priceId,
-        allow_promotion_codes: true,
-        success_url: window.location.origin,
-        cancel_url: window.location.origin,
-      }
-    );
-
-    onSnapshot(docRef, async (snap) => {
-      const { error, sessionId } = snap.data();
-
-      if (error) {
-        // Show an error to a customer and inspect your
-        // Cloud functions logs in the firebase console.
-        alert(`An error occurred: ${error.message}`);
-      }
-
-      if (sessionId) {
-        // We have a session, let's redirect to Checkout
-        // Init Stripe
-        const stripe = await loadStripe(
-          "pk_test_51M0hAMK1PrYKJW73EuY6xenNHSTLuRoFN7CTDih18CE5swdGip9mrwXgaMwM7KX9tv0rXz3YX2ItlpI4kggZMsEi00ckAanGkb"
-        );
-        stripe.redirectToCheckout({ sessionId });
-      }
+        
+useEffect(() => {
+  const q = query(collection(db, "products"), where("active", "==", true));
+  
+  onSnapshot(q, (querySnapshot) => {
+    const products = {};
+    
+    querySnapshot.forEach(async (productDoc) => {
+      products[productDoc.id] = productDoc.data();
+      
+      const productDocRef = doc(db, "products", productDoc.id);
+      const priceSnap = await getDocs(collection(productDocRef, "prices"));
+      
+      priceSnap.forEach((price) => {
+        products[productDoc.id].prices = {
+          priceId: price.id,
+          priceData: price.data(),
+        };
+      });
     });
-  };
+    setProducts(products);
+  });
+}, []);
+
+
+
+const loadCheckOut = async (priceId) => {
+  const docRef = await addDoc(
+    collection(db, "users", auth.currentUser.uid, "checkout_sessions"),
+    {
+      price: priceId,
+      allow_promotion_codes: true,
+      success_url: window.location.origin,
+      cancel_url: window.location.origin,
+    }
+  );
+
+  onSnapshot(docRef, async (snap) => {
+    const { error, sessionId } = snap.data();
+
+    if (error) {
+      // Show an error to a customer and inspect your
+      // Cloud functions logs in the firebase console.
+      alert(`An error occurred: ${error.message}`);
+    }
+
+    if (sessionId) {
+      // We have a session, let's redirect to Checkout
+      // Init Stripe
+      const stripe = await loadStripe(
+        "pk_test_51M0hAMK1PrYKJW73EuY6xenNHSTLuRoFN7CTDih18CE5swdGip9mrwXgaMwM7KX9tv0rXz3YX2ItlpI4kggZMsEi00ckAanGkb"
+      );
+      stripe.redirectToCheckout({ sessionId });
+    }
+  });
+};
 
 
   return (
@@ -780,42 +786,65 @@ const Checkout = () => {
                 </div>
             </div>
             <section className="section">
-            <div className="plansScreen">
-                      {subscription && (
-                        <p>
-                          Renewal date:{" "}
-                          {new Date(
-                            subscription?.current_period_end * 1000
-                          ).toLocaleDateString()}
-                        </p>
-                      )}
-                      {Object.entries(products).map(([productId, productData]) => {
-                        ///  TODO: add logic
-                        const isCurrentPackage = productData.name
-                          ?.toLowerCase()
-                          .includes(subscription?.role);
-                        return (
-                          <div
-                            key={productId}
-                            className={`${
-                              isCurrentPackage && "plansScreen__plan--disabled"
-                            } plansScreen__plan`}
-                          >
-                            <div className="plansScreen__info">
-                              <h5>{productData.name}</h5>
-                              <h6>{productData.description}</h6>
-                            </div>
+            <div  style={{display: "flex", justifyContent: "center"}}>
+                          {(function() 
+                            
+                            {
+                                
+                              if (subscription != null) {
+                              
+                                return <div>
+                                  <div className="profileText1">Subscription: ACTIVATED</div>
 
-                            <button
-                              onClick={() =>
-                                !isCurrentPackage && loadCheckOut(productData.prices.priceId)
+                                  {subscription && (
+                                    <p>
+                                      Renewal date:{" "}
+                                      {new Date(
+                                        subscription?.current_period_end * 1000
+                                      ).toLocaleDateString()}
+                                    </p>
+                                  )}
+
+                                </div>
+                              } else {
+                                return <div>
+                                  <div className="profileText1">Subscription: NOT FOUND💀</div>
+
+                                  {Object.entries(products).map(([productId, productData]) => {
+                                    ///  TODO: add logic
+                                    const isCurrentPackage = productData.name
+                                      ?.toLowerCase()
+                                      .includes(subscription?.role);
+                                    return (
+                                      <div
+                                        key={productId}
+                                        className={`${
+                                          isCurrentPackage && "plansScreen__plan--disabled"
+                                        } plansScreen__plan`}
+                                      >
+                                        <div className="plansScreen__info">
+                                          <h5>{productData.name}</h5>
+                                          <h6>{productData.description}</h6>
+                                        </div>
+
+                                        <button
+                                          onClick={() =>
+                                            !isCurrentPackage && loadCheckOut(productData.prices.priceId)
+                                          }
+                                        >
+                                          {isCurrentPackage ? "Current Package" : "Subscribe"}
+                                        </button>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
                               }
-                            >
-                              {isCurrentPackage ? "Current Package" : "Subscribe"}
-                            </button>
-                          </div>
-                        );
-                      })}
+                          })()}
+
+                        </div>
+                    <div style={{marginBottom:"4em"}}>
+                      
+                      
                     </div>
             </section>
         </div>

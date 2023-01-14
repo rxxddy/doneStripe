@@ -136,18 +136,10 @@ function Checkout() {
   }
 
 
-  let checkSubscription = () => {
-    if (subscription !== null) {
-
-        console.log("  Subscription: ACTIVATED" );
-      } else {
-        console.log("  Dummass get this pass rn💀" );
-      }
-    }
   
-
-
-    // if(auth.currentUser.uid != null){
+  
+  
+  // if(auth.currentUser.uid != null){
     //   const userUID = (auth.currentUser.uid);
     //   console.log(userUID);
     // }
@@ -156,12 +148,20 @@ function Checkout() {
       
       // console.log(auth.currentUser.uid);
     } 
-
-  // (auth.currentUser.uid) = '5xgIaT8r4rSnCcJuGWE2zgqsdK73'
- 
+    
+    // (auth.currentUser.uid) = '5xgIaT8r4rSnCcJuGWE2zgqsdK73'
+    
+    
+    
+    
+    let checkSubscription = () => {
+      if (subscription !== null) {
   
-  
-   
+          console.log("  Subscription: ACTIVATED" );
+        } else {
+          console.log("  Dummass get this pass rn💀" );
+        }
+      }
       
       
       useEffect(() => {
@@ -404,7 +404,7 @@ function Checkout() {
 
                         </div>
                       
-                      {Object.entries(products).map(([productId, productData]) => {
+                      {/* {Object.entries(products).map(([productId, productData]) => {
                         ///  TODO: add logic
                         const isCurrentPackage = productData.name
                           ?.toLowerCase()
@@ -430,7 +430,7 @@ function Checkout() {
                             </button>
                           </div>
                         );
-                      })}
+                      })} */}
                     </div>
 
 
