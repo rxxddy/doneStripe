@@ -9,7 +9,7 @@ import firebase from 'firebase/compat/app';
 class Signup extends Component {
   // state = { user: null, error: null };
 
-  state = { user: false, address: '', lastName: '', displayName: '', phone: '', email: '', password: '' };
+  state = { user: false, address: '', lastName: '', displayName: '', phone: '', email: '', password: '', errorMessage: '' };
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +19,7 @@ class Signup extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password, displayName, phone, lastName, address } = this.state;
+    const { email, password, displayName, phone, lastName, address, errorMessage } = this.state;
     try {
       
       const { user } = await firebase.auth().createUserWithEmailAndPassword(
@@ -32,7 +32,18 @@ class Signup extends Component {
         this.setState({  user: true });
         
       } catch (error) {
-        console.log('error', error);
+        let message = error;
+          
+        console.log(error)
+        console.log(message)
+
+        if (message == 'FirebaseError: Firebase: Error (auth/wrong-password).') {
+          this.setState({ errorMessage: 'Wrong Password'  });
+        } else if (message == 'FirebaseError: Firebase: Error (auth/user-not-found).') {
+          this.setState({ errorMessage: 'User not found'  });
+        } else {
+          this.setState({ errorMessage: message  });
+        }
       }
       
       
@@ -42,7 +53,10 @@ class Signup extends Component {
     };
     
     render() {
-      const { address, lastName, displayName, phone, email, password } = this.state;
+      const { address, lastName, displayName, phone, email, password, errorMessage } = this.state;
+
+      let changeText = this.handleChange;
+
       return (
         <div className="main-container2">
       <div className="main-container3">
@@ -151,6 +165,26 @@ class Signup extends Component {
               <div className="actions">
                 <button className="sendinfo">Signup</button>
               </div>
+
+              {(function() {
+
+                if (errorMessage !== '') {
+                  console.log('errorMessage not empty')
+                  console.log(errorMessage)
+                  return <div className="control">
+                            <input
+                              type="errorMessage"
+                              name="errorMessage"
+                              value={errorMessage}
+                              onChange={changeText}
+                              placeholder=""
+                            />
+                        </div>
+                } else {
+                  console.log('errorMessage empty')
+                }
+
+              })()}
 
             </form>
             {this.state.user && (

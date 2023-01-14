@@ -97,7 +97,7 @@ code {
   width: 169px;
   cursor: pointer;
   margin: 0 auto;
-  margin-top: 3em;
+
   
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -408,6 +408,28 @@ code {
 }
 
 .control input {
+
+  background-color: wheat;
+  color: #252525;
+  border-radius: 0.9em;
+  border: 1px solid #252525;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+}
+
+.controlE {
+  margin-bottom: 0.5rem;
+}
+
+.controlE label {
+  display: block;
+  color: #252525;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.controlE input {
 
   background-color: wheat;
   color: #252525;
@@ -948,6 +970,10 @@ body {
   }
 
   .control label {
+    color: wheat;
+    font-size: small;
+  }
+  .controlE label {
     color: wheat;
     font-size: small;
   }

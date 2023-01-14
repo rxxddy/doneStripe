@@ -244,31 +244,31 @@ const Checkout = () => {
   });
 
   // Animation for fading in
-  const fadeIn3 = element3 => {
-    gsap.to(element3, {
-      duration: 1,
-      opacity: 1,
-      y: 0,
-      ease: "power4.out",
-      stagger: {
-        amount: 1
-      }
-    });
-  };
+  // const fadeIn3 = element3 => {
+  //   gsap.to(element3, {
+  //     duration: 1,
+  //     opacity: 1,
+  //     y: 0,
+  //     ease: "power4.out",
+  //     stagger: {
+  //       amount: 1
+  //     }
+  //   });
+  // };
   // Animation for fading out
-  const fadeOut3 = element3 => {
-    gsap.to(element3, {
-      duration: 1,
-      opacity: 0,
-      y: -80,
-      ease: "power4.out"
-    });
-  };
+  // const fadeOut3 = element3 => {
+  //   gsap.to(element3, {
+  //     duration: 1,
+  //     opacity: 0,
+  //     y: -80,
+  //     ease: "power4.out"
+  //   });
+  // };
 
   // checking to see when the vieport is visible to the user
-  intersection3 && intersection3.intersectionRatio < 0.3
-    ? fadeOut3(".fadeIn3")
-    : fadeIn3(".fadeIn3");
+  // intersection3 && intersection3.intersectionRatio < 0.3
+  //   ? fadeOut3(".fadeIn3")
+  //   : fadeIn3(".fadeIn3");
 
     const { scrollYProgress } = useScroll();
     const x = useTransform(scrollYProgress, [0, 1], [-400, 400]);
@@ -763,21 +763,79 @@ const loadCheckOut = async (priceId) => {
                         </div>
                         {(function() {
                           if (auth.currentUser != null) {
-                            return <button
-                            className="checkout-button "
-                            onClick={redirectToCheckout}
-                            disabled={isLoading}
-                            style={{justifyContent: "center"}}
-                        >
-                            <div className="text-block ">
-                              <div className="text">{isLoading ? "Carico..." : "paga"}</div>
-                            </div>
-                        </button>
+
+                            if (subscription != null) {
+                                
+                                return <div>
+                                  <div className="profileText1">Subscription: ACTIVATED</div>
+
+                                  {subscription && (
+                                    <p>
+                                      Renewal date:{" "}
+                                      {new Date(
+                                        subscription?.current_period_end * 1000
+                                      ).toLocaleDateString()}
+                                    </p>
+                                  )}
+
+                                </div>
+                              } else {
+                                
+                                return <div>
+                                  
+
+                                  {Object.entries(products).map(([productId, productData]) => {
+                                    {/* console.log(productData.name) */}
+                                    const isCurrentPackage = productData.name
+                                      ?.toLowerCase()
+                                      .includes(subscription?.role);
+                                    if (productData.name == 'Pass') {
+                                    return (
+                                      <div
+                                        key={productId}
+                                        className={`${
+                                          isCurrentPackage && "plansScreen__plan--disabled"
+                                        } plansScreen__plan`}
+                                      >
+                                        {/* <div className="plansScreen__info">
+                                          <h5>{productData.name}</h5>
+                                          <h6>{productData.description}</h6>
+                                        </div> */}
+
+                                        <button
+                                          className="checkout-button"
+                                          style={{padding: '1em 0 1em 0', display: 'flex', justifyContent: 'center', fontSize: '2vh', }}
+                                          onClick={() =>
+                                            !isCurrentPackage && loadCheckOut(productData.prices.priceId)
+                                          }
+                                        >
+                                          {isCurrentPackage ? "Current Package" : "Subscribe"}
+                                        </button>
+
+                                        {/* <button
+                                          className="checkout-button "
+                                          onClick={redirectToCheckout}
+                                          disabled={isLoading}
+                                          style={{justifyContent: "center"}}
+                                        >
+                                          <div className="text-block ">
+                                            <div className="text">{isLoading ? "Carico..." : "paga"}</div>
+                                          </div>
+                                        </button> */}
+                                      </div>
+                                    );
+                                    }
+
+                                  })}
+                                </div>
+                              }
+
+                            
                           } else {
-                            return <li>
+                            return <div>
                               <Link to="/login" className="right" style={{    margin: "auto", padding: "0.5em",
               textAlign: "center", border: "solid 2px wheat", borderRadius: "1em" }}>Please login first 🢂</Link>
-                            </li>
+                            </div>
                           }
                         })()}
                         
@@ -786,7 +844,7 @@ const loadCheckOut = async (priceId) => {
                 </div>
             </div>
             <section className="section">
-            <div  style={{display: "flex", justifyContent: "center"}}>
+            {/* <div  style={{display: "flex", justifyContent: "center"}}>
                           {(function() 
                             
                             {
@@ -845,7 +903,7 @@ const loadCheckOut = async (priceId) => {
                               }
                           })()}
 
-                        </div>
+                        </div> */}
                     <div style={{marginBottom:"4em"}}>
                       
                       

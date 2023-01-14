@@ -68,6 +68,8 @@ class Login extends Component {
   render() {
     const { email, password, errorMessage, setErrorMessage } = this.state;
 
+    let changeText = this.handleChange;
+
     return (
         <div className="main-container2">
         <div className="main-container3">
@@ -139,16 +141,26 @@ class Login extends Component {
                 <div className="actions">
                   <button className="sendinfo">Log In</button>
                 </div>
+                {(function() {
 
-                <div className="control">
-                  <input
-                    type="errorMessage"
-                    name="errorMessage"
-                    value={errorMessage}
-                    onChange={this.handleChange}
-                    placeholder=""
-                  />
-                </div>
+                  if (errorMessage !== undefined) {
+                    console.log('errorMessage not empty')
+                    console.log(errorMessage)
+                    return <div className="control">
+                              <input
+                                type="errorMessage"
+                                name="errorMessage"
+                                value={errorMessage}
+                                onChange={changeText}
+                                placeholder=""
+                              />
+                           </div>
+                  } else {
+                    console.log('errorMessage empty')
+                  }
+
+                })()}
+                
                 {/* <div>
                   {error !== null || undefined ? "Wrong Password": null}
                 </div> */}
