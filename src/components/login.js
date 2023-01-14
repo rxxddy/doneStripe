@@ -12,7 +12,17 @@ const getStripe = () => {
 import firebase from 'firebase/compat/app';
 
 class Login extends Component {
-  state = { user: false, email: '', password: '' };
+  state = { user: false, email: '', password: '', errorMessage: '', setErrorMessage: '' };
+
+  // static [errorMessage, setErrorMessage] = useState('');
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0,
+    };
+  }
   
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +32,7 @@ class Login extends Component {
   
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
+    const { email, password, errorMessage } = this.state;
     if (email && password) {
       try {
         await firebase.auth().signInWithEmailAndPassword(email, password);
@@ -30,8 +40,22 @@ class Login extends Component {
         console.log(createUserDocument);
         this.setState({ user: true });
       } catch (error) {
-        console.log('error logging in', error);
-        setErrorMessage('Example error message!');
+
+          let message = error;
+          
+          console.log(error)
+          console.log(message)
+
+          if (message == 'FirebaseError: Firebase: Error (auth/wrong-password).') {
+            this.setState({ errorMessage: 'Wrong Password'  });
+          } else if (message == 'FirebaseError: Firebase: Error (auth/user-not-found).') {
+            this.setState({ errorMessage: 'User not found'  });
+          } else {
+            this.setState({ errorMessage: message  });
+          }
+          
+          
+          // setErrorMessage('error logging in', error);
       }
     }
   };
@@ -42,7 +66,8 @@ class Login extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, errorMessage, setErrorMessage } = this.state;
+
     return (
         <div className="main-container2">
         <div className="main-container3">
@@ -114,10 +139,23 @@ class Login extends Component {
                 <div className="actions">
                   <button className="sendinfo">Log In</button>
                 </div>
-              </form>
+
+                <div className="control">
+                  <input
+                    type="errorMessage"
+                    name="errorMessage"
+                    value={errorMessage}
+                    onChange={this.handleChange}
+                    placeholder=""
+                  />
+                </div>
+                {/* <div>
+                  {error !== null || undefined ? "Wrong Password": null}
+                </div> */}
                 {/* {errorMessage && (
                   <p className="error"> {errorMessage} </p>
-                )} */}
+                )}  */}
+              </form>
               {this.state.user && (
                 <Navigate to="/" replace={true} />
               )}

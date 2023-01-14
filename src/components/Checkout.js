@@ -744,32 +744,32 @@ const loadCheckOut = async (priceId) => {
             </section>
 
             <div ref={ref} className="checkout mt">
-                <div ref={sectionRef3} className="centerPass">   
+                <div  className="centerPass">   
                     <div className="checkoutLeft">
-                        <img src={ticket} className="ticket fadeIn3"/>
+                        <img src={ticket} className="ticket"/>
                     </div>
                     <div className="checkoutRight">
                         <div className="style1">
-                        <h1 className="tickets fadeIn3">PASS</h1>
-                        <h1 className="checkout-price fadeIn3" style={{justifyContent: "center", display: "flex"}}>€{total}/year</h1>
+                        <h1 className="tickets ">PASS</h1>
+                        <h1 className="checkout-price " style={{justifyContent: "center", display: "flex"}}>€{total}/year</h1>
                         <div className="quantity-input">
 
-                            <button className="quantity-input__modifier quantity-input__modifier--left fadeIn3" onClick={decNum}>—</button>
+                            {/* <button className="quantity-input__modifier quantity-input__modifier--left " onClick={decNum}>—</button>
 
-                            <input type="text" className="quantity-input__screen fadeIn3" style={{ color: "wheat"}} value={num} onChange={handleChange}/>
+                            <input type="text" className="quantity-input__screen " style={{ color: "wheat"}} value={num} onChange={handleChange}/>
                             
-                            <button className="quantity-input__modifier quantity-input__modifier--right fadeIn3" onClick={incNum}>＋</button>
+                            <button className="quantity-input__modifier quantity-input__modifier--right " onClick={incNum}>＋</button> */}
 
                         </div>
                         {(function() {
                           if (auth.currentUser != null) {
                             return <button
-                            className="checkout-button fadeIn3"
+                            className="checkout-button "
                             onClick={redirectToCheckout}
                             disabled={isLoading}
                             style={{justifyContent: "center"}}
                         >
-                            <div className="text-block fadeIn3">
+                            <div className="text-block ">
                               <div className="text">{isLoading ? "Carico..." : "paga"}</div>
                             </div>
                         </button>
@@ -790,54 +790,58 @@ const loadCheckOut = async (priceId) => {
                           {(function() 
                             
                             {
+                              if (auth.currentUser != null) {
+
+                                if (subscription != null) {
                                 
-                              if (subscription != null) {
-                              
-                                return <div>
-                                  <div className="profileText1">Subscription: ACTIVATED</div>
+                                  return <div>
+                                    <div className="profileText1">Subscription: ACTIVATED</div>
 
-                                  {subscription && (
-                                    <p>
-                                      Renewal date:{" "}
-                                      {new Date(
-                                        subscription?.current_period_end * 1000
-                                      ).toLocaleDateString()}
-                                    </p>
-                                  )}
+                                    {subscription && (
+                                      <p>
+                                        Renewal date:{" "}
+                                        {new Date(
+                                          subscription?.current_period_end * 1000
+                                        ).toLocaleDateString()}
+                                      </p>
+                                    )}
 
-                                </div>
-                              } else {
-                                return <div>
-                                  <div className="profileText1">Subscription: NOT FOUND💀</div>
+                                  </div>
+                                } else {
+                                  return <div>
+                                    <div className="profileText1">Subscription: NOT FOUND💀</div>
 
-                                  {Object.entries(products).map(([productId, productData]) => {
-                                    ///  TODO: add logic
-                                    const isCurrentPackage = productData.name
-                                      ?.toLowerCase()
-                                      .includes(subscription?.role);
-                                    return (
-                                      <div
-                                        key={productId}
-                                        className={`${
-                                          isCurrentPackage && "plansScreen__plan--disabled"
-                                        } plansScreen__plan`}
-                                      >
-                                        <div className="plansScreen__info">
-                                          <h5>{productData.name}</h5>
-                                          <h6>{productData.description}</h6>
-                                        </div>
-
-                                        <button
-                                          onClick={() =>
-                                            !isCurrentPackage && loadCheckOut(productData.prices.priceId)
-                                          }
+                                    {Object.entries(products).map(([productId, productData]) => {
+                                      ///  TODO: add logic
+                                      const isCurrentPackage = productData.name
+                                        ?.toLowerCase()
+                                        .includes(subscription?.role);
+                                      return (
+                                        <div
+                                          key={productId}
+                                          className={`${
+                                            isCurrentPackage && "plansScreen__plan--disabled"
+                                          } plansScreen__plan`}
                                         >
-                                          {isCurrentPackage ? "Current Package" : "Subscribe"}
-                                        </button>
-                                      </div>
-                                    );
-                                  })}
-                                </div>
+                                          <div className="plansScreen__info">
+                                            <h5>{productData.name}</h5>
+                                            <h6>{productData.description}</h6>
+                                          </div>
+
+                                          <button
+                                            onClick={() =>
+                                              !isCurrentPackage && loadCheckOut(productData.prices.priceId)
+                                            }
+                                          >
+                                            {isCurrentPackage ? "Current Package" : "Subscribe"}
+                                          </button>
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                }
+                              } else {
+                                <div className="profileText1">Please Log In first💀</div>
                               }
                           })()}
 
