@@ -421,6 +421,7 @@ useEffect(() => {
 
 
 const loadCheckOut = async (priceId) => {
+  setLoading(true);
   const docRef = await addDoc(
     collection(db, "users", auth.currentUser.uid, "checkout_sessions"),
     {
@@ -438,6 +439,7 @@ const loadCheckOut = async (priceId) => {
       // Show an error to a customer and inspect your
       // Cloud functions logs in the firebase console.
       alert(`An error occurred: ${error.message}`);
+      setLoading(false);
     }
 
     if (sessionId) {
@@ -808,8 +810,11 @@ const loadCheckOut = async (priceId) => {
                                           onClick={() =>
                                             !isCurrentPackage && loadCheckOut(productData.prices.priceId)
                                           }
+                                          disabled={isLoading}
                                         >
-                                          {isCurrentPackage ? "Current Package" : "Subscribe"}
+                                           <div className="text-block ">
+                                            <div className="text">{isLoading ? "Carico..." : "paga"}</div>
+                                          </div>
                                         </button>
 
                                         {/* <button
