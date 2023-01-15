@@ -418,8 +418,8 @@ function Checkout() {
                                                         <img src={banner1} className="imgG" alt="las vegas"/>
                                                     </div>
                                                     <div className="details">
-                                                        <h3>Las Vegas</h3>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                        <h3>Bergamo</h3>
+                                                        <p>Any short description</p>
                                                     </div>
                                                 </div>
                                                 <div className="card">
@@ -427,8 +427,8 @@ function Checkout() {
                                                         <img src={banner2} className="imgG" alt="New York"/>
                                                     </div>
                                                     <div className="details">
-                                                        <h3>New York</h3>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                        <h3>Milano</h3>
+                                                        <p>Any short description</p>
                                                     </div>
                                                 </div>
                                                 <div className="card">
@@ -436,8 +436,8 @@ function Checkout() {
                                                         <img src={banner3} className="imgG" alt="Singapore"/>
                                                     </div>
                                                     <div className="details">
-                                                        <h3>Singapore</h3>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                        <h3>Sizilia</h3>
+                                                        <p>Any short description</p>
                                                     </div>
                                                 </div>
                                                 <div className="card">
@@ -445,8 +445,8 @@ function Checkout() {
                                                         <img src={banner4} className="imgG" alt="Singapore"/>
                                                     </div>
                                                     <div className="details">
-                                                        <h3>Singapore</h3>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                        <h3>Como</h3>
+                                                        <p>Any short description</p>
                                                     </div>
                                                 </div>
                                                 <div className="card">
@@ -454,8 +454,8 @@ function Checkout() {
                                                         <img src={lock} className="imgG" alt="Singapore"/>
                                                     </div>
                                                     <div className="details">
-                                                        <h3>Singapore</h3>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                        {/* <h3>Singapore</h3> */}
+                                                        <p>Coming soon...</p>
                                                     </div>
                                                 </div>
                                                 <div className="card">
@@ -463,8 +463,8 @@ function Checkout() {
                                                         <img src={lock} className="imgG" alt="Singapore"/>
                                                     </div>
                                                     <div className="details">
-                                                        <h3>Singapore</h3>
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                        {/* <h3>Singapore</h3> */}
+                                                        <p>Coming soon...</p>
                                                     </div>
                                                 </div>
                                               </div>
