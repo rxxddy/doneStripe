@@ -720,7 +720,7 @@ code {
 
 .profileText1 {
   max-width: 50vh;
-  font-size: xx-large;
+  font-size: 7vh;
   font-family: fantasy;
   color: wheat;
 }
@@ -903,6 +903,9 @@ body {
 }
 
 @media screen and (max-width: 991px) {
+  .profileText1{
+    font-size: 5vh;
+  }
   .navbar{
     display: block;
   }
