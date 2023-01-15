@@ -10,8 +10,10 @@ import '../firebase';
 // import { getAuth } from "firebase/auth";
 
 import banner1 from "../images/1.png";
-import banner2 from "../images/2.png";
-import banner3 from "../images/3.png";
+import banner2 from "../images/mansion1.jpg";
+import banner3 from "../images/mansion3.jpeg";
+import banner4 from "../images/mansion4.jpeg";
+import lock from "../images/lock.png";
 
 import db from "../firebase";
 
@@ -334,7 +336,7 @@ function Checkout() {
                     </div>
                 </div>
             </section>
-            <div className="section" style={{height: "100vh"}}>
+            <div className="section" style={{minHeight:"100vh", height: "100%"}}>
               {/* <div className="section22" style={{marginTop: "20vh"}}>
                 Hello world
               </div>
@@ -393,21 +395,150 @@ function Checkout() {
                            if (subscription != null) {
                            
                              return <div>
-                               <div className="profileText1">Subscription: ACTIVATED</div>
+                                      <div className="profileText1" style={{margin: "auto"}}>Subscription: ACTIVATED</div>
+                                        {subscription && (
+                                          <p>
+                                            Renewal date:{" "}
+                                            {new Date(
+                                              subscription?.current_period_end * 1000
+                                            ).toLocaleDateString()}
+                                          </p>
+                                        )}
 
-                               {subscription && (
-                                 <p>
-                                   Renewal date:{" "}
-                                   {new Date(
-                                     subscription?.current_period_end * 1000
-                                   ).toLocaleDateString()}
-                                 </p>
-                               )}
+                                        
+                                        <div  style={{display: "flex", justifyContent: "center"}}>
+                                          <div style={{display:"grid"}}>
+                                              <div style={{padding: "3vh 0 3vh 0"}}>
+                                                <h3>Incoming Events:</h3>
+                                              </div>
+                                            <div className="profile2">
+                                              <div className="cards">
+                                                <div className="card">
+                                                    <div className="containerG">
+                                                        <img src={banner1} className="imgG" alt="las vegas"/>
+                                                    </div>
+                                                    <div className="details">
+                                                        <h3>Las Vegas</h3>
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                    </div>
+                                                </div>
+                                                <div className="card">
+                                                    <div className="containerG">
+                                                        <img src={banner2} className="imgG" alt="New York"/>
+                                                    </div>
+                                                    <div className="details">
+                                                        <h3>New York</h3>
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                    </div>
+                                                </div>
+                                                <div className="card">
+                                                    <div className="containerG">
+                                                        <img src={banner3} className="imgG" alt="Singapore"/>
+                                                    </div>
+                                                    <div className="details">
+                                                        <h3>Singapore</h3>
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                    </div>
+                                                </div>
+                                                <div className="card">
+                                                    <div className="containerG">
+                                                        <img src={banner4} className="imgG" alt="Singapore"/>
+                                                    </div>
+                                                    <div className="details">
+                                                        <h3>Singapore</h3>
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                    </div>
+                                                </div>
+                                                <div className="card">
+                                                    <div className="containerG">
+                                                        <img src={lock} className="imgG" alt="Singapore"/>
+                                                    </div>
+                                                    <div className="details">
+                                                        <h3>Singapore</h3>
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                    </div>
+                                                </div>
+                                                <div className="card">
+                                                    <div className="containerG">
+                                                        <img src={lock} className="imgG" alt="Singapore"/>
+                                                    </div>
+                                                    <div className="details">
+                                                        <h3>Singapore</h3>
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                                                    </div>
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
 
-                             </div>
+
+                                    </div>
                            } else {
                              return <div>
-                               <div className="profileText1">Subscription: NOT FOUND💀</div>
+                               <div className="profileText1" style={{margin: "auto"}}>Subscription: NOT FOUND💀</div>
+                               <div  style={{display: "flex", justifyContent: "center"}}>
+                                  <div style={{display:"grid"}}>
+                                      <div style={{padding: "3vh 0 3vh 0"}}>
+                                        <h3>Incoming Events:</h3>
+                                      </div>
+                                    <div className="profile2">
+                                      <div className="cards">
+                                        <Link to="/" className="card">
+                                            <div className="containerG">
+                                                <img src={lock} className="imgG" alt="las vegas"/>
+                                            </div>
+                                            <div className="details">
+                                                <p>Please buy subscription to unlock content</p>
+                                            </div>
+                                        </Link>
+                                        <Link to="/" className="card">
+                                            <div className="containerG">
+                                                <img src={lock} className="imgG" alt="New York"/>
+                                            </div>
+                                            <div className="details">
+                                                <p>Please buy subscription to unlock content</p>
+                                            </div>
+                                        </Link>
+                                        <Link to="/" className="card">
+                                            <div className="containerG">
+                                                <img src={lock} className="imgG" alt="Singapore"/>
+                                            </div>
+                                            <div className="details">
+                                                <p>Please buy subscription to unlock content</p>
+                                            </div>
+                                        </Link>
+                                        <Link to="/" className="card">
+                                            <div className="containerG">
+                                                <img src={lock} className="imgG" alt="Singapore"/>
+                                            </div>
+                                            <div className="details">
+                                                <p>Please buy subscription to unlock content</p>
+                                            </div>
+                                        </Link>
+                                        <Link to="/" className="card">
+                                            <div className="containerG">
+                                                <img src={lock} className="imgG" alt="Singapore"/>
+                                            </div>
+                                            <div className="details">
+                                                <p>Please buy subscription to unlock content</p>
+                                            </div>
+                                        </Link>
+                                        <Link to="/" className="card">
+                                            <div className="containerG">
+                                                <img src={lock} className="imgG" alt="Singapore"/>
+                                            </div>
+                                            <div className="details">
+                                                <p>Please buy subscription to unlock content</p>
+                                            </div>
+                                        </Link>
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+                                </div>
+
                              </div>
                            }
                        })()}
@@ -415,42 +546,7 @@ function Checkout() {
                      </div>
                  </div>
              </div>
-             <div  style={{display: "flex", justifyContent: "center"}}>
-              <div style={{display:"grid"}}>
-                <div className="profile2">
-                  <div className="cards">
-                    <div className="card card1">
-                        <div className="containerG">
-                            <img src={banner1} className="imgG" alt="las vegas"/>
-                        </div>
-                        <div className="details">
-                            <h3>Las Vegas</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
-                        </div>
-                    </div>
-                    <div className="card card2">
-                        <div className="containerG">
-                            <img src={banner2} className="imgG" alt="New York"/>
-                        </div>
-                        <div className="details">
-                            <h3>New York</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
-                        </div>
-                    </div>
-                    <div className="card card3">
-                        <div className="containerG">
-                            <img src={banner3} className="imgG" alt="Singapore"/>
-                        </div>
-                        <div className="details">
-                            <h3>Singapore</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
-                        </div>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-             </div>
+             
             </section>
           </div>
             
