@@ -349,7 +349,7 @@ const Checkout = () => {
       // Sign-out successful.
       console.log("Sign-out successful");
       
-      navigate("/Signup");
+      navigate("/login");
     });
   };
   let handleLogOut2 = () => {
