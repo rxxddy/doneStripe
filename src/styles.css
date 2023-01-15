@@ -714,6 +714,13 @@ code {
   border: 0.5em solid black;
 }
 
+.profileImage2Img {
+
+  transform: translateY(13%);
+  border-radius: 100%;
+  border: 0.5em solid black;
+}
+
 .profileImage1 {
   width: 35%;
 }
@@ -942,6 +949,11 @@ body {
     max-width: 100%;
     transform: translateY(0);
   }
+  .profileImage2Img {
+    max-width: 100%;
+    transform: translateY(0);
+    margin-top: 20vh;
+  }
 
   .profile00 {
     margin-left: 2em;
@@ -981,7 +993,7 @@ body {
     color: wheat;
   }
   .profileText1 {
-    font-size: 3vh;
+    font-size: 5vh;
   }
   .insideLeft {
     border-radius: none;

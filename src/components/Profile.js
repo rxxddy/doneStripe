@@ -347,8 +347,8 @@ function Checkout() {
                 <div className="profile0">
                   <div className="profile01">
                 
-                    <div className="profileImage1">
-                      <img src={userLogo} className="profileImage2"/>
+                    <div className="profileImage1" style={{width: "55%"}}>
+                      <img src={userLogo} className="profileImage2Img"/>
                     
                     </div>
                   </div>
@@ -366,13 +366,13 @@ function Checkout() {
                                 let userEmail = (auth.currentUser.email);
                                 {/* console.log(auth.currentUser); */}
                                 return <div>
-                                  <div className="profileText1" style={{fontSize:"7vh", display:"flex", justifyContent:"center"}}>{userEmail}</div>
+                                  <div className="profileText1" style={{display:"flex", justifyContent:"center"}}>{userEmail}</div>
                                   {/* <div className="profileText1">{userSubscription}</div> */}
                                  
                                 </div>
                               } else {
                                 return <div>
-                                  <Link to="/login" className="profileText1" style={{fontSize:"7vh", display:"flex", justifyContent:"center"}}>Please login first</Link>
+                                  <Link to="/login" className="profileText1" style={{ display:"flex", justifyContent:"center"}}>Please login first</Link>
                                 </div>
                               }
                           })()}
