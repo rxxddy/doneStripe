@@ -9,6 +9,9 @@ import "../../src/components/components/css/styles.css";
 import '../firebase';
 // import { getAuth } from "firebase/auth";
 
+import banner1 from "../images/1.png";
+import banner2 from "../images/2.png";
+import banner3 from "../images/3.png";
 
 import db from "../firebase";
 
@@ -331,7 +334,7 @@ function Checkout() {
                     </div>
                 </div>
             </section>
-            <section className="section" style={{height: "100vh"}}>
+            <div className="section" style={{height: "100vh"}}>
               {/* <div className="section22" style={{marginTop: "20vh"}}>
                 Hello world
               </div>
@@ -344,101 +347,112 @@ function Checkout() {
                 
                     <div className="profileImage1">
                       <img src={userLogo} className="profileImage2"/>
-                    <div className="profile2">
-                      {(function() 
-                        
-                        {
-                            
-                          if (auth.currentUser != null) {
-                            let userEmail = (auth.currentUser.email);
-                            {/* console.log(auth.currentUser); */}
-                            return <div>
-                              <div className="profileText1">{userEmail}</div>
-                              {/* <div className="profileText1">{userSubscription}</div> */}
-                              <button onClick={check}>Check</button>
-                              <button onClick={checkInfo}>Check FULL</button>
-                              <button onClick={checkSubscription}>Check user</button>
-                            </div>
-                          } else {
-                            return <div>
-                              <Link to="/login" className="profileText1">Please login first</Link>
-                            </div>
-                          }
-                        })()}
-                    </div>
+                    
                     </div>
                   </div>
                 </div>
-                <div style={{marginTop: "20em"}}>
-                 
-
-
-
-                    <div>
-                        <div  style={{display: "flex", justifyContent: "center"}}>
-                          {(function() 
+                <div className="profile0" style={{backgroundColor:"transparent"}}>
+                  <div className="profile01" style={{backgroundImage:"none",height: "10vh"}}>
+                
+                    <div className="profileImage1">
+                      <div className="profileImage2" style={{border: "transparent"}}>
+                        {(function() 
                             
                             {
                                 
-                              if (subscription != null) {
-                              
+                              if (auth.currentUser != null) {
+                                let userEmail = (auth.currentUser.email);
+                                {/* console.log(auth.currentUser); */}
                                 return <div>
-                                  <div className="profileText1">Subscription: ACTIVATED</div>
-
-                                  {subscription && (
-                                    <p>
-                                      Renewal date:{" "}
-                                      {new Date(
-                                        subscription?.current_period_end * 1000
-                                      ).toLocaleDateString()}
-                                    </p>
-                                  )}
-
+                                  <div className="profileText1" style={{fontSize:"7vh", display:"flex", justifyContent:"center"}}>{userEmail}</div>
+                                  {/* <div className="profileText1">{userSubscription}</div> */}
+                                 
                                 </div>
                               } else {
                                 return <div>
-                                  <div className="profileText1">Subscription: NOT FOUND💀</div>
+                                  <Link to="/login" className="profileText1" style={{fontSize:"7vh", display:"flex", justifyContent:"center"}}>Please login first</Link>
                                 </div>
                               }
                           })()}
-
                         </div>
-                      
-                      {/* {Object.entries(products).map(([productId, productData]) => {
-                        ///  TODO: add logic
-                        const isCurrentPackage = productData.name
-                          ?.toLowerCase()
-                          .includes(subscription?.role);
-                        return (
-                          <div
-                            key={productId}
-                            className={`${
-                              isCurrentPackage && "plansScreen__plan--disabled"
-                            } plansScreen__plan`}
-                          >
-                            <div className="plansScreen__info">
-                              <h5>{productData.name}</h5>
-                              <h6>{productData.description}</h6>
-                            </div>
-
-                            <button
-                              onClick={() =>
-                                !isCurrentPackage && loadCheckOut(productData.prices.priceId)
-                              }
-                            >
-                              {isCurrentPackage ? "Current Package" : "Subscribe"}
-                            </button>
-                          </div>
-                        );
-                      })} */}
+                    
                     </div>
+                  </div>
+                </div>
+                
+              </div>
+              
+            <section>
+              <div>
+                 <div>
+                     <div  style={{display: "flex", justifyContent: "center"}}>
+                       {(function() 
+                         
+                         {
+                             
+                           if (subscription != null) {
+                           
+                             return <div>
+                               <div className="profileText1">Subscription: ACTIVATED</div>
 
+                               {subscription && (
+                                 <p>
+                                   Renewal date:{" "}
+                                   {new Date(
+                                     subscription?.current_period_end * 1000
+                                   ).toLocaleDateString()}
+                                 </p>
+                               )}
 
+                             </div>
+                           } else {
+                             return <div>
+                               <div className="profileText1">Subscription: NOT FOUND💀</div>
+                             </div>
+                           }
+                       })()}
 
-
+                     </div>
+                 </div>
+             </div>
+             <div  style={{display: "flex", justifyContent: "center"}}>
+              <div style={{display:"grid"}}>
+                <div className="profile2">
+                  <div className="cards">
+                    <div className="card card1">
+                        <div className="containerG">
+                            <img src={banner1} className="imgG" alt="las vegas"/>
+                        </div>
+                        <div className="details">
+                            <h3>Las Vegas</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                        </div>
+                    </div>
+                    <div className="card card2">
+                        <div className="containerG">
+                            <img src={banner2} className="imgG" alt="New York"/>
+                        </div>
+                        <div className="details">
+                            <h3>New York</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                        </div>
+                    </div>
+                    <div className="card card3">
+                        <div className="containerG">
+                            <img src={banner3} className="imgG" alt="Singapore"/>
+                        </div>
+                        <div className="details">
+                            <h3>Singapore</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                        </div>
+                    </div>
+                  </div>
+                  
                 </div>
               </div>
+             </div>
             </section>
+          </div>
             
         </div>
 
