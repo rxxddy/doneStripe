@@ -15,7 +15,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function ResetPass() {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
+  const [email, setEmail, errorMessage] = useState("");
 
   function onChange(e) {
     setEmail(e.target.value);
@@ -29,7 +29,18 @@ export default function ResetPass() {
       navigate('/login');
       console.log("Email was sent");
     } catch (error) {
+
+      let message = error;
+
       console.log("Could not send reset password");
+      
+      if (message == 'FirebaseError: Firebase: Error (auth/wrong-password).') {
+        this.setState({ errorMessage: 'Wrong Password'  });
+      } else if (message == 'FirebaseError: Firebase: Error (auth/user-not-found).') {
+        this.setState({ errorMessage: 'User not found'  });
+      } else {
+        this.setState({ errorMessage: message  });
+      }
     }
   }
   return (
@@ -96,6 +107,25 @@ export default function ResetPass() {
                 <div className="actions">
                   <button className="sendinfo">Reset Password</button>
                 </div>
+                {(function() {
+
+                if (errorMessage !== '') {
+                  console.log('errorMessage not empty')
+                  console.log(errorMessage)
+                  return <div className="control">
+                            <input
+                              type="errorMessage"
+                              name="errorMessage"
+                              value={errorMessage}
+                              onChange={changeText}
+                              placeholder=""
+                            />
+                        </div>
+                } else {
+                  console.log('errorMessage empty')
+                }
+
+                })()}
               </form>
 
                 {/* {errorMessage && (

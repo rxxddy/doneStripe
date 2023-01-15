@@ -347,7 +347,7 @@ function Checkout() {
                 <div className="profile0">
                   <div className="profile01">
                 
-                    <div className="profileImage1" style={{width: "55%"}}>
+                    <div className="profileImage1 profileStyle">
                       <img src={userLogo} className="profileImage2Img"/>
                     
                     </div>

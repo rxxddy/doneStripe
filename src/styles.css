@@ -715,7 +715,7 @@ code {
 }
 
 .profileImage2Img {
-
+  scale: 0.6;
   transform: translateY(13%);
   border-radius: 100%;
   border: 0.5em solid black;
@@ -727,7 +727,7 @@ code {
 
 .profileText1 {
   max-width: 50vh;
-  font-size: 7vh;
+  font-size: 5vh;
   font-family: fantasy;
   color: wheat;
 }
@@ -908,6 +908,9 @@ body {
   color: rgb(33, 33, 33);
   letter-spacing: 1px;
 }
+.profileStyle{
+  width: 35%;
+}
 
 @media screen and (max-width: 991px) {
   .profileText1{
@@ -950,6 +953,7 @@ body {
     transform: translateY(0);
   }
   .profileImage2Img {
+    scale: 1;
     max-width: 100%;
     transform: translateY(0);
     margin-top: 20vh;
@@ -985,6 +989,9 @@ body {
 }
 
 @media screen and (max-width: 479px) {
+  .profileStyle{
+    width: 55%;
+  }
   .cookie {
     width: 90%;
   }
